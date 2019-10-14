@@ -1,0 +1,5 @@
+In computer science, computation offloading is the transfer of resource intensive computational tasks to an external platform, such as a cluster, grid, or a cloud. Offloading may be necessary due to hardware limitations of a devices, such as limited computational power, storage, and energy. The resource intensive tasks may be for searching, virus scanning, image processing, artificial intelligence, computational decision making etc. 
+Offloading is mainly used in mobile cloud computing, edge computing, and fog computing.
+
+
+== References ==

@@ -1,0 +1,151 @@
+A Supnick matrix or Supnick array – named after Fred Supnick of the City College of New York, who introduced the notion in 1957 – is a Monge array which is also a symmetric matrix.
+
+
+== Mathematical definition ==
+A Supnick matrix is a square Monge array that is symmetric around the main diagonal.
+An n-by-n matrix is a Supnick matrix if, for all i, j, k, l such that if
+
+  
+    
+      
+        1
+        ≤
+        i
+        <
+        k
+        ≤
+        n
+      
+    
+    {\displaystyle 1\leq i<k\leq n}
+   and 
+  
+    
+      
+        1
+        ≤
+        j
+        <
+        l
+        ≤
+        n
+      
+    
+    {\displaystyle 1\leq j<l\leq n}
+  then
+
+  
+    
+      
+        
+          a
+          
+            i
+            j
+          
+        
+        +
+        
+          a
+          
+            k
+            l
+          
+        
+        ≤
+        
+          a
+          
+            i
+            l
+          
+        
+        +
+        
+          a
+          
+            k
+            j
+          
+        
+        
+      
+    
+    {\displaystyle a_{ij}+a_{kl}\leq a_{il}+a_{kj}\,}
+  and also
+
+  
+    
+      
+        
+          a
+          
+            i
+            j
+          
+        
+        =
+        
+          a
+          
+            j
+            i
+          
+        
+        .
+        
+      
+    
+    {\displaystyle a_{ij}=a_{ji}.\,}
+  A logically equivalent definition is given by Rudolf & Woeginger who in 1995 proved that
+
+A matrix is a Supnick matrix iff it can be written as the sum of a sum matrix S and a non-negative linear combination of LL-UR block matrices.The sum matrix is defined in terms of a sequence of n real numbers {αi}:
+
+  
+    
+      
+        S
+        =
+        [
+        
+          s
+          
+            i
+            j
+          
+        
+        ]
+        =
+        [
+        
+          α
+          
+            i
+          
+        
+        +
+        
+          α
+          
+            j
+          
+        
+        ]
+        ;
+        
+      
+    
+    {\displaystyle S=[s_{ij}]=[\alpha _{i}+\alpha _{j}];\,}
+  and an LL-UR block matrix consists of two symmetrically placed rectangles in the lower-left and upper right corners for which aij = 1, with all the rest of the matrix elements equal to zero.
+
+
+== Properties ==
+Adding two Supnick matrices together will result in a new Supnick matrix (Deineko and Woeginger 2006).
+Multiplying a Supnick matrix by a non-negative real number produces a new Supnick matrix (Deineko and Woeginger 2006).
+If the distance matrix in a traveling salesman problem can be written as a Supnick matrix, that particular instance of the problem admits an easy solution (even though the problem is, in general, NP hard).
+
+
+== References ==
+Supnick, Fred (July 1957). "Extreme Hamiltonian Lines". Annals of Mathematics. Second Series. 66 (1): 179–201. JSTOR 1970124.
+Woeginger, Gerhard J. (June 2003). "Computational Problems without Computation" (PDF). Nieuwarchief. 5 (4): 140–147.
+Deineko, Vladimir G.; Woeginger, Gerhard J. (October 2006). "Some problems around travelling salesmen, dart boards, and euro-coins" (PDF). Bulletin of the European Association for Theoretical Computer Science. EATCS. 90: 43–52. ISSN 0252-9742.

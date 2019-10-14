@@ -1,0 +1,13 @@
+Two-level scheduling is a computer science term to describe a method to more efficiently perform process scheduling that involves swapped out processes. 
+Consider this problem: A system contains 50 running processes all with equal priority. However, the system's memory can only hold 10 processes in memory simultaneously. Therefore, there will always be 40 processes swapped out written on virtual memory on the hard disk. The time taken to swap out and swap in a process is 50 ms respectively.  
+With straightforward Round-robin scheduling, every time a context switch occurs, a process would need to be swapped in (because only the 10 least recently used processes are swapped in). Choosing randomly among the processes would diminish the probability to 80% (40/50). If that occurs, then obviously a process also need to be swapped out. Swapping in and out of is costly, and the scheduler would waste much of its time doing unneeded swaps.
+That is where two-level scheduling enters the picture. It uses two different schedulers, one lower-level scheduler which can only select among those processes in memory to run. That scheduler could be a Round-robin scheduler. The other scheduler is the higher-level scheduler whose only concern is to swap in and swap out processes from memory. It does its scheduling much less often than the lower-level scheduler since swapping takes so much time. 
+Thus, the higher-level scheduler selects among those processes in memory that have run for a long time and swaps them out. They are replaced with processes on disk that have not run for a long time. Exactly how it selects processes is up to the implementation of the higher-level scheduler. A compromise has to be made involving the following variables:
+
+Response time: A process should not be swapped out for too long. Then some other process (or the user) will have to wait needlessly long. If this variable is not considered resource starvation may occur and a process may not complete at all.
+Size of the process: Larger processes must be subject to fewer swaps than smaller ones because they take longer time to swap. Because they are larger, fewer processes can share the memory with the process.
+Priority: The higher the priority of the process, the longer it should stay in memory so that it completes faster.
+
+
+== References ==
+Tanenbaum, Albert Woodhull, Operating Systems: Design and Implementation, p.92

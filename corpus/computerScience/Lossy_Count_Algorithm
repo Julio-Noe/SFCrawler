@@ -1,0 +1,4 @@
+The lossy count algorithm is an algorithm to identify elements in a data stream whose frequency count exceed a user-given threshold. The frequency computed by this algorithm is not always accurate, but has an error threshold that can be specified by the user. The run time space required by the algorithm is inversely proportional to the specified error threshold, hence larger the error, the smaller the footprint. It was created by eminent computer scientists Rajeev Motwani and Gurmeet Singh Manku. This algorithm finds huge application in computations where data takes the form of a continuous data stream instead of a finite data set, for e.g. network traffic measurements, web server logs, clickstreams.
+
+
+== References ==

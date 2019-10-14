@@ -1,0 +1,394 @@
+Numerical algebraic geometry is a field of computational mathematics, particularly computational algebraic geometry, which uses methods from numerical analysis to study and manipulate algebraic varieties on a computer.
+
+
+== Homotopy continuation ==
+
+The primary computational method used in numerical algebraic geometry is homotopy continuation, in which a homotopy is formed between two polynomial systems, and the isolated solutions (points) of one are continued to the other. This is a specification of the more general method of numerical continuation.
+Let 
+  
+    
+      
+        z
+      
+    
+    {\displaystyle z}
+   represent the variables of the system.  By abuse of notation, and to facilitate the spectrum of ambient spaces over which one can solve system, we do not use vector notation for 
+  
+    
+      
+        z
+      
+    
+    {\displaystyle z}
+  .  Similarly for the polynomial systems 
+  
+    
+      
+        f
+      
+    
+    {\displaystyle f}
+   and 
+  
+    
+      
+        g
+      
+    
+    {\displaystyle g}
+  .
+Current canonical notation calls the start system 
+  
+    
+      
+        g
+      
+    
+    {\displaystyle g}
+  , and the target system – the system to solve – 
+  
+    
+      
+        f
+      
+    
+    {\displaystyle f}
+  .  A very common homotopy, the straight-line homotopy, between 
+  
+    
+      
+        f
+      
+    
+    {\displaystyle f}
+   and 
+  
+    
+      
+        g
+      
+    
+    {\displaystyle g}
+   is
+
+In the above homotopy, one starts the path variable at 
+  
+    
+      
+        
+          t
+          
+            start
+          
+        
+        =
+        1
+      
+    
+    {\displaystyle t_{\text{start}}=1}
+   and continues toward 
+  
+    
+      
+        
+          t
+          
+            end
+          
+        
+        =
+        0
+      
+    
+    {\displaystyle t_{\text{end}}=0}
+  .  Another common choice is to run from 
+  
+    
+      
+        0
+      
+    
+    {\displaystyle 0}
+   to 
+  
+    
+      
+        1
+      
+    
+    {\displaystyle 1}
+  .  In principle, the choice is completely arbitrary.  In practice, regarding endgame methods for computing singular solutions using homotopy continuation, the target time being 
+  
+    
+      
+        0
+      
+    
+    {\displaystyle 0}
+   can significantly ease analysis, so this perspective is here taken.Regardless of the choice of start and target times, the 
+  
+    
+      
+        H
+      
+    
+    {\displaystyle H}
+   ought to be formulated such that 
+  
+    
+      
+        H
+        (
+        z
+        ,
+        
+          t
+          
+            start
+          
+        
+        )
+        =
+        g
+        (
+        z
+        )
+      
+    
+    {\displaystyle H(z,t_{\text{start}})=g(z)}
+  , and 
+  
+    
+      
+        H
+        (
+        z
+        ,
+        
+          t
+          
+            end
+          
+        
+        )
+        =
+        f
+        (
+        z
+        )
+      
+    
+    {\displaystyle H(z,t_{\text{end}})=f(z)}
+  .
+One has a choice in 
+  
+    
+      
+        g
+        (
+        z
+        )
+      
+    
+    {\displaystyle g(z)}
+  , including
+
+Roots of unity
+Total degree
+Polyhedral
+Multi-homogeneousand beyond these, specific start systems that closely mirror the structure of 
+  
+    
+      
+        f
+      
+    
+    {\displaystyle f}
+   may be formed for particular systems.  The choice of start system impacts the computational time it takes to solve 
+  
+    
+      
+        f
+      
+    
+    {\displaystyle f}
+  , in that those that are easy to formulate (such as total degree) tend to have higher numbers of paths to track, and those that take significant effort (such as the polyhedral method) are much sharper.  There is currently no good way to predict which will lead to the quickest time to solve.Actual continuation is typically done using predictor–corrector methods, with additional features as implemented.  Predicting is done using a standard ODE predictor method, such as Runge–Kutta, and correction often uses Newton–Raphson iteration.
+Because 
+  
+    
+      
+        f
+      
+    
+    {\displaystyle f}
+   and 
+  
+    
+      
+        g
+      
+    
+    {\displaystyle g}
+   are polynomial, homotopy continuation in this context is theoretically guaranteed to compute all solutions of 
+  
+    
+      
+        f
+      
+    
+    {\displaystyle f}
+  , due to Bertini's theorem.  However, this guarantee is not always achieved in practice, because of issues arising from limitations of the modern computer, most namely finite precision.  That is, despite the strength of the probability-1 argument underlying this theory, without using a priori certified tracking methods, some paths may fail to track perfectly for various reasons.
+
+
+== Witness set ==
+A witness set 
+
+  
+    
+      
+        W
+      
+    
+    {\displaystyle W}
+   is a data structure used to describe algebraic varieties. The witness set for an affine variety that is equidimensional consists of three pieces of information. The first piece of information is a system of equations 
+  
+    
+      
+        F
+      
+    
+    {\displaystyle F}
+  . These equations define the algebraic variety 
+  
+    
+      
+        
+          
+            V
+          
+        
+        (
+        F
+        )
+      
+    
+    {\displaystyle {\mathbf {V} }(F)}
+   that is being studied. The second piece of information is a linear space 
+  
+    
+      
+        
+          
+            L
+          
+        
+      
+    
+    {\displaystyle {\mathcal {L}}}
+  . The dimension of 
+  
+    
+      
+        
+          
+            L
+          
+        
+      
+    
+    {\displaystyle {\mathcal {L}}}
+   is the codimension of 
+  
+    
+      
+        
+          
+            V
+          
+        
+        (
+        F
+        )
+      
+    
+    {\displaystyle {\mathbf {V} }(F)}
+  , and chosen to intersect 
+  
+    
+      
+        
+          
+            V
+          
+        
+        (
+        F
+        )
+      
+    
+    {\displaystyle {\mathbf {V} }(F)}
+   transversely. The third piece of information is the list of points in the intersection 
+  
+    
+      
+        
+          
+            L
+          
+        
+        ∩
+        
+          
+            V
+          
+        
+        (
+        F
+        )
+      
+    
+    {\displaystyle {\mathcal {L}}\cap {\mathbf {V} }(F)}
+  . This intersection has finitely many points and the number of points is the degree of the algebraic variety 
+  
+    
+      
+        
+          
+            V
+          
+        
+        (
+        F
+        )
+      
+    
+    {\displaystyle {\mathbf {V} }(F)}
+  . Thus, witness sets encode the answer to the first two questions one asks about an algebraic variety: What is the dimension, and what is the degree? Witness sets also allow one to perform a numerical irreducible decomposition, component membership tests, and component sampling. This makes witness sets a good description of an algebraic variety.
+
+
+== Certification ==
+Solutions to polynomial systems computed using numerical algebraic geometric methods can be certified, meaning that the approximate solution is "correct".  This can be achieved in several ways, either a priori using a certified tracker, or a posteriori by showing that the point is, say, in the basin of convergence for Newton's method.
+
+
+== Software ==
+Several software packages implement portions of the theoretical body of numerical algebraic geometry. These include, in alphabetic order:
+
+alphaCertified
+Bertini 
+Hom4PS 
+HomotopyContinuation.jl 
+Macaulay2 (core implementation of homotopy tracking and NumericalAlgebraicGeometry package)
+PHCPack
+
+
+== Theorem Star ==
+Often researchers use results from both probabilistic symbolic computations and numerical computations to prove theorems. The notation Theorem Star is often used to indicate the reliance on such computations. 
+
+    Our methods include probabilistic symbolic computations and numerical computations. Though they have been carefully tested and produce completely reproducible results, they are technically only true with high probability, or up to the numerical precision of the computers we use. To indicate reliance on such computations, we designate those theorems, corollaries, and propositions with a star.
+
+
+== References ==
+
+
+== See also ==
+Numerical certification

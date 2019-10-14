@@ -1,0 +1,42 @@
+WindStation is a wind energy software which uses computational fluid dynamics (CFD) to conduct wind resource assessments in complex terrain. The physical background and its numerical implementation are described in.. and the official manual of the software .
+WindStation takes the terrain description in raster format as well as wind observations and atmospheric stability as input data. Solution is provided for the non-linear fluid dynamics equations, with inclusion of Coriolis effects .
+The implemented nesting technique enables the user to run the simulation with measured wind data or mesoscale data. Domain and meshing provide flexibility, including features such as automatic alignment with free stream direction . 
+WindStation can be used to prepare wind resource assessments in complex terrain in order to quantify the feasibility of wind farms . This is achieved by taking into account measured wind data from a measurement mast or reanalysis data as well as terrain and roughness data. It can also be used to evaluate the flow around buildings in cities. Additionally, WindStation can be applied for specific analysis of urban climate including air pollution and dispersion calculations. Batch run features allow the setup and calculation of multiple projects, including climatology calculations for statistical analysis. Postprocessing tools are available for visualisation as well as data export options .
+WindStation was originally developed to simulate and predict fire propagation   .
+The software can be used by wind turbine manufacturers, wind farm developers, consulting firms and wind farm operators.
+A free trial version of the software including all features and modules can be requested online .
+
+
+== Solution method ==
+WindStation solves the momentum (Navier-Stokes) equations, continuity, energy and turbulence equations, using a control volume approach in a terrain-following mesh. The underlying method relies on the SIMPLEC algorithm applied to a collocated grid arrangement. The pressure correction equation is solved using a multigrid method for faster convergence .
+
+
+== Validation and case studies ==
+WindStation has been applied to case studies and validated with actual wind measurements in several studies  Also, it was validated using the widely used Bolund case study . The wind farm model of WindStation was tested and validated in .
+
+
+== Graphical user interface (GUI) ==
+WindStation provides a graphical user interface consisting of a main window including the visualisation of terrain and roughness data as well as positions of turbines and input climatology data.
+The main simulation details are shown as expandable windows. The menus for changing numerical and boundary conditions as well as input data can be reached over the software menu or small icons 
+
+
+== Compatibility with other software ==
+WindStation provides file formats which can be read by WindPRO, WAsP and ArcGIS.
+The following file formats can be exported
+ *.tab, *.asc, *.txt, *.grd, *.xls,*.pow,*.out 
+
+The following file formats can be imported
+ *.tab, *.asc, *.txt,*.xls,*.pow, *.trb,*.out
+
+
+== Language ==
+WindStation is available in English and German. Portuguese, Spanish and French are currently under preparation
+
+
+== See also ==
+Wind resource assessment
+Wind energy software
+Computational fluid dynamics
+
+
+== References ==

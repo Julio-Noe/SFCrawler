@@ -1,0 +1,36 @@
+Scantegrity is a security enhancement for optical scan voting systems, providing such systems with end-to-end (E2E) verifiability of election results. It uses confirmation codes to allow a voter to prove to themselves that their ballot is included unmodified in the final tally. The codes are privacy-preserving and offer no proof of which candidate a voter voted for. Receipts can be safely shown without compromising ballot secrecy.Scantegrity II prints the confirmation codes in invisible ink to improve usability and dispute resolution. As the system relies on cryptographic techniques, the ability to validate an election outcome is both software independent as well as independent of faults in the physical chain-of-custody of the paper ballots. The system was developed by a team of researchers including cryptographers David Chaum and Ron Rivest.
+
+
+== Advantages ==
+Optical scan voting systems produce an electronic tally, while maintaining the original paper ballots which can be rescanned or manually hand-counted to provide an ostensibly corroborative tally. However, the correctness of each of these tallies requires the voter to either trust that the software is error-free and has not been hacked, or that the physical chain-of-custody of the ballots has not been broken at any point. Other E2E voting systems such as Punchscan and ThreeBallot, address these issues but require existing polling place equipment and procedures to be greatly altered or replaced. In contrast, Scantegrity is an add-on meant to be used in conjunction with existing optical scan equipment, thereby requiring fewer hardware and software and procedural modifications.For all other voters, the ballot marking procedure is essentially identical to conventional optical scan paper-ballots. Similarly, the underlying system still produces both an electronic tally as well as a human readable paper trail through which manual recounts can still be conducted.
+
+
+== Method ==
+
+The Scantegrity II voting procedure is similar to that of a traditional optical scan voting system, except that each voting response location contains a random confirmation code printed in invisible ink. The voter marks the location using a specially provided "decoder" pen, which activates the invisible ink causing it to darken, revealing a confirmation code.Voters wishing to verify that their vote is unmodified may write down the confirmation codes for each race on a detachable chit that contains the ballot's serial number. Otherwise, the voter can simply ignore the code and continue to mark and cast their ballot as normal.
+The confirmation codes are randomly assigned to the ballots, allowing voters to freely share their codes while keeping their votes secret. The codes are also pre-committed to a committee of mutually-distrustful entities (such as representatives of each political party) so that the confirmation codes cannot be changed or misprinted without detection. Voters may request additional ballots to audit—they ensure the ballots are properly printed by revealing all the codes and comparing these to the codes committed to.
+
+
+=== Checking ===
+After the election is finished, the election authority publicly posts a list of confirmation codes for the positions marked on each ballot it received. Voters who wrote down their codes can verify that the codes are correct for their ballot number and that no codes were added or removed. If the posted record is incorrect, the voter may file a dispute. Spurious disputes can be excluded from consideration by comparing the claimed codes to the set of possible codes for a given contest on a ballot—the probability of randomly guessing a code that actually appeared on the ballot is low.
+
+
+=== Verification ===
+After the election, the trustees generate an independent tally from the voter-verifiable list of ballots and confirmation codes. Since the link between a confirmation code and the candidate voted for must remain secret, the tally is generated using an anonymity-preserving backend. Many such backends have been proposed for tallying votes, including the ones used by Punchscan and Prêt à Voter. Steps in the tally can be recalculated by anyone to ensure its correctness. For this reason, the system is more accurately described as mathematical voting than electronic voting. The security of the system does not require any software to operate correctly, only that the mathematical operations are independently corroborated by all interested parties.
+
+
+== Use in public elections ==
+The city of Takoma Park, Maryland used Scantegrity II for its November, 2009 election.
+Scantegrity was used again in Takoma Park for its November, 2011 election.
+
+
+== Notes ==
+
+
+== Further reading ==
+
+
+== External links ==
+Scantegrity.org
+Scantegrity II  video presentation
+Ben Adida's Takoma Park election blog

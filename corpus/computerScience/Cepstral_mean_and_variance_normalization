@@ -1,0 +1,24 @@
+Cepstral mean and variance normalization (CMVN) is a computationally efficient normalization technique for robust speech recognition. The performance of CMVN is known to degrade for short utterances. This is due to insufficient data for parameter estimation and loss of discriminable information as all utterances are forced to have zero mean and unit variance. CMVN minimizes distortion by noise contamination for robust feature extraction by linearly transforming the cepstral coefficients to have the same segmental statistics.  Cepstral Normalization has been effective in the CMU Sphinx for maintaining a high level of recognition accuracy over a wide variety of acoustical environments.
+
+
+== Cepstral Normalization Techniques ==
+There are multiple algorithms that achieve Cepstral Normalization in different ways.  
+
+
+=== Fixed codeword-dependent cepstral normalization (FCDCN) ===
+FCDCN was developed to provide a form of compensation that provides greater recognition accuracy than SDCN but in a more computationally-efficient manner than the CDCN algorithm. The FCDCN algorithm applies an additive correction that depends on the instantaneous SNR of the input (like SDCN), but that can also vary from codeword to codeword (like CDCN).
+
+
+=== Multiple Fixed Codeword-dependent Cepstral Normalization (MFCDCN) ===
+MFCDCN is a simple extension of FCDCN algorithm that does not need environment specific training. In MFCDCN, compensation vectors are pre-computed in parallel for a set of target environments, using the FCDCN algorithm. 
+
+
+=== Incremental Multiple Fixed Codeword-dependent Cepstral Normalization (IMFCDCN) ===
+While environment selection for the compensation vectors of MFCDCN is generally performed on an utterance-by-utterance basis, IMFCFCN improves on it by allowing the classification process to make use of cepstral vectors from previous utterances in a given session.
+
+
+== Cepstral Noise Subtraction ==
+Automatic speech recognition (ASR) describes the steps of transcribing speech utterances represented as acoustic wave forms to written words. As is, CMVN has been used in different applications as this technique has proven to provide better speech recognitions results in different environments. CMVN has the capabilities to reduce differences between test and training data produced by channel distortions and colorizations . CMVN has also been found to be able to reduce differences in feature representation between speakers can also partly reduce the influence of background noise.
+
+
+== References ==

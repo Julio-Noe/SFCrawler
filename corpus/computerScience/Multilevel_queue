@@ -1,0 +1,45 @@
+In computer science, a multilevel feedback queue is a scheduling algorithm. Solaris 2.6 Time-Sharing (TS) scheduler implements this algorithm. The MacOS and Microsoft Windows schedulers can both be regarded as examples of the broader class of multilevel feedback queue schedulers.
+This scheduling algorithm is intended to meet the following design requirements for multimode systems:
+
+Give preference to short jobs.
+Give preference to I/O bound processes.
+Separate processes into categories based on their need for the processor.The Multi-level Feedback Queue scheduler was first developed by Fernando J. Corbató et al. in 1962, and this work, along with other work on Multics, led the ACM to award Corbató the Turing Award.
+
+
+== Process Scheduling ==
+Unlike multilevel queue scheduling algorithm where processes are permanently assigned to a queue, multilevel feedback queue scheduling allows a process to move between queues. This movement is facilitated by the characteristic of the CPU burst of the process. If a process uses too much CPU time, it will be moved to a lower-priority queue. This scheme leaves I/O-bound and interactive processes in the higher priority queues. In addition, a process that waits too long in a lower-priority queue may be moved to a higher priority queue. This form of aging also helps to prevent starvation of certain lower priority processes.
+
+
+=== Algorithm ===
+Multiple FIFO queues are used and the operation is as follows:
+
+A new process is inserted at the end (tail) of the top-level FIFO queue.
+At some stage the process reaches the head of the queue and is assigned the CPU.
+If the process is completed within the time quantum of the given queue, it leaves the system.
+If the process voluntarily relinquishes control of the CPU, it leaves the queuing network, and when the process becomes ready again it is inserted at the tail of the same queue which it relinquished earlier.
+If the process uses all the quantum time, it is pre-empted and inserted at the end of the next lower level queue. This next lower level queue will have a time quantum which is more than that of the previous higher level queue.
+This scheme will continue until the process completes or it reaches the base level queue.At the base level queue the processes circulate in round robin fashion until they complete and leave the system. Processes in the base level queue can also be scheduled on a first come first served basis.
+Optionally, if a process blocks for I/O, it is 'promoted' one level, and placed at the end of the next-higher queue. This allows I/O bound processes to be favored by the scheduler and allows processes to 'escape' the base level queue.For scheduling, the scheduler always starts picking up processes from the head of the highest level queue. Only if the highest level queue has become empty will the scheduler take up a process from the next lower level queue. The same policy is implemented for picking up in the subsequent lower level queues. Meanwhile, if a process comes into any of the higher level queues, it will preempt a process in the lower level queue.
+Also, a new process is always inserted at the tail of the top level queue with the assumption that it will complete in a short amount of time. Long processes will automatically sink to lower level queues based on their time consumption and interactivity level. In the multilevel feedback queue a process is given just one chance to complete at a given queue level before it is forced down to a lower level queue.
+
+
+=== Scheduling parameters ===
+In general, a multilevel feedback queue scheduler is defined by the following parameters:
+The number of queues.
+The scheduling algorithm for each queue which can be different from FIFO.
+The method used to determine when to promote a process to a higher priority queue.
+The method used to determine when to demote a process to a lower priority queue.
+The method used to determine which queue a process will enter when that process needs service.
+
+
+== See also ==
+Multilevel queue
+Lottery scheduling
+Scheduling (computing)
+Fair-share scheduling
+Round-robin scheduling
+
+
+== References ==
+
+Kleinrock, L.; Muntz, R. R. (July 1972). "Processor Sharing Queueing Models of Mixed Scheduling Disciplines for Time Shared System". Journal of the ACM. 19 (3): 464–482. CiteSeerX 10.1.1.228.4672. doi:10.1145/321707.321717.

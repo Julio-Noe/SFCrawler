@@ -1,0 +1,42 @@
+There exist various methods through which the ballots cast at an election may be counted, prior to applying a voting system to obtain one or more winners.
+
+
+== Manual counting ==
+Manual counting requires a physical ballot that represents voter intent. The physical ballots are read and interpreted; then results are individually tabulated. This method is used in Sweden for example, and conducted as follows. The voter casts three ballots, one for each of the three elections (national, regional, and local), each in a sealed envelope. The party and candidate names are pre-printed on the ballot, or the voter can write them in on a blank ballot. When voting has finished, all envelopes are opened on the counting table, for one election at a time. They are sorted in piles according to party, inspecting them for validity. The piles are then counted manually, while witnesses around the table observe. The count is recorded, and the same pile is counted again. If the results do not agree, it is counted a third time. When all piles are counted and the results agree, the result is certified and transmitted for central tabulation. The count as received is made public, to allow anyone to double-check the tabulation and audit the raw data. There appears to be a high level of confidence in this system among the population, as evidenced by the lack of criticism of it.Such a system may be used for recounts in areas where mechanical or automated counting systems are used.
+
+
+== Electromechanical and Optical scan counting ==
+
+Paper ballots, typically punched cards or marksense, are collected and fed into a machine to tabulate vote totals. Tabulation can occur with each individual ballot, or in batches.
+
+
+== Direct-recording voting (mechanical) counting ==
+Voters selecting switches (levers), pushing plastic chips through holes, or pushing mechanical buttons which increment a mechanical counter (sometimes called the odometer) for the appropriate candidate panot.
+
+
+== Direct-recording electronic counting ==
+
+Voting data and ballot images are recorded in memory components. Tabulation of the voting data stored in a removable memory component and as printed copy. The system may also provide a means for transmitting individual ballots or vote totals to a central location for consolidating and reporting results from precincts at the central location. This consolidation can be any subset of machines, such as all voting machines in a polling station, or all voting machines in a precinct, etc.
+
+
+== See also ==
+Recount
+Tally (voting)
+Electronic voting
+Voting machine
+Voting/Electoral system
+Ballot
+
+
+== References ==
+
+
+== External links ==
+The Election Technology Library research list - A comprehensive list of research relating to technology use in elections.
+E-Voting information from ACE Project
+AEI-Brookings Election Reform Project
+Electronic Voting Systems at Curlie
+Voting and Elections by Douglas W. Jones: Thorough articles about the history and problems with Voting Machinery
+Selker, Ted Scientific American Magazine Fixing the Vote October 2004
+The Machinery of Democracy: Voting System Security, Accessibility, Usability, and Cost from Brennan Center for Justice at NYU School of Law
+An index of articles on vote counting  from the ACE Project guide to designing and administering elections

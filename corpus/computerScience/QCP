@@ -1,0 +1,9 @@
+The QCP file format is used by many cellular telephone manufacturers to provide ring tones and record voice.  It is based on RIFF, a generic format for storing chunks of data identified by tags.  The QCP format does not specify how voice data in the file is encoded.  Rather, it is a container format. QCP files are typically encoded QCELP or EVRC.
+Qualcomm, which originated the format, has removed an internal web page link from the page that formerly discussed QCP.  "Out of an abundance of caution, due to the December 31st, 2007 injunction ordered against certain Qualcomm products, Qualcomm has temporarily removed certain web content until it can be reviewed and modified if necessary to ensure compliance with the injunction. It may be several more days or weeks before these pages are accessible again. Thank you for your patience."QCP files have the same signature as RIFF files: A SOF (start of file) header of 52494646 ("RIFF"), and an EOF (end of file) of 0000.
+
+
+== Playing QCP files ==
+Qualcomm offers downloads of the software and SDK for its PureVoice voice and audio enhancement products that can play and convert QCP files.
+
+
+== References ==

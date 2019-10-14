@@ -1,0 +1,13 @@
+ALF ("Another logical framework") is a structure editor for monomorphic Martin-Löf type theory developed at Chalmers University. It is a predecessor of the Alfa, Agda, Cayenne and Coq proof assistants and dependently typed programming languages. It was the first language to support inductive families and dependent pattern matching.
+
+
+== References ==
+
+
+== Further reading ==
+Lena Magnusson and Bengt Nordström. "The ALF proof editor and its proof engine".
+Thorsten Altenkirch, Veronica Gaspes, Bengt Nordström and Björn von Sydow. "A user's guide to ALF".
+
+
+== External links ==
+Alfa

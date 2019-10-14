@@ -1,0 +1,45 @@
+Radhika Nagpal is an American computer scientist and researcher in the fields of self-organising computer systems, biologically-inspired robotics, and biological multi-agent systems. She is the Fred Kavli Professor of Computer Science at Harvard University and the Harvard School of Engineering and Applied Sciences. She is also a Core Faculty Member of the Harvard Wyss Institute for Biologically Inspired Engineering. In 2017, Nagpal co-founded a robotics company under the name of Root Robotics. This educational company works to create many different opportunities for those unable to code to learn how.
+
+
+== Education and academic career ==
+Nagpal received an S.B. and S.M. in Electrical Engineering and Computer Science from the Massachusetts Institute of Technology in 1994, and a Ph.D. in Electrical Engineering and Computer Science from MIT in 2001. Her dissertation, "Programmable Self-Assembly using Biologically-Inspired Local Interactions and Origami Mathematics", was supervised by Gerald Sussman and Harold Abelson. In it, she presented a language for instructing a sheet of identically-programmed agents to self-assemble into a desired shape making use only of local interactions, and in a manner robust to irregularities, communication failure, and agent malfunction.
+From 2001 to 2003, she served as a Postdoctoral Lecturer at the MIT Computer Science and Artificial Intelligence Laboratory, as a member of the Amorphous Computing Group. From 2004 to 2009, she served as an Assistant Professor of Computer Science at the Harvard School of Engineering and Applied Sciences; from 2009 to 2012, she served as the Thomas D. Cabot Associate Professor of Computer Science at Harvard SEAS. Since 2012, she has served as the Fred Kavli Professor of Computer Science at Harvard SEAS, where she heads the Self-Organizing Systems Research Group.
+
+
+== Academic research ==
+Her research group focuses on biologically-inspired multi-agent systems: collective algorithms, programming paradigms, modular and swarm robotics, and on  biological multi-agent systems: models of multicellular morphogenesis, collective insect behavior. This work lies at the intersection of computer science (AI/robotics) and biology. It studies bio-inspired algorithms, programming paradigms, and hardware designs for swarm/modular robotic systems and smart materials, drawing inspiration mainly from social insects and multicellular biology. It also investigates models of self-organization in biology, specifically how cells cooperate during the development of multicellular organisms.
+
+
+=== Programming paradigms for robust collective behavior ===
+Her primary research interest is developing programming paradigms for robust collective behavior, inspired by biology.   Ultimately, the goal is to create a framework for the design and analysis of self-organising multi-agent systems. Her group's approach is to formalize these strategies as algorithms, analysis, theoretical models, and programming languages. They are especially interested in global-to-local compilation, the ability to specify user goals at the high level and automatically derive provable strategies at the agent level.
+
+
+=== Understanding robust collective behavior in biological systems ===
+Another of her research interests is in understanding robust collective behavior in biological systems. Building artificial systems can give us insights into how complex global properties can arise from identically-programmed parts --- for example, how cells can form scale-independent patterns, how large morphological variations can arise from small genetic changes, and how complex cascades of decisions can tolerate variations in timing. She is interested in mathematical and computational models of multi-cellular behavior, that capture hypotheses of cell behavior and cell-cell interactions as multi-agent systems, and can be used to provide insights into systems level behavior that should emerge. Her group works in close collaboration with biologists, and currently studies growth and pattern formation in the fruit fly wing.
+
+
+== Academic positions ==
+Nagpal has held the following positions as a researcher and an academic:
+
+Bell Laboratories, Murray Hill, NJ from 1994-1995 as a technical staff member
+MIT Computer Science and Artificial Intelligence Laboratory, Amorphous Computing Group from 2001-2003 as a postdoctoral lecturer
+Harvard Medical School from 2003-2004 as a research fellow
+Harvard School of Engineering and Applied Sciences from 2004-2009 as an assistant professor of Computer Science
+Harvard Medical School, Department of Systems Biology since 2004 as an affiliated faculty member
+Harvard Wyss Institute for Biological-inspired Engineering since 2008 as a Core Faculty Member
+Harvard School of Engineering and Applied Sciences from 2009 to 2012 as an associate professor of computer science
+Harvard School of Engineering and Applied Sciences since 2012 as the Fred Kavli Professor of Computer Science
+
+
+== Awards and honors ==
+National Talent Search Scholarship Award, India (1987)
+AT&T Bell Labs GRPW Fellowship (1995-2001)
+Microsoft New Faculty Fellowship (2005)
+NSF Career Award (2007)
+Anita Borg Early Career Award (2010)
+Radcliffe Fellowship (2012)
+named one of "Nature's 10" people who mattered" of 2014.
+McDonald Mentoring Award (2015)During her time as Radcliffe Fellow, she worked with experimental biologists to develop a better understanding of collective intelligence in social insects through the application of computer science.
+
+
+== References ==

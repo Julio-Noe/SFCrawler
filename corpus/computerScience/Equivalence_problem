@@ -1,0 +1,7 @@
+In theoretical computer science and formal language theory, the equivalence problem is the question of determining, given two representations of formal languages, whether they denote the same formal language. 
+The complexity and decidability of this decision problem depends upon the type of representation under consideration.
+For instance, in the case of finite-state automata, equivalence is decidable, and the problem is PSPACE-complete,
+whereas it is undecidable for pushdown automata, context-free grammars, etc.
+
+
+== References ==

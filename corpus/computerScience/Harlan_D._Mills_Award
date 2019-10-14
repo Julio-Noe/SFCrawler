@@ -1,0 +1,62 @@
+Harlan D. Mills (May 14, 1919 – January 8, 1996) was Professor of Computer Science at the Florida Institute of Technology and founder of Software Engineering Technology, Inc. of Vero Beach, Florida (since acquired by Q-Labs). Mills' contributions to software engineering have had a profound and enduring effect on education and industrial practice. Since earning his Ph.D. in Mathematics at Iowa State University in 1952, Mills led a distinguished career.
+As an IBM research fellow, Mills adapted existing ideas from engineering and computer science to software development. These included automata theory, the structured programming theory of Edsger Dijkstra, Robert W. Floyd, and others, and Markov chain-driven software testing. His Cleanroom software development process emphasized top-down design and formal specification. Mills contributed his ideas to the profession in six books and over fifty refereed articles in technical journals.
+Dr. Mills was termed a "super-programmer", a term which would evolve to the concept in IBM of a "Chief Programmer."
+
+
+== Achievements ==
+Ph.D.: Iowa State University, 1952
+Visiting Professor (Part Time) 1975-1987
+Adjunct Professor, 1987-1995
+Chairman, NSF Computer Science Research Panel on Software Methodology, 1974–77
+the Chairman of the First National Conference on Software Engineering, 1975
+Editor for IEEE Transactions on Software Engineering, 1975–81
+U.S. Representative for Software at the IFIP Congress, 1977
+Governor of the IEEE Computer Society, 1980–83
+Chairman for IEEE Fall CompCon, 1981
+Chairman, Computer Science Panel, U.S. Air Force Scientific Advisory Board, 1986
+Awardee, Distinguished Information Sciences Award, DPMA 1985
+Designer of initial NFL scheduling algorithm (http://trace.tennessee.edu/utk_harlan/407/)The ICSE-affiliated colloquium "Science and Engineering for Software Development" is being organized in honor of Dr. Harlan D. Mills, and as a recognition of his enduring legacy to the theory and practice of software engineering. The ICSE-affiliated colloquium "Science and Engineering for Software Development" was being organized in honor of Dr. Harlan D. Mills (1919–1996), and as a recognition of his enduring legacy to the theory and practice of software engineering. The first annual "Harlan Mills Practical Visionary Prize" award was presented in 1996. This award is given to an individual who has demonstrated a long-standing and meaningful contribution to both the theory and practice of the information sciences.
+
+
+== Career ==
+
+
+=== Early life ===
+Born in Liberty Center, Iowa. As a young man, Mills studied art with Grant Wood. During World War II, Mills became a bomber pilot in the U.S. Army Air Corps. His skills in flying and teaching were such that rather than having him fly missions, the Army assigned him to train other pilots.
+
+
+=== Education ===
+Mills served on the faculties of Iowa State University, Princeton, New York and Johns Hopkins Universities, the Universities of Maryland and Florida,
+and Florida Institute of Technology (FIT). At Johns Hopkins and Maryland, he initiated one of the first American university courses in structured programming. At Maryland, he developed a new two-semester freshman introduction to computer science and textbook "Principles of Computer Programming: A Mathematical Approach" with co-authors Basili, Gannon, and Hamlet. At FIT, he developed a new freshman and sophomore curriculum for software engineering using Ada as the underlying language with colleagues Engle and Newman.
+
+
+=== Industry ===
+Dr. Mills was an IBM Fellow and Member of the Corporate Technical Committee at IBM, a Technical Staff Member at GE
+and RCA, and President of Mathematica and Software Engineering Technology. At GE, he developed a three-month curriculum in management science attended by hundreds of GE executives. At IBM, he was the primary architect of the IBM Software Engineering Institute where thousands of IBM software personnel were trained in the mathematical foundations of software. He later embodied the mathematical and statistical principles for software in the Cleanroom software engineering process. As founder of Software Engineering Technology, he created an enterprise for Cleanroom technology transfer.
+
+
+=== Nation ===
+Dr. Mills had an abiding interest in fostering sound software engineering practices through federal programs. During the formative period of the DoD DARPA STARS Program in the 1980s, he provided fundamental concepts for development of high quality software at high productivity. In 1986, he served as Chairman of the Computer Science Panel for the U.S. Air Force Scientific Advisory Board. During 1974-77, he was Chairman of the NSF Computer Science Research Panel on Software Methodology.
+
+
+=== Profession ===
+Dr. Mills was a program committee member and invited speaker for many professional conferences, and a referee for many mathematics and
+computer science journals. From 1980-83, he was Governor of the IEEE Computer Society. In 1981, he was the Chairman for IEEE Fall CompCon. During 1975-81, he served as Editor for IEEE Transactions on Software Engineering. In 1977, he was the U.S. Representative for Software at the IFIP Congress. In 1975, he was the Chairman of the First National Conference on Software Engineering.
+
+
+== Harlan D. Mills Award ==
+To honor Dr. Mills the IEEE Computer Society created the Harlan D. Mills Award, the first one presented in 1999, for "contributions to the theory and practice of the information sciences, [focused on] software engineering".
+
+
+== Further reading ==
+Linger and Witt (1979), Structured Programming: Theory and Practice, presents Mills' function-theoretic approach to program verification
+Software Productivity (1983), includes a collection of his seminal papers on chief programmer teams, top-down design, structured programming, program correctness, and other fundamental ideas in software engineering
+Linger and Hevner (1986), Principles of Information System Analysis and Design, includes Mills' reduction of the mathematics of specification and design to practice
+
+
+== References ==
+
+
+== External links ==
+IP: Harlan Mills passed away this week - Mailing list message with details
+Harlan D. Mills List of publications from the DBLP Bibliography Server

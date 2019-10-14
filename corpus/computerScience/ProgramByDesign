@@ -1,0 +1,73 @@
+The ProgramByDesign (formerly TeachScheme!) project is an outreach effort of the PLT research group. The goal is to train college faculty, high school teachers, and possibly even middle school teachers, in programming and computing.
+
+
+== History ==
+Matthias Felleisen and PLT began the effort in January 1995, one day after the Symposium on Principles of Programming Languages (POPL), in response to observations of his Rice University freshmen students and the algebra curriculum of local public schools. His objective was to use functional programming to bring mathematics alive and help inject design knowledge into the introductory computer science curriculum.
+The effort began using a programming language named PLT Scheme which was a version of the language Scheme, which is a newer dialect of an older language, Lisp.
+The group raised funds from several private foundations, the United States Department of Education, and the National Science Foundation to create:
+
+Software appropriate for novices in functional programming
+Courseware: curricula, lecture notes, exercises, mini-projects
+Teacher training campsOver ten years, it ran several dozen one-week training workshops for some 550 teachers. In 2005, the TeachScheme! project ran an Anniversary workshop where two dozen teachers presented their work with students.
+In 2010, PLT renamed its major programming language from PLT Scheme to Racket, and DrScheme to DrRacket. A little later it renamed TeachScheme! to ProgramByDesign.
+
+
+== Functional programming, computing, and algebra ==
+The starting point of ProgramByDesign is the observation that students act as computers in primary school courses on arithmetic, and in middle school and secondary school courses on pre-algebra and algebra. Teachers program them with rules and run specific problems via exercises. The key is that students execute purely functional programs.
+If students can be turned into teachers that create functional programs and run them on computers, this content can be reinforced and show students how writing down mathematics, and functional programs, creates lively animated scenes and even computer games.
+Here is an example:
+
+This short program simulates an apple falling from the top to the bottom of a small white canvas. It consists of three parts:
+
+A function definition for create-image, which is a one-line function in mathematics, assuming an algebra of images with place-image, circle, and empty-scene have been introduced
+Two abbreviations, where names are equated with some value, just as in "let x be 5" in an algebra text
+One line for running the programA teacher can explain create-image as easily as any ordinary function in an algebra course. For example, one can first draw a table with two rows and n columns where each column contains t at the top and an appropriate image at the bottom. That is, if the numbers increase from left to right, then on each image the red dot is a little bit lower.
+Finally the animate line applies the given function, create-image, at the rate of 28 ticks per second to 0, 1, 2, 3, and so on. The resulting images are displayed on the computer monitor at the same pace. That's how movies are made.
+The background needed for such an example is little more than knowledge about making movies, about the algebra of pictures in DrRacket (which is like the one for numbers), and minimal pre-algebra. The ProgramByDesign project claims, however, that children would have more fun with such live functions than with algebraic expressions that count the number of garden tiles [see Prentice Hall books for grades 8-9].
+The ProgramByDesign project proposes that both traditional mathematics and science courses could benefit from integrating this form of programming. In contrast to the traditional BASIC or Visual Basic blocks in such books, a Racket program consists of as many lines as the mathematics. Moving between the mathematics and the program is thus straightforward. Better still, the meaning of the two are the same. DrRacket's algebraic stepper can illustrate how Racket evaluates the program as if it were a sixth or seventh grade student, step by step, using plain algebra.
+
+
+== Functional Programming, Computing and Design in Programming 101 ==
+For the introductory curriculum on programming, the ProgramByDesign project emphasizes that courses should focus on the role of systematic design. Even if students never program again, they should see how helpful a systematic approach to problem solving is. This should help them whether they become programmers or doctors or journalists or photographers. Thus, an introductory course in programming would not be perceived as a place where students learn about the syntax of the currently fashionable (and soon-to-be-obsolete) programming languages, but a place where they can learn something widely applicable.
+The key design element of the ProgramByDesign curriculum is the design recipe. It has two dimensions: the process dimension and the data dimension.
+Along the process dimension students learn that there are six steps to designing a (simple) program, before they can run it and others can use it:
+
+Analysing problems with the goal of describing the classes of data that go into the program and come out;
+Reformulating the problem statement as a concise purpose statement
+Creating examples that illustrate the purpose statement and that serve as criteria for success;
+Organizing givens, also called a template or inventory
+Coding
+Creating a test suite from examples to ensure the program works properly on small inputs.As in test-driven development, test cases are written before coding, as part of requirements analysis, rather than afterward as part of testing.
+Almost any human endeavour can benefit from clearly understanding the problem, defining criteria for success, analyzing the available resources and givens, developing a proposed solution, and checking it against the criteria, in that order.
+For example, a journalist benefits from a similar process: figuring out the major concepts in a story; creating a headline; lining up examples and specific data; organizing the article about the story of the givens and how the story unfolded; writing; and fact checking.
+The data dimension can be summarized by the maxim the shape of the data determines the shape of the code and tests. For example, if the input or output data type has three variants, a test suite should have at least one test case from each variant, and program code will probably contain a three-way conditional (whether explicit or hidden in a polymorphic dispatch). If the input or output data type has three fields, a test suite will have to specify values for those three fields, and program code will have to refer to those three fields. If the input or output data type has a simple base case and one or more self-referential variants, the test suite should include a base case and one or more non-base cases, and the program code will probably have a base case and one or more self-referential cases, isomorphic to the data type. The technique of recursion, rather than being mysterious and scary, is simply applying already-learned methods to a self-referential data type.
+Organizing the givens is the task of translating the descriptions of data into a program skeleton. Each form of description determines a specific form of program organization. The transformation is nearly mechanical and helps the students focus on the creative part of the task.
+How to Design Programs (HTDP) is the text book authored by the core of the ProgramByDesign group. A third edition is being prepared.
+
+
+== Programming language choice ==
+The name TeachScheme! appears to imply that this design recipe requires Scheme (now Racket) and is teachable only with Scheme. Neither conclusion is true. Members of PLT and their trainees have successfully applied the design recipe in assembly language, C, Java, ML, Python, and other programming languages, and with geometry, biology, and poetry courses. The fundamental idea of ProgramByDesign is to stress programming as a design activity. This misconception is one of the reasons for the renaming actions taken in 2010.
+To get started, the ProgramByDesign project has produced three essential elements:
+
+A series of successively more powerful and permissive teaching languages, which are dialects of Racket, matched to the design recipe but with error reporting matched to the student's level (for example, many things that are legal in standard Racket, but which a beginning student doesn't need, are flagged as errors in the Beginning Student level)
+A beginner-friendly, freely-downloadable, pedagogic programming environment, an integrated development environment named DrRacket, that enforces these language levels
+A curriculum, encoded mostly in the book How to Design Programs, which third edition is in the works.Their choice of Racket reflects their belief that Racket is a good language for a small team with little funding (relative to Java) to validate their conjectures. The PLT group has always tried to ensure that the ideas remain portable to other contexts.
+
+
+== For Java ==
+Over the past few years, the team has also created a second part or phase of the curriculum. It demonstrates how the same design recipe ideas apply to a complex object-oriented programming language, such as Java. The recipes are applied initially in a functional paradigm, then introducing object-oriented concepts such as polymorphism and inheritance, and then introducing the imperative methods that are idiomatic in mainstream Java.
+A part of the team has a grant from the National Science Foundation to conduct field tests in colleges and high schools. Professional development workshops took place in the summer of 2007, 2008, 2009, and 2010. This part of the project is dubbed ReachJava; the accompanying book is tentatively titled "How to Design Classes."
+
+
+== Bootstrap ==
+In 2006 PLT at Northeastern University and Citizen Schools from Boston made joint efforts to reach out to inner city students with after-school programs. Citizen Schools is a nationwide organization that matches volunteers with after-school program sites and gets them started with scripted curricula. The goal of the effort is to translate the material into a sixth-grade curriculum. The first few tests were a great success in Boston. The effect on the mathematics courses of this program has encouraged Microsoft and Google to fund a national scale-up effort, developing materials for training teachers and creating sites in Texas, California, and other volunteer cities.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Racket
+How to Design Programs
+Bootstrap

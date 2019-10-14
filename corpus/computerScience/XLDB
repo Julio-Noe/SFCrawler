@@ -1,0 +1,52 @@
+XLDB (eXtremely Large DataBases) is a yearly conference about databases, data management and analytics. The definition of extremely large refers to data sets that are too big in terms of volume (too much), and/or velocity (too fast), and/or variety (too many places, too many formats) to be handled using conventional solutions. This conference deals with the high-end of very large databases (VLDB).
+
+
+== History ==
+In October 2007, data experts gathered at SLAC National Accelerator Lab for the First Workshop on Extremely Large Databases. As a result, the XLDB research community was formed to meet the rapidly growing demands of the largest data systems. In addition to the original invitational workshop, an open conference, tutorials, and annual satellite events on different continents were added. The main event, held annually at Stanford University gathers over 300 attendees. XLDB is one of the data systems events catering to both academic and industry communities. For 2009, the workshop was co-located with VLDB 2009 in France to reach out to non-US research communities. XLDB 2019 followed Stanford's Conference on Systems and Machine Learning (SysML).
+
+
+== Goals ==
+The main goals of this community include:
+Identify trends, commonalities and major roadblocks related to building extremely large databases
+Bridge the gap between users trying to build extremely large databases and database solution providers worldwide
+Facilitate development and growth of practical technologies for extremely large data stores
+
+
+== XLDB Community ==
+As of 2013, the community consisted of above one thousand members including:
+
+Scientists who develop, use, or plan to develop or use XLDB for their research, from laboratories.
+Commercial users of XLDB.
+Providers of database products, including commercial vendors and representatives from open source database communities.
+Academic database researchers.
+
+
+== XLDB Conferences, Workshops and Tutorials ==
+The community meets annually at Stanford University where the main event is held each Spring. Those who live too far from California to attend have the opportunity to attend occasional satellite events either in Asia or Europe. 
+A detailed report or videos are produced after each workshop.
+
+
+== Tangible results ==
+XLDB events led to initiating an effort to build a new open source, science database called SciDB.The XLDB organizers started defining a science benchmark for scientific data management systems called SS-DB.
+At XLDB 2012 the XLDB organizers announced that two major databases that support arrays as first-class objects (MonetDB SciQL and SciDB) have formed a working group in conjunction with XLDB. This working group is proposing a common syntax (provisionally named “ArrayQL”) for manipulating arrays, including array creation and query.
+
+
+== See also ==
+International Conference on Very Large Data Bases
+
+
+== References ==
+
+
+== Further reading ==
+Pavlo A., Paulson E., Rasin A., Abadi D. J., Dewitt D. J., Madden S., and Stonebraker M., A Comparison of Approaches to Large-Scale Data Analysis," Proceedings of the 2009 ACM SIGMOD, https://web.archive.org/web/20090611174944/http://database.cs.brown.edu/sigmod09/benchmarks-sigmod09.pdf
+Becla, J., et al. 2006, Designing a multi-petabyte database for LSST, https://arxiv.org/abs/cs/0604112
+Becla, J., & Wang, D. L. 2005, Lessons Learned from Managing a Petabyte, downloaded from https://web.archive.org/web/20110604223735/http://www.slac.stanford.edu/pubs/slacpubs/10750/slac-pub-10963.pdf on 2007-11-25.
+Bell, G., Gray, J., & Szalay, A. 2005, Petascale computations systems: Balanced cyberinfrastructure in a data-centric world, https://arxiv.org/abs/cs/0701165
+Duellmann, D. 1999, Petabyte Databases, ACM SIGMOD Record, vol. 28, p. 506, https://web.archive.org/web/20071012015357/http://www.sigmod.org/sigmod/record/issues/9906/index.html#TutorialSessions.
+Hanushevsky, A., & Nowak, M. 1999, Pursuit of a Scalable High Performance Multi-Petabyte Database, 16th IEEE Symposium on Mass Storage Systems, pp. 169–175, http://citeseer.ist.psu.edu/217883.html.
+Shiers, J., Building Very Large, Distributed Object Databases, downloaded from https://web.archive.org/web/20070915101842/http://wwwasd.web.cern.ch/wwwasd/cernlib/rd45/papers/dbprog.html on 2007-11-25.
+
+
+== External links ==
+Official website

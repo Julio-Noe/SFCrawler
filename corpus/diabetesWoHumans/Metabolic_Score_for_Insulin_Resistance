@@ -1,0 +1,127 @@
+The Metabolic Score for Insulin Resistance (METS-IR) is a metabolic index developed with the aim to quantify peripheral insulin sensitivity in humans; it was first described under the name METS-IR by Bello-Chavolla et al in 2018. It was developed by the Metabolic Research Disease Unit at the Instituto Nacional de Ciencias Médicas Salvador Zubirán and validated against the euglycemic hyperinsulinemic clamp and the frequently-sampled intravenous glucose tolerance test in Mexican population. It is a non-insulin-based alternative to insulin-based methods to quantify peripheral insulin sensitivity and an alternative to the Homeostatic Model Assessment (HOMA-IR) and the quantitative insulin sensitivity check index (QUICKI). METS-IR is currently validated for its use to assess cardio-metabolic risk in Latino population.
+
+
+== Derivation and validation ==
+METS-IR was generated using linear regression against the M-value adjusted by lean body mass obtained from the glucose clamp technique in Mexican subjects with and without type 2 diabetes mellitus. It is estimated using fasting laboratory values including glucose (in mg/dL), triglycerides (mg/dL) and high-density lipoprotein cholesterol (HDL-C, in mg/dL) along with body-mass index (BMI). The index can be estimated using the following formula:
+
+  
+    
+      
+        M
+        E
+        T
+        S
+        −
+        I
+        R
+        =
+        
+          
+            
+              ln
+              ⁡
+              [
+              2
+              ∗
+              G
+              l
+              u
+              c
+              o
+              s
+              e
+              (
+              m
+              g
+              
+                /
+              
+              d
+              L
+              )
+              +
+              T
+              r
+              i
+              g
+              l
+              y
+              c
+              e
+              r
+              i
+              d
+              e
+              s
+              (
+              m
+              g
+              
+                /
+              
+              d
+              L
+              )
+              ]
+              ∗
+              B
+              M
+              I
+              (
+              k
+              g
+              
+                /
+              
+              
+                m
+                
+                  2
+                
+              
+              )
+            
+            
+              ln
+              ⁡
+              [
+              H
+              D
+              L
+              −
+              C
+              (
+              m
+              g
+              
+                /
+              
+              d
+              L
+              )
+              ]
+            
+          
+        
+      
+    
+    {\displaystyle METS-IR={\frac {\ln[2*Glucose(mg/dL)+Triglycerides(mg/dL)]*BMI(kg/m^{2})}{\ln[HDL-C(mg/dL)]}}}
+  The index holds a significant correlation with the M-value adjusted by lean mass (ρ = −0.622) obtained from the euglycemic hyperinsulinaemic clamp study adjusted for age and gender as well as minimal model estimates of glucose sensitivity. In an open population cohort study in Mexican population, METS-IR was shown to predict incident type 2 diabetes mellitus and a value of METS-IR >50.0 suggested up to three-fold higher risk of developing type 2 diabetes after an average of three years. In a nation-wide population-based study of Chinese subjects, METS-IR was also shown to identify subjects with metabolic syndrome independent of adiposity. METS-IR also predicts visceral fat content, subcutaneous adipose tisue, fasting insulin levels and ectopic fat accumulation in liver and pancreas.
+
+
+== Comparison to other indexes ==
+METS-IR was compared against other non-insulin-based methods to approximate insulin sensitivity including the Triglyceride-Glucose index (TyG), the triglyceride to HDL-C ratio, and the TyG-BMI index, yielding a higher correlation and area under the receiving operating characteristic curve compared to these other measures. When assessing its utility for identifying metabolic syndrome in Chinese subjects, Yu et al. suggested that the TyG and TG/HDL-C indexes had superior performance in their population owing to ethnic-specific variations in body composition. Given the role of ethnicity in modifying the performance of insulin sensitivity fasting-based indexes, further evaluations in different populations are required to establish performance of non-insulin-based methods.
+
+
+== See also ==
+Insulin resistance
+Homeostatic model assessment
+Quantitative insulin sensitivity check index
+Diabetes mellitus
+
+
+== References ==
+
+
+== External links ==
+Calculator to estimate METS-IR, the TyG index and TG/HDL-C ratio

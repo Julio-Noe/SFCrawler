@@ -1,0 +1,15 @@
+The 2 GB limit refers to a physical memory barrier for a process running on a 32-bit operating system, which can only use a maximum of 2 GB of memory. The problem mainly affects 32-bit versions of operating systems like Microsoft Windows and Linux, although some variants of the latter can overcome this barrier. It is also found in servers like FTP servers or embedded systems like Xbox. The use of Physical Address Extension (PAE) can help overcome this barrier.While Linux, FreeBSD, and most Unix-Likes support PAE so long as the hardware does, Windows needs this boot option enabled manually. This is known as 4-gigabyte tuning (4GT), or the /3GB switch. Once enabled, executables can have the "large address aware" flag set to increase their memory limit to 3GB. 32-bit processes on 64-bit Windows are also limited to 2GB. However, they can use the "large address aware" flag as well, except that it doesn't require the /3GB switch and increases the limit to 4GB.It could also refer to the maximum partition size for the FAT16 file system in versions of Windows prior to XP.
+
+
+== References ==
+
+
+== See also ==
+Large file support
+File size
+File system
+Comparison of file systems: Limits
+640 KB barrier
+3 GB barrier
+Fat32
+FAT16

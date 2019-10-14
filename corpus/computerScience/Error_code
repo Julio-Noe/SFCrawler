@@ -1,0 +1,38 @@
+In computer programming, a return code or an error code is a numbered or alphanumeric code that is used to determine the nature of an error, and why it occurred.  They are commonly found in consumer electronics and devices when these attempt to do something it can't do (ie, dividing by zero).  They can also passed off to error handlers that determine what action to take.
+
+
+== In consumer products ==
+
+Error codes can also be used to specify an error, and simplify research into the cause and how to fix it.  This is commonly used by consumer products when something goes wrong, such as the cause of a Blue Screen of Death, to make it easier to pinpoint the exact problem the product is having.  
+There is no definitive form of an error code.  Some styles use decimal or hexidecimal numbers.  Others use alphanumeric codes, while others use a phrase describing the error.  
+
+
+== In computing ==
+Error codes in computers can be passed to the system itself, to judge how to respond to the error.  Often error codes come synonymous with an exit code or a return value.  
+
+
+== In networking software ==
+Network protocols typically support returning status codes. In the TCP/IP stack, it's a common feature of higher level protocols. For example:
+
+List of HTTP status codes
+List of FTP server return codes
+Simple Mail Transfer Protocol#Protocol overview
+
+
+== Error codes and exception handling ==
+Error codes are passed to exception handling in programming languages that support it.  These are passed to log files and the parent process to determine what action to take.
+
+
+== See also ==
+errno.h, a header file in C that defines macros for reporting errors
+Abort (computing)
+Aspect-oriented programming
+Failure
+Exit status
+Static code analysis
+
+
+== External links ==
+Lists of Linux errno values, both numeric and symbolic
+Microsoft system error codes
+Microsoft Device Manager error codes

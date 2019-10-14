@@ -1,0 +1,22 @@
+In computer programming, a mirror is a reflection mechanism that is completely decoupled from the object whose structure is being introspected. This is as opposed to traditional reflection, for example in Java, where one introspects an object using methods from the object itself (e.g. getClass()).
+Mirrors adhere to the qualities of encapsulation, stratification and ontological correspondence.
+
+
+== Benefits ==
+Decoupling the reflection mechanism from the objects themselves allows for a few benefits:
+
+The object's interface is not polluted, so there is no danger of breaking reflection by overriding a reflective method.
+There can be different mirror systems.
+The mirror system can be removed entirely (potentially allowing for optimizations).
+A mirror system can operate on remote code, since it is not coupled with a particular machine.
+
+
+== Languages that use mirrors ==
+Dart, via its reflect function.
+Inko, via its std::mirror module.
+Rubinius (Ruby implementation), via its Rubinius::Mirror.reflect method.
+Scala
+Swift, via its reflect function.
+
+
+== References ==

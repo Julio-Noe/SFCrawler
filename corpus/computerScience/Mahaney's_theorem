@@ -1,0 +1,4 @@
+Mahaney's theorem is a theorem in computational complexity theory proven by Stephen Mahaney that states that if any sparse language is NP-Complete, then P=NP. Also, if there is a Turing reduction from an NP-complete sparse language to P, then the polynomial-time hierarchy collapses to ∆_2 (NP^{NP [logn]}).
+
+
+== References ==

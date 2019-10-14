@@ -1,0 +1,20 @@
+The generalized star-height problem in formal language theory is the open question whether all regular languages can be expressed using generalized regular expressions with a limited nesting depth of Kleene stars.  Here, generalized regular expressions are defined like regular expressions, but they have a built-in complement operator. For a regular language, its generalized star height is defined as the minimum nesting depth of Kleene stars needed in order to describe the language by means of a generalized regular expression, hence the name of the problem. 
+More specifically, it is an open question whether a nesting depth of more than 1 is required, and if so, whether there is an algorithm to determine the minimum required star height.Regular languages of star-height 0 are also known as star-free languages. The theorem of Schützenberger provides an algebraic characterization of star-free languages by means of aperiodic syntactic monoids. In particular star-free languages are a proper decidable subclass of regular languages.
+
+
+== See also ==
+Eggan's theorem and Generalized star height sections of the Star height article
+Star height problem
+
+
+== References ==
+
+Janusz A. Brzozowski (1980). "Open problems about regular languages".  In Ronald V. Book (ed.). Formal Language Theory: Perspectives and Open Problems. Academic Press. pp. 23–47.
+Wolfgang Thomas (1981). "Remark on the star-height-problem". Theoretical Computer Science. 13 (2): 231–237. doi:10.1016/0304-3975(81)90041-4. MR 0594062.
+Jean-Eric Pin; Howard Straubing; Denis Thérien (1992). "Some results on the generalized star-height problem" (PDF). Information and Computation. 101 (2): 219–250. doi:10.1016/0890-5401(92)90063-L.
+Sakarovitch, Jacques (2009). Elements of automata theory. Translated from the French by Reuben Thomas. Cambridge: Cambridge University Press. ISBN 978-0-521-84425-3. Zbl 1188.68177.
+Marcel-Paul Schützenberger (1965). "On finite monoids having only trivial subgroups". Information and Control. 8 (2): 190–194. doi:10.1016/S0019-9958(65)90108-7. Zbl 0131.02001.
+
+
+== External links ==
+Jean-Eric Pin: The star-height problem

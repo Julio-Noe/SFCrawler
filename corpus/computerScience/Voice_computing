@@ -1,0 +1,65 @@
+Voice computing is the discipline that develops hardware or software to process voice inputs.It spans many other fields including human-computer interaction, conversational computing, linguistics, natural language processing, automatic speech recognition, speech synthesis, audio engineering, digital signal processing, cloud computing, data science, ethics, law, and information security.
+Voice computing has become increasingly significant in modern times, especially with the advent of smart speakers like the Amazon Echo and Google Assistant, a shift towards serverless computing, and improved accuracy of speech recognition and text-to-speech models.
+
+
+== History ==
+Voice computing has a rich history. First, scientists like Wolfgang Kempelen started to build speech machines to produce the earliest synthetic speech sounds. This led to further work by Thomas Edison to record audio with dictation machines and play it back in corporate settings. In the 1950s-1960s there were primitive attempts to build automated speech recognition systems by Bell Labs, IBM, and others. However, it was not until the 1980s that Hidden Markov Models were used to recognize up to 1,000 words that speech recognition systems became relevant.
+
+Around 2011, Siri emerged on Apple iPhones as the first voice assistant accessible to consumers. This innovation led to a dramatic shift to building voice-first computing architectures. PS4 was released by Sony in North America in 2013 (70+ million devices), Amazon released the Amazon Echo in 2014 (30+ million devices), Microsoft released Cortana (2015 - 400 million Windows 10 users), Google released Google Assistant (2016 - 2 billion active monthly users on Android phones), and Apple released HomePod (2018 - 500,000 devices sold and 1 billion devices active with iOS/Siri). These shifts, along with advancements in cloud infrastructure (e.g. Amazon Web Services) and codecs, have solidified the voice computing field and made it widely relevant to the public at large.
+
+
+== Hardware ==
+A voice computer is assembled hardware and software to process voice inputs.
+Note that voice computers do not necessarily need a screen, such as in the traditional Amazon Echo. In other embodiments, traditional laptop computers or mobile phones could be used as voice computers. Moreover, there has become increasingly more interfaces for voice computers with the advent of IoT-enabled devices, such as within cars or televisions.
+As of September 2018, there are currently over 20,000 types of devices compatible with Amazon Alexa.
+
+
+== Software ==
+Voice computing software can read/write, record, clean, encrypt/decrypt, playback, transcode, transcribe, compress, publish, featurize, model, and visualize voice files.
+Here are some popular software packages related to voice computing:
+
+FFmpeg - for transcoding audio files from one format to another (e.g. .WAV --> .MP3).
+Audacity - for recording and filtering audio.
+SoX - for manipulating audio files and removing environmental noise.
+Natural Language ToolKit - for featurizing transcripts with things like parts of speech.
+LibROSA - for visualizing audio file spectrograms and featurizing audio files.
+OpenSMILE - for featurizing audio files with things like mel-frequency cepstrum coefficients.
+PocketSphinx - for transcribing speech files into text.
+Pyttsx3 - for playing back audio files (text-to-speech).
+Pycryptodome - for encrypting and decrypting audio files.
+Alexa Voice Service - enables you to access cloud-based Alexa capabilities with the support of AVS APIs, hardware kits, software tools, and documentation.
+
+
+== Applications ==
+Voice computing applications span many industries including voice assistants, healthcare, e-Commerce, finance, supply chain, agriculture, text-to-speech, security, marketing, customer support, recruiting, cloud computing, microphones, speakers, and podcasting. Voice technology is projected to grow at a CAGR of 19-25% by 2025, making it an attractive industry for startups and investors alike.
+
+
+== Legal considerations ==
+In the United States, the states have varying telephone call recording laws. In some states, it is legal to record a conversation with the consent of only one party, in others the consent of all parties is required.
+Moreover, COPPA is a significant law to protect minors using the Internet. With an increasing number of minors interacting with voice computing devices (e.g. the Amazon Alexa), the Federal Trade Commission recently relaxed the COPAA rule so that children can issue voice searches and commands.Lastly, GDPR is a new European law that governs the right to be forgotten and many other clauses for EU citizens. GDPR also is clear that companies need to outline clear measures to obtain consent if audio recordings are made and define the purpose and scope as to how these recordings will be used, e.g., for training purposes. The bar for valid consent has been raised under the GDPR. Consents must be freely given, specific, informed, and unambiguous; tacit consent is no longer sufficient.
+
+
+== Research conferences ==
+There are many research conferences that relate to voice computing. Some of these include:
+
+International Conference on Acoustics, Speech, and Signal Processing
+Interspeech 
+AVEC 
+IEEE Int'l Conf. on Automatic Face and Gesture Recognition 
+ACII2019 The 8th Int'l Conf. on Affective Computing and Intelligent Interaction 
+
+
+== Developer community ==
+Google Assistant has roughly 2,000 actions as of January 2018.There are over 50,000 Alexa skills worldwide as of September 2018.In June 2017, Google released AudioSet, a large-scale collection of human-labeled 10-second sound clips drawn from YouTube videos. It contains 1,010,480 videos of human speech files, or 2,793.5 hours in total. It was released as part of the IEEE ICASSP 2017 Conference.In November 2017, Mozilla Foundation released the Common Voice Project, a collection of speech files to help contribute to the larger open source machine learning community. The voicebank is currently 12GB in size, with more than 500 hours of English-language voice data that have been collected from 112 countries since the project's inception in June 2017. This dataset has already resulted in creative projects like the DeepSpeech model, an open source transcription model.
+
+
+== See also ==
+Speech recognition
+Natural Language Processing
+Voice user interface
+Audio codec
+Ubiquitous computing
+Hands-free computing
+
+
+== References ==

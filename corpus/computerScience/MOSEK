@@ -1,0 +1,10 @@
+MOSEK is a software package for the solution of linear, mixed-integer linear, quadratic, mixed-integer quadratic, quadratically constraint, conic and convex nonlinear mathematical optimization problems. The emphasis in MOSEK is on solving large scale sparse problems, particularly the interior-point optimizer for linear, conic quadratic (a.k.a. Second-order cone programming) and semi-definite (aka. semidefinite programming). MOSEK is very efficient solving the latter set of problems.
+A special feature of the MOSEK interior-point optimizer is that it is based on the so-called homogeneous model. This implies that MOSEK can reliably detect a primal and/or dual infeasible status as documented in several published papers.The software is developed by Mosek ApS, a Danish company established in 1997. It has its office located in Copenhagen, the capital of Denmark.
+In addition to the interior-point optimizer MOSEK includes:
+
+Primal and dual simplex optimizer for linear problems.
+Mixed-integer optimizer for linear, quadratic and conic problems.In version 9, Mosek introduced support for exponential and power cones in its sover. The software also provides interfaces to the C, C#, Java and Python languages. Most major modeling systems are made compatible with MOSEK, examples are: AMPL, and GAMS.
+MOSEK can also be used from popular tools such as MATLAB and the R programming language / software environment. With the latter, an outdated version of package Rmosek is available from the CRAN server, the up-to-date version is provided by Mosek ApS), CVX, and YALMIP.
+
+
+== References ==

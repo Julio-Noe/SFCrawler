@@ -1,0 +1,4 @@
+An object hierarchy is a concept from computer programming. It references descendants of objects acting as properties of an object. An example of this would be the object controlling a window (at the top of the hierarchy) having another object like the window's border acting as a property of the window.
+
+
+== References ==

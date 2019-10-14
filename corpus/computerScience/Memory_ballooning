@@ -1,0 +1,9 @@
+Memory ballooning is a technique used to eliminate the need to overprovision host memory used by a virtual machine (VM). To implement it, the virtual machine's kernel implements a "balloon driver" which allocates unused memory within the VM's address space into a reserved memory pool (the "balloon") so that it is unavailable to other processes on the VM. However, rather than being reserved for other uses within the VM, the physical memory mapped to those pages within the VM is actually unmapped from the VM by the host operating system's hypervisor, making it available for other uses by the host machine. Depending on the amount of memory required by the VM, the size of the "balloon" may be increased or decreased dynamically, mapping and unmapping physical memory as required by the VM.
+
+
+== References ==
+
+
+== See also ==
+Memory overcommitment
+Thin provisioning

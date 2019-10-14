@@ -1,0 +1,30 @@
+The Quantum compression format is a little-known data compression method created by David Stafford of Cinematronics, LLC. It was licensed to Borland, Microsoft and Novell. Quantum is one of the possible compression methods in a Microsoft Windows CAB archive. Quantum uses an extended LZ77 compression algorithm. Quantum archive files are named with the filename extension .Q by convention.
+
+
+== Quantum archiver ==
+PAQ.EXE is the Quantum compressor for MS-DOS and UNPAQ.EXE is the decompressor. These are 32-bit applications using a DOS extender from Borland.
+QWIN.EXE is the Quantum decompressor for 16-bit Windows. It is much faster than the MS-DOS decompressor and has more features such as selective decompression. 
+A command-line tool COMPRESS.EXE supplied with Microsoft Windows or its resource kits up until Windows XP (up until version 5.00.2134.1 of COMPRESS.EXE) is able to compress files using the Quantum algorithm.      
+All the Quantum compressors and decompressors require at least a 386 CPU in order to run.  
+The last known version of Quantum released by Cinematronics is 0.97.
+
+
+== Quantum archive file structure ==
+File header 
+
+This is immediately followed by the list of files:
+
+Immediately following the list of files is the compressed data.
+(*) Strings are prefixed with their length. 
+If the length is less than 128 then it is stored directly in one byte.  
+If it is greater than 127 then the high bit of the first byte is set to 1 
+and the remaining fifteen bits contain the actual length in big-endian format.
+
+
+== References ==
+
+Salomon, David (2007). Data compression: the complete reference. Springer Verlag. p. 187. ISBN 1-84628-602-6.
+
+
+== External links ==
+http://www.russotto.net/quantumcomp.html

@@ -1,0 +1,21 @@
+The Treiber stack algorithm is a scalable lock-free stack utilizing the fine-grained concurrency primitive compare-and-swap. It is believed that R. Kent Treiber was the first to publish it in his 1986 article "Systems Programming: Coping with Parallelism".
+
+
+== Basic principle ==
+The basic principle for the algorithm is to only add something new to the stack once you know the item you are trying to add is the only thing that has been added since you began the operation. This is done by using compare-and-swap. Pushing an item to the stack is done by first taking the top of the stack (old head) and placing it after your new item to create a new head. You then compare the old head to the new head. If the two are matching then you can swap old head to the new one, if not then it means another thread has added an item to the stack, in which case you must try again.
+When popping an item from the stack, before returning the item you must check that another thread has not added a new item since the operation began.
+
+
+== Correctness ==
+In some languages -- particularly, those without garbage collection -- the Treiber stack can be at risk for the ABA problem.  When a process is about to remove an element from 
+the stack (just before the compare and set in the pop routine below) another process can change the stack such that the head is the same, but the second element is
+different. The compare and swap will set the head of the stack to the old second element in the stack mixing up the complete data structure.  However, the Java version on this page is not subject to this problem, because of the stronger guarantees offered by the Java runtime (it is impossible for a newly-created, unaliased object reference to be reference-equal to any other reachable object.)  
+Testing for failures such as ABA can be exceedingly difficult, because the problematic sequence of events is very rare. 
+Model checking is an excellent way to uncover such problems. See for instance exercise 7.3.3 in "Modeling and analysis of communicating Systems".
+
+
+== Java example ==
+Below is an implementation of the Treiber Stack in Java, based on the one provided by Java Concurrency in Practice 
+
+
+== References ==

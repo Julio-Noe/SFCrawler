@@ -1,0 +1,27 @@
+T.H. Tse is a professor and researcher in program testing and debugging. He is ranked internationally by AMiner as
+No. 2 among experts in test cases and
+No. 2 among experts in metamorphic testing.
+The application areas of his research include object-oriented software, services computing, pervasive computing, concurrent systems, imaging software, and numerical programs.
+In addition, he is noted for his graphic designs for non-government organizations.In 2018, he served as the matchmaker of a generous donation of $100 million by Mrs May Tam to The University of Hong Kong for the establishment of the Tam Wing Fan Innovation Wing.In 2019, Tse and team applied metamorphic testing to verify the robustness of citation indexing services, including Scopus and Web of Science.
+The innovative method, known as "metamorphic robustness testing"
+, revealed that the presence of simple hyphens in the titles of scholarly papers adversely affects citation counts and journal impact factors,
+regardless of the quality of the publications.
+The surprising results attracted the attention of the international media, including
+Nature Index, The Australian, and Psychology Today.
+
+
+== Biography ==
+T.H. Tse received the PhD degree from the London School of Economics in 1988 under the supervision of Frank Land and Ian Angell. He was a visiting fellow at the University of Oxford in 1990 and 1992 working with Joseph Goguen.  He is currently an honorary professor at the Department of Computer Science in The University of Hong Kong after retiring from his full professorship in July 2014.
+He has been the steering committee chair of the IEEE International Conference on Software Quality, Reliability, and Security, the International Conference on Quality Software, and the IEEE International Workshop on Debugging and Repair. He is an associate editor of IEEE Transactions on Reliability and an editorial board member of Software Testing, Verification and Reliability and Software: Practice and Experience. He also served on the search committee for the editor-in-chief of IEEE Transactions on Software Engineering in 2013.
+He is a fellow of the British Computer Society. He was selected for a State Science and Technology Award, recommended by the Ministry of Education of P.R. China. He was also selected for an Outstanding Disabled Person of the Year Award. He was decorated with an MBE by Queen Elizabeth II of the United Kingdom.
+
+
+== Book ==
+T.H. Tse, A Unifying Framework for Structured Analysis and Design Models: An Approach using Initial Algebra Semantics and Category Theory, Cambridge Tracts in Theoretical Computer Science, vol. 11, Cambridge University Press, Cambridge. Ebook edition (2010).  Paperback edition (2009).  Hardcover edition (1991).
+
+
+== Selected publications ==
+H.Y. Chen, T.H. Tse, F.T. Chan, and T.Y. Chen, "In black and white: An integrated approach to class-level testing of object-oriented programs", ACM Transactions on Software Engineering and Methodology 7 (3): 250-295 (1998).H.Y. Chen, T.H. Tse, and T.Y. Chen, "TACCLE: A methodology for object-oriented software testing at the class and cluster levels", ACM Transactions on Software Engineering and Methodology 10 (1): 56-109 (2001).T.Y. Chen, T.H. Tse, and Z.Q. Zhou, "Semi-proving: An integrated method for program proving, testing, and debugging", IEEE Transactions on Software Engineering 37 (1): 109-125 (2011).H.Y. Chen and T.H. Tse, "Equality to equals and unequals: A revisit of the equivalence and nonequivalence criteria in class-level testing of object-oriented software", IEEE Transactions on Software Engineering 39 (11): 1549-1563 (2013).L. Mei, Y. Cai, C. Jia, B. Jiang, W.K. Chan, Z. Zhang, and T.H. Tse, "A subsumption hierarchy of test case prioritization for composite services", IEEE Transactions on Services Computing 8 (5): 658-673 (2015).L. Mei, W.K. Chan, T.H. Tse, B. Jiang, and K. Zhai, "Preemptive regression testing of workflow-based web services", IEEE Transactions on Services Computing 8 (5): 740-754 (2015).T.Y. Chen, F.-C. Kuo, H. Liu, P.-L. Poon, D. Towey, T.H. Tse, and Z.Q. Zhou, "Metamorphic testing: A review of challenges and opportunities", ACM Computing Surveys 51 (1): 4:1-4:27 (2018).C. Mao, X. Zhan, T.H. Tse, and T.Y. Chen, "KDFC-ART: a KD-tree approach to enhancing Fixed-size-Candidate-set Adaptive Random Testing", IEEE Transactions on Reliability (2019). doi: 10.1109/TR.2019.2892230.Z.Q. Zhou, T.H. Tse, and M. Witheridge, "Metamorphic robustness testing: Exposing hidden defects in citation statistics and journal impact factors", IEEE Transactions on Software Engineering (2019), doi:10.1109/TSE.2019.2915065.
+
+
+== References ==

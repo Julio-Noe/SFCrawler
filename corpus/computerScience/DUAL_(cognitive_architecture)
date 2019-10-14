@@ -1,0 +1,84 @@
+A  cognitive architecture refers to both a theory about the structure of the human mind and to a computational instantiation of such a theory used in the fields of artificial intelligence (AI) and computational cognitive science. One of the main goals of a cognitive architecture is to summarize the various results of cognitive psychology in a comprehensive computer model. However, the results need to be formalized so far as they can be the basis of a computer program. The formalized models can be used to further refine a comprehensive theory of cognition, and more immediately, as a commercially usable model. Successful cognitive architectures include ACT-R (Adaptive Control of Thought - Rational) and SOAR.The Institute of Creative Technologies defines cognitive architecture as: "hypothesis about the fixed structures that provide a mind, whether in natural or artificial systems, and how they work together – in conjunction with knowledge and skills embodied within the architecture – to yield intelligent behavior in a diversity of complex environments."
+
+
+== History ==
+Herbert A. Simon, one of the founders of the field of artificial intelligence, stated that the 1960 thesis by his student Ed Feigenbaum, EPAM provided a possible "architecture for cognition" because it included some commitments for how more than one fundamental aspect of the human mind worked (in EPAM's case, human memory and human learning).
+John R. Anderson started research on human memory in the early 1970s and his 1973 thesis with Gordon H. Bower provided a theory of human associative memory. He included more aspects of his research on long-term memory and thinking processes into this research and eventually designed a cognitive architecture he eventually called ACT.  He and his students were influenced by Allen Newell's use of the term "cognitive architecture". Anderson's lab used the term to refer to the ACT theory as embodied in a collection of papers and designs (there was not a complete implementation of ACT at the time).
+In 1983 John R. Anderson published the seminal work in this area, entitled The Architecture of Cognition. One can distinguish between the theory of cognition and the implementation of the theory. The theory of cognition outlined the structure of the various parts of the mind and made commitments to the use of rules, associative networks, and other aspects. The cognitive architecture implements the theory on computers. The software used to implement the cognitive architectures were also "cognitive architectures". Thus, a cognitive architecture can also refer to a blueprint for intelligent agents. It proposes (artificial) computational processes that act like certain cognitive systems, most often, like a person, or acts intelligent under some definition. Cognitive architectures form a subset of general agent architectures. The term 'architecture' implies an approach that attempts to model not only behavior, but also structural properties of the modelled system.
+
+
+== Distinctions ==
+Cognitive architectures can be symbolic, connectionist, or hybrid. Some cognitive architectures or models are based on a set of generic rules, as, e.g., the Information Processing Language (e.g., Soar based on the unified theory of cognition, or similarly ACT-R). Many of these architectures are based on the-mind-is-like-a-computer analogy. In contrast subsymbolic processing specifies no such rules a priori and relies on emergent properties of processing units (e.g. nodes). Hybrid architectures combine both types of processing (such as CLARION). A further distinction is whether the architecture is centralized with a neural correlate of a processor at its core, or decentralized (distributed). The decentralized flavor, has become popular under the name of parallel distributed processing in mid-1980s and connectionism, a prime example being neural networks. A further design issue is additionally a decision between holistic and atomistic, or (more concrete) modular structure. By analogy, this extends to issues of knowledge representation.
+In traditional AI, intelligence is often programmed from above: the programmer is the creator, and makes something and imbues it with its intelligence, though many traditional AI systems were also designed to learn (e.g. improving their game-playing or problem-solving competence). Biologically inspired computing, on the other hand, takes sometimes a more bottom-up, decentralised approach; bio-inspired techniques often involve the method of specifying a set of simple generic rules or a set of simple nodes, from the interaction of which emerges the overall behavior. It is hoped to build up complexity until the end result is something markedly complex (see complex systems). However, it is also arguable that systems designed top–down on the basis of observations of what humans and other animals can do rather than on observations of brain mechanisms, are also biologically inspired, though in a different way.
+
+
+== Notable examples ==
+A comprehensive review of implemented cognitive architectures has been undertaken in 2010 by Samsonovich et al. and is available as an online repository. Some well-known cognitive architectures, in alphabetical order:
+
+4CAPS, developed at Carnegie Mellon University under Marcel A. Just
+4D-RCS Reference Model Architecture developed by James Albus at NIST is a reference model architecture that provides a theoretical foundation for designing, engineering, integrating intelligent systems software for unmanned ground vehicles.
+ACT-R, developed at Carnegie Mellon University under John R. Anderson.
+ALifeE, developed under Toni Conde at the Ecole Polytechnique Fédérale de Lausanne.
+Apex developed under Michael Freed at NASA Ames Research Center.
+ASMO, developed under Rony Novianto at University of Technology, Sydney.
+Behaviour Oriented Design, developed by Joanna J. Bryson at MIT.
+CHREST, developed under Fernand Gobet at Brunel University and Peter C. Lane at the University of Hertfordshire.
+CLARION the cognitive architecture, developed under Ron Sun at Rensselaer Polytechnic Institute and University of Missouri.
+CMAC – The Cerebellar Model Articulation Controller (CMAC) is a type of neural network based on a model of the mammalian cerebellum. It is a type of associative memory. The CMAC was first proposed as a function modeler for robotic controllers by James Albus in 1975 and has been extensively used in reinforcement learning and also as for automated classification in the machine learning community.
+CMatie is a 'conscious' software agent developed to manage seminar announcements in the Mathematical Sciences Department at the University of Memphis. It's based on Sparse distributed memory augmented with the use of genetic algorithms as an associative memory.
+Copycat, by Douglas Hofstadter and Melanie Mitchell at the Indiana University.
+DUAL, developed at the New Bulgarian University under Boicho Kokinov.
+DUAL PECCS, developed under Antonio Lieto at the University of Turin - A hybrid knowledge representation and processing system integrated with the declarative memories and the knowledge retrieval mechanisms of the following cognitive architectures: ACT-R, CLARION, LIDA and Soar.
+EPIC, developed under David E. Kieras and David E. Meyer at the University of Michigan.
+FORR developed by Susan L. Epstein at The City University of New York.
+GAIuS developed by Sevak Avakians.
+Genie – "General Evolving Networked Intelligence Engine" is a Cognitive Computing Platform developed by Intelligent Artifacts and built on top of GAIuS.  Its "no data modeling" paradigm and simple API calls enables anyone to build and deploy powerful custom artificial intelligence applications within minutes.
+Google DeepMind – The company has created a neural network that learns how to play video games in a similar fashion to humans and a neural network that may be able to access an external memory like a conventional Turing machine, resulting in a computer that appears to possibly mimic the short-term memory of the human brain. The underlying algorithm is based on a combination of Q-learning with multilayer recurrent neural network. (Also see an overview by Jürgen Schmidhuber on earlier related work in Deep learning)
+Holographic associative memory is part of the family of correlation-based associative memories, where information is mapped onto the phase orientation of complex numbers on a Riemann plane.  It was inspired by holonomic brain model  by Karl H. Pribram. Holographs have been shown to be effective for associative memory tasks, generalization, and pattern recognition with changeable attention.
+The H-Cogaff architecture, which is a special case of the CogAff schema.
+Hierarchical temporal memory is an online machine learning model developed by Jeff Hawkins and Dileep George of Numenta, Inc. that models some of the structural and algorithmic properties of the neocortex. HTM is a biomimetic model based on the memory-prediction theory of brain function described by Jeff Hawkins in his book On Intelligence. HTM is a method for discovering and inferring the high-level causes of observed input patterns and sequences, thus building an increasingly complex model of the world.
+CoJACK An ACT-R inspired extension to the JACK multi-agent system that adds a cognitive architecture to the agents for eliciting more realistic (human-like) behaviors in virtual environments.
+IDA and LIDA, implementing Global Workspace Theory, developed under Stan Franklin at the University of Memphis.
+Memory Networks – created by Facebook AI research group in 2014 this architecture presents a new class of learning models called memory networks. Memory networks reason with inference components combined with a long-term memory component; they learn how to use these jointly. The long-term memory can be read and written to, with the goal of using it for prediction.
+MANIC (Cognitive Architecture), Michael S. Gashler, University of Arkansas.
+MIDCA (Cognitive Architecture), Michael T. Cox, Wright State University.
+PreAct, developed under Dr. Norm Geddes at ASI.
+PRODIGY, by Veloso et al.
+PRS 'Procedural Reasoning System', developed by Michael Georgeff and Amy Lansky at SRI International.
+Psi-Theory developed under Dietrich Dörner at the Otto-Friedrich University in Bamberg, Germany.
+R-CAST, developed at the Pennsylvania State University.
+Sigma, developed at the University of Southern California's Institute for Creative Technologies
+Spaun (Semantic Pointer Architecture Unified Network) – by Chris Eliasmith at the Centre for Theoretical Neuroscience at the University of Waterloo – Spaun is a network of 2,500,000 artificial spiking neurons, which uses groups of these neurons to complete cognitive tasks via flexibile coordination. Components of the model communicate using spiking neurons that implement neural representations called "semantic pointers" using various firing patterns. Semantic pointers can be understood as being elements of a compressed neural vector space.
+Soar, developed under Allen Newell and John Laird at Carnegie Mellon University and the University of Michigan.
+Society of mind and its successor the Emotion machine proposed by Marvin Minsky.
+Sparse distributed memory was proposed by Pentti Kanerva at NASA Ames Research Center as a realizable architecture that could store large patterns and retrieve them based on partial matches with patterns representing current sensory inputs. This memory exhibits behaviors, both in theory and in experiment, that resemble those previously unapproached by machines – e.g., rapid recognition of faces or odors, discovery of new connections between seemingly unrelated ideas, etc. Sparse distributed memory is used for storing and retrieving large amounts (
+  
+    
+      
+        
+          2
+          
+            1000
+          
+        
+      
+    
+    {\displaystyle 2^{1000}}
+   bits) of information without focusing on the accuracy but on similarity of information. There are some recent applications in robot navigation and experience-based robot manipulation.
+Sparsey by Neurithmic Systems is an event recognition framework via deep hierarchical sparse distributed codes
+Subsumption architectures, developed e.g. by Rodney Brooks (though it could be argued whether they are cognitive).
+QuBIC: Quantum and Bio-inspired Cognitive Architecture for Machine Consciousness developed by Wajahat M. Qazi and Khalil Ahmad at Department of Computer Science, GC University Lahore Pakistan and School of Computer Science, NCBA&E Lahore, Pakistan
+TinyCog a minimalist open-source implementation of a cognitive architecture based on the ideas of Scene Based Reasoning
+Vector LIDA is a variation of the LIDA cognitive architecture that employs high-dimensional Modular Composite Representation (MCR) vectors as its main representation model and Integer Sparse Distributed Memory as its main memory implementation technology. The advantages of this new model include a more realistic and biologically plausible model, better integration with its episodic memory, better integration with other low level perceptual processing (such as deep learning systems), better scalability, and easier learning mechanisms.
+VisNet by Edmund Rolls at the Oxford Centre for Computational Neuroscience – A feature hierarchy model in which invariant representations can be built by self-organizing learning based on the temporal and spatial statistics of the visual input produced by objects as they transform in the world.
+
+
+== See also ==
+
+
+== References ==
+
+
+== External links ==
+ Media related to Cognitive architecture at Wikimedia Commons
+ Quotations related to Cognitive architecture at Wikiquote

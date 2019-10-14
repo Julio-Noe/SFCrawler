@@ -1,0 +1,27 @@
+NCSIMUL is a software program developed by the company SPRING Technologies, that is used for simulating, verifying, and optimizing CNC machining in a 3-step process. It reads the post-processed G-code to identify the tool path, and replicates the material removal process of the machine by cutting volumes. It then identifies all syntax errors in the code, crashes in the machining environment, and deviations from the modeled CAD part. 
+
+
+== History ==
+NCSIMUL's development began in 1983, and currently has 140 partners world-wide, and over 2000 licenses of NCSIMUL in use. It was founded in Paris, France, but has since expanded to China, Germany, the United States, India, Mexico, and Spain. The US headquarters was founded in 2009, and is located in Boston, Massachusetts. In August 2018 it was acquired by the global technology group Hexagon AB. NCSIMUL is current members of the  AMT and National Center for Defense Manufacturing and Machining (NCDMM).
+
+
+== Features ==
+
+
+=== 5-Axis simulation ===
+NCSIMUL is designed for turning, drilling, milling (up to 5-axis), mill-turn, and multi-channel machines. Based on the real characteristics of the CNC machine, it creates a dynamic verification software that includes the exact environment for all machines, tools and materials.
+
+
+=== G-Code conversion ===
+With the release of V10, NCSIMUL added the capability to change the target machine without CAM reprogramming. It is able to perform the necessary recalculations across different number of axes and across different controller languages. NCSIMUL  generates verified and optimized CNC programs directly, without an external post-processor, while taking into account the real machining environment.
+
+
+=== Optimization ===
+NCSIMUL can optimize the tool length, air-cutting motions, and cutting conditions by regulating feed rates to create better G-code programs in 3 to 5-axis machining. These strategies result in  a reduction for the production cycle times, enhancement of cutting operations, and fast development of new G-code optimized files for future applications.
+
+
+=== CAM integration ===
+Additionally, NCSIMUL integrates directly with several CAM systems to transfer all previously created resources including tool libraries, fixturing, part models, and G-code directly into the machining verification software.
+
+
+== References ==

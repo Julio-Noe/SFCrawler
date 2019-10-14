@@ -1,0 +1,678 @@
+In quantum information and quantum computing, a cluster state is a type of highly entangled state of multiple qubits. Cluster states are generated in lattices of qubits with Ising type interactions. A cluster C is a connected subset of a d-dimensional lattice, and a cluster state is a pure state of the qubits located on C. They are different from other types of entangled states such as GHZ states or W states in that it is more difficult to eliminate quantum entanglement (via projective measurements) in the case  of cluster states. Another way of thinking of cluster states is as a particular instance of graph states, where the underlying graph is a connected subset of a d-dimensional lattice. Cluster states are especially useful in the context of the one-way quantum computer. For a comprehensible introduction to the topic see.Formally, cluster states 
+  
+    
+      
+        
+          |
+        
+        
+          ϕ
+          
+            {
+            κ
+            }
+          
+        
+        
+          ⟩
+          
+            C
+          
+        
+      
+    
+    {\displaystyle |\phi _{\{\kappa \}}\rangle _{C}}
+   are states which obey the set eigenvalue equations:
+
+  
+    
+      
+        
+          K
+          
+            (
+            a
+            )
+          
+        
+        
+          
+            
+              |
+              
+                ϕ
+                
+                  {
+                  κ
+                  }
+                
+              
+              ⟩
+            
+            
+              C
+            
+          
+        
+        =
+        (
+        −
+        1
+        
+          )
+          
+            
+              κ
+              
+                a
+              
+            
+          
+        
+        
+          
+            
+              |
+              
+                ϕ
+                
+                  {
+                  κ
+                  }
+                
+              
+              ⟩
+            
+            
+              C
+            
+          
+        
+      
+    
+    {\displaystyle K^{(a)}{\left|\phi _{\{\kappa \}}\right\rangle _{C}}=(-1)^{\kappa _{a}}{\left|\phi _{\{\kappa \}}\right\rangle _{C}}}
+  where 
+  
+    
+      
+        
+          K
+          
+            (
+            a
+            )
+          
+        
+      
+    
+    {\displaystyle K^{(a)}}
+   are the correlation operators
+
+  
+    
+      
+        
+          K
+          
+            (
+            a
+            )
+          
+        
+        =
+        
+          σ
+          
+            x
+          
+          
+            (
+            a
+            )
+          
+        
+        
+          ⨂
+          
+            b
+            ∈
+            
+              N
+            
+            (
+            a
+            )
+          
+        
+        
+          σ
+          
+            z
+          
+          
+            (
+            b
+            )
+          
+        
+      
+    
+    {\displaystyle K^{(a)}=\sigma _{x}^{(a)}\bigotimes _{b\in \mathrm {N} (a)}\sigma _{z}^{(b)}}
+  with 
+  
+    
+      
+        
+          σ
+          
+            x
+          
+        
+      
+    
+    {\displaystyle \sigma _{x}}
+   and 
+  
+    
+      
+        
+          σ
+          
+            z
+          
+        
+      
+    
+    {\displaystyle \sigma _{z}}
+   being Pauli matrices, 
+  
+    
+      
+        N
+        (
+        a
+        )
+      
+    
+    {\displaystyle N(a)}
+   denoting the neighbourhood of 
+  
+    
+      
+        a
+      
+    
+    {\displaystyle a}
+   and 
+  
+    
+      
+        {
+        
+          κ
+          
+            a
+          
+        
+        ∈
+        {
+        0
+        ,
+        1
+        }
+        
+          |
+        
+        a
+        ∈
+        C
+        }
+      
+    
+    {\displaystyle \{\kappa _{a}\in \{0,1\}|a\in C\}}
+   being a set of binary parameters specifying the particular instance of a cluster state.
+Cluster states have been realized experimentally. They have been obtained in photonic experiments using 
+parametric downconversion 
+.  They have been created also in optical lattices of
+cold atoms
+.
+
+
+== Examples ==
+Here are some examples of one-dimensional cluster states (d=1), for 
+  
+    
+      
+        n
+        =
+        2
+        ,
+        3
+        ,
+        4
+      
+    
+    {\displaystyle n=2,3,4}
+  , where 
+  
+    
+      
+        n
+      
+    
+    {\displaystyle n}
+   is the number of qubits. We take 
+  
+    
+      
+        
+          κ
+          
+            a
+          
+        
+        =
+        0
+      
+    
+    {\displaystyle \kappa _{a}=0}
+   for all 
+  
+    
+      
+        a
+      
+    
+    {\displaystyle a}
+  , which means the cluster state is the unique simultaneous eigenstate that has corresponding eigenvalue 1 under all correlation operators. In each example the set of correlation operators 
+  
+    
+      
+        {
+        
+          K
+          
+            (
+            a
+            )
+          
+        
+        
+          }
+          
+            a
+          
+        
+      
+    
+    {\displaystyle \{K^{(a)}\}_{a}}
+  and the corresponding cluster state is listed.   
+
+  
+    
+      
+        n
+        =
+        2
+      
+    
+    {\displaystyle n=2}
+  
+  
+    
+      
+        {
+        
+          σ
+          
+            x
+          
+        
+        
+          σ
+          
+            z
+          
+        
+        ,
+         
+        
+          σ
+          
+            z
+          
+        
+        
+          σ
+          
+            x
+          
+        
+        }
+      
+    
+    {\displaystyle \{\sigma _{x}\sigma _{z},\ \sigma _{z}\sigma _{x}\}}
+  
+  
+    
+      
+        
+          |
+        
+        ϕ
+        ⟩
+        =
+        
+          
+            1
+            
+              2
+            
+          
+        
+        (
+        
+          |
+        
+        0
+        +
+        ⟩
+        +
+        
+          |
+        
+        1
+        −
+        ⟩
+        )
+      
+    
+    {\displaystyle |\phi \rangle ={\frac {1}{\sqrt {2}}}(|0+\rangle +|1-\rangle )}
+  This is an EPR-pair (up to local transformations).
+  
+    
+      
+        n
+        =
+        3
+      
+    
+    {\displaystyle n=3}
+  
+  
+    
+      
+        {
+        
+          σ
+          
+            x
+          
+        
+        
+          σ
+          
+            z
+          
+        
+        I
+        ,
+         
+        
+          σ
+          
+            z
+          
+        
+        
+          σ
+          
+            x
+          
+        
+        
+          σ
+          
+            z
+          
+        
+        ,
+         
+        I
+        
+          σ
+          
+            z
+          
+        
+        
+          σ
+          
+            x
+          
+        
+        }
+      
+    
+    {\displaystyle \{\sigma _{x}\sigma _{z}I,\ \sigma _{z}\sigma _{x}\sigma _{z},\ I\sigma _{z}\sigma _{x}\}}
+  
+
+  
+    
+      
+        
+          |
+        
+        ϕ
+        ⟩
+        =
+        
+          
+            1
+            
+              2
+            
+          
+        
+        (
+        
+          |
+        
+        +
+        0
+        +
+        ⟩
+        +
+        
+          |
+        
+        −
+        1
+        −
+        ⟩
+        )
+      
+    
+    {\displaystyle |\phi \rangle ={\frac {1}{\sqrt {2}}}(|+0+\rangle +|-1-\rangle )}
+    This is the GHZ-state (up to local transformations).
+  
+    
+      
+        n
+        =
+        4
+      
+    
+    {\displaystyle n=4}
+  
+  
+    
+      
+        {
+        
+          σ
+          
+            x
+          
+        
+        
+          σ
+          
+            z
+          
+        
+        I
+        I
+        ,
+         
+        
+          σ
+          
+            z
+          
+        
+        
+          σ
+          
+            x
+          
+        
+        
+          σ
+          
+            z
+          
+        
+        I
+        ,
+         
+        I
+        
+          σ
+          
+            z
+          
+        
+        
+          σ
+          
+            x
+          
+        
+        
+          σ
+          
+            z
+          
+        
+        ,
+         
+        I
+        I
+        
+          σ
+          
+            z
+          
+        
+        
+          σ
+          
+            x
+          
+        
+        }
+      
+    
+    {\displaystyle \{\sigma _{x}\sigma _{z}II,\ \sigma _{z}\sigma _{x}\sigma _{z}I,\ I\sigma _{z}\sigma _{x}\sigma _{z},\ II\sigma _{z}\sigma _{x}\}}
+  
+
+  
+    
+      
+        
+          |
+        
+        ϕ
+        ⟩
+        =
+        
+          
+            1
+            2
+          
+        
+        (
+        
+          |
+        
+        +
+        0
+        +
+        0
+        ⟩
+        +
+        
+          |
+        
+        +
+        0
+        −
+        1
+        ⟩
+        +
+        
+          |
+        
+        −
+        1
+        −
+        0
+        ⟩
+        +
+        
+          |
+        
+        −
+        1
+        +
+        1
+        ⟩
+        )
+      
+    
+    {\displaystyle |\phi \rangle ={\frac {1}{2}}(|+0+0\rangle +|+0-1\rangle +|-1-0\rangle +|-1+1\rangle )}
+  .
+This is not a GHZ-state and can not be converted to a GHZ-state with local operations.
+In all examples 
+  
+    
+      
+        I
+      
+    
+    {\displaystyle I}
+   is the identity operator, and tensor products are omitted. The states above can be obtained from the all zero state 
+  
+    
+      
+        
+          |
+        
+        0
+        …
+        0
+        ⟩
+      
+    
+    {\displaystyle |0\ldots 0\rangle }
+   by first applying a Hadamard gate to every qubit, and then a controled-Z gate between all qubits that are adjacent to each other.  
+
+
+== See also ==
+Bell state
+Graph state
+Optical cluster state
+
+
+== References ==

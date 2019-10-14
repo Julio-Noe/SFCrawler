@@ -1,0 +1,98 @@
+The selectorate theory is detailed in The Logic of Political Survival, authored by Bruce Bueno de Mesquita of New York University (NYU), Alastair Smith of NYU, Randolph M. Siverson of UC Davis, and James D. Morrow of the University of Michigan.
+
+
+== Overview ==
+
+In selectorate theory, three groups of people affect leaders. These groups are the nominal selectorate, the real selectorate, and the winning coalition. The nominal selectorate, also referred to as the interchangeables, includes every person who has some say in choosing the leader (for example, in an American presidential election, this is all registered voters). The real selectorate, also referred to as the influentials, are those who really choose the leaders (for example, in an American presidential election, those people who actually bother to cast a vote). The winning coalition, also referred to as the essentials, are those whose support translates into victory (for example, in an American presidential election, those voters that get a candidate to 270 Electoral College votes). In other countries, leaders may stay in power with the support of much smaller numbers of people, such as senior figures in the security forces, and business oligarchs, in contemporary Russia.The fundamental premise in selectorate theory is that the primary goal of a leader is to remain in power. To remain in power, leaders must maintain their winning coalition. When the winning coalition is small, as in autocracies, the leader will tend to use private goods to satisfy the coalition. When the winning coalition is large, as in democracies, the leader will tend to use public goods to satisfy the coalition.In The Dictator's Handbook, Bueno de Mesquita and Smith state five rules that leaders should use to stay in power: (1) The smaller the winning coalition the fewer people to satisfy to remain in control. (2) Having a large nominal selectorate gives a pool of potential people to replace dissenters in coalition. (3) Maintain control of revenue flows to redistribute to your friends. (4) But only pay friends enough that they will not consider overthrowing you and at the same time little enough so that they depend on you. (5) Don't take your friends' money and redistribute it to the masses.
+
+
+== Distribution of goods ==
+A public good is one that everyone enjoys non-exclusively such as national defense or clean water. A private good is a good that is enjoyed exclusively by a select few, usually within the winning coalition, and cannot be shared. An example of such a good would be anything exclusionary, such as cash or legal impunity.
+It can be said, then, that everyone in the selectorate, including the winning coalition, reap the benefits of public goods while only those within the winning coalition enjoy private goods.
+Selectorate theory predicts that the relative sizes of the winning coalition (W) and the selectorate (S) can determine whether a leader will pursue public or private goods and thus over all government performance. A leader's loyalty norm is the ratio of W/S and measures the chance any member of the selectorate has of being in the winning coalition of the next regime.:388 Loyalty norms closer to 0 are considered strong as each member of the winning coalition has a strong incentive to not betray the leader as they would face slim chances of remaining, while loyalty norms closer to 1 are considered weak. The loyalty norm can be used to calculate the amount of goods of any type the leader must award to each member in W. In such a calculation, the amount of available funds to put toward goods of any type is the tax revenue (R) of the regime and any revenue left over goes to the leader.:389Calculating the amount of revenue the leader needs to spend to keep any member of the winning coalition loyal is done with the following formula.
+
+  
+    
+      
+        P
+        a
+        y
+        o
+        u
+        t
+        =
+        (
+        W
+        
+          /
+        
+        S
+        )
+        ∗
+        (
+        R
+        
+          /
+        
+        W
+        )
+        +
+        (
+        1
+        −
+        W
+        
+          /
+        
+        S
+        )
+        ∗
+        (
+        0
+        )
+      
+    
+    {\displaystyle Payout=(W/S)*(R/W)+(1-W/S)*(0)}
+  
+This formula is in an expanded form for better illustration. Each member of the winning coalition can expect to earn a proportional share of the revenue, illustrated by the (R/W) term, if they are successfully in the next winning coalition. The chances of this are effectively the loyalty norm, illustrated by the (W/S) term. If they fail to be in the winning coalition they will receive none of the revenue. The chances of this are illustrated with the (1-W/S) term. Leaders therefor only have to spend any amount above the expected payout to keep the members loyal. The amount a leader can keep is 
+  
+    
+      
+        L
+        e
+        a
+        d
+        e
+        r
+        =
+        R
+        −
+        W
+        ∗
+        P
+        a
+        y
+        o
+        u
+        t
+      
+    
+    {\displaystyle Leader=R-W*Payout}
+  . 
+As the loyalty norm becomes weaker, the payout needed for each member of the winning coalition becomes higher. At some point the payout becomes so high that a leader is better off providing public goods which can be used by any member of the winning coalition as opposed to private goods such as direct payouts or corruption.:390 Following this, governments should perform better when they have weak loyalty norms visible through higher levels of economic growth, lower levels of state predation, but much shorter lifespans. In democracies, which have incredibly weak loyalty norms, leaders last incredibly short, sometimes changing each election cycle. This mechanism is used to explain why even well performing leaders in democracies spend less time in office than dictators with horrible performance.:390
+
+
+== Government types, leaders, and challenger threats ==
+According to the selectorate theory, a leader has the greatest chance of political survival when the selectorate is large and the winning coalition is small, which occurs in an autocracy. This is because those who are in a winning coalition can easily be replaced by other members of the selectorate who are not in the winning coalition. Thus, the costs of defection for those members of the winning coalition can be potentially large, namely the loss of all private goods. Similarly, the chances of a challenger in replacing the leader are similarly smallest in such an autocratic system since those in the winning coalition would be hard pressed to defect. The ratio of private to public goods as payoff to the winning coalition is the highest in such a system.
+A monarchy, where the selectorate is small and the winning coalition is even smaller, provides a challenger with a greater opportunity to overthrow the current leader. This is because the proportion of selectorate members who are also in the winning coalition is relatively large. That is, if a new leader comes to power, chances are a given member of the winning coalition will remain within the coalition. The incentive for defection to attain a greater amount of goods offered by a challenger is not, in this case, outweighed by the risk of not being included in the new winning coalition. Here, the proportion of private goods in relation to public goods is seen declining.
+A scenario in which both the winning coalition is large and the selectorate is even larger provides the least amount of stability to a leader’s occupancy of power; such a system is a democracy. Here, the proportion of public goods outweighs private goods simply because of the sheer size of the winning coalition; it would be far too costly to provide private goods to every individual member of the winning coalition when the benefits of public goods would be enjoyed by all. Because of this fact—that the leader cannot convince winning coalition members to remain loyal through private good incentives, which are in turn cost-restrictive—the challenger poses the greatest threat to the incumbent. This degree of loyalty to the incumbent leader, whatever the government structure may be, is called the loyalty norm.
+A scenario where the winning coalition is large and the selectorate is small is logically impossible since the winning coalition is a subset of the selectorate.
+
+
+== Implication of selectorate theory ==
+Bruce Bueno de Mesquita and Alastair Smith further applied the selectorate theory to the field of foreign aid. The fundamental reason behind foreign aid practice, as the selectorate theory suggests, is to improve the survival of political leaders in both donor and recipient states. They argued that the size of leader's winning coalition and government revenues affect leader's decision making on policy concession and aid. By analyzing the bilateral aid transfers by Organization for Economic Cooperation and Development (OECD) nations between 1960 and 2001, they discovered that leaders in aid recipient countries are more likely to grant policy concession for donors when the winning coalition is small because leaders with small winning coalitions can easily reimburse supporters for their concession. As a result, relatively poor, small coalition systems are most likely to get aid. The conclusion of their study shows that interest exchange is the primary reason for foreign aid practice and OECD members have little humanitarian motivation for aid giving. Nancy Qian's study supported this conclusion by arguing that “The literature shows that the primary purpose of aid is often not to alleviate poverty and that out of all of the foreign aid flows, only 1.69% to 5.25% are given to the poorest twenty percent of countries in any given year"
+
+
+== References ==
+
+Bueno de Mesquita, Bruce; Alastair Smith; Randolph M. Siverson; James D. Morrow (2003). The Logic of Political Survival. The MIT Press. ISBN 0-262-63315-9.

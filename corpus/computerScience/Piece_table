@@ -1,0 +1,58 @@
+A Piece Table is a data structure typically used to represent a series of edits on a text document. An initial reference (or 'span') to the whole of the original file is created, with subsequent inserts and deletes being created as combinations of one, two, or three references to sections of either the original document or of the spans associated with earlier inserts.Typically the text of the original document is held in one immutable block, and the text of each subsequent insert is stored in new immutable blocks. Because even deleted text is still included in the piece table, this makes multi-level or unlimited undo easier to implement with a piece table than with alternative data structures such as a gap buffer.
+This data structure was invented by J Strother Moore.
+
+
+== Description ==
+For this description, we use buffer as the immutable block to hold the contents.
+A piece table consists of three columns:
+
+Which buffer
+Start index in the buffer
+Length in the bufferIn addition to the table, two buffers are used:
+
+"Original buffer": A buffer to the original text document. This buffer is read-only.
+"Add buffer": A buffer to a temporary file. This buffer is append-only.
+
+
+== Operations ==
+
+
+=== Index ===
+Definition: Index(i): return the character at position iTo retrieve the i-th character, the appropriate entry in a piece table is read.
+
+
+===== Example =====
+Given the following buffers and piece table:
+
+To access the i-th character, the appropriate entry in the piece table is looked up.
+For instance, to get the value of Index(15), the 3rd entry of piece table is retrieved. This is because the 3rd entry describes the characters from index 12 to 17 (the first entry describes characters in index 0 to 5, the next one is 6 to 11). The piece table entry instructs the program to look for the characters in the "add file" buffer, starting at index 18 in that buffer. The relative index in that entry is 3 (15 - 12), making the value of Index(15) the character "o".
+For the buffers and piece table given above, the following text is shown:
+
+Lorem ipsum dolor sit amet
+
+
+=== Insert ===
+Inserting characters to the text consists of:
+
+Appending characters to the "add file" buffer, and
+Updating the entry in piece table (breaking an entry into two or three)
+
+
+=== Delete ===
+Deletion involves only modifying the appropriate entry in piece table.
+
+
+== Time complexity ==
+Although a piece table itself is a data structure, it does not state how it should be implemented. The time complexity of operations depends on how the table is being implemented. One possible implementation of a piece table is in a splay tree, because it provides quick access to recently-accessed elements.
+
+
+== Usage ==
+Several text editors use an in-RAM piece table internally, including Bravo,Abiword, Atom and Visual Studio Code.The "fast save" feature in some versions of Microsoft Word uses a piece table for the on-disk file format.The on-disk representation of text files in the Oberon System uses a piece chain technique that allows pieces of one document to point to text stored in some other document, similar to transclusion.
+
+
+== See also ==
+Rope (computer science)
+Gap buffer, a data structure commonly used in text editors that allows efficient insertion and deletion operations clustered near the same location
+
+
+== References ==

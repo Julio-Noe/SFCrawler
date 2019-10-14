@@ -1,0 +1,28 @@
+A continuous glucose monitor (CGM) is a device used for monitoring blood glucose on a continual basis by people with either type I or type II diabetes. A continuous glucose monitor takes a reading on set intervals with a small electrode placed under the skin and held in place by an adhesive. A transmitter attached to the electrode sends data to a separate receiver. 
+Traditional fingerprick testing of blood glucose levels measures the level at a single point in time. CGM use allows trends in blood glucose to be displayed over time. Users must calibrate CGM devices with traditional blood glucose measurements.A limitation of the CGM system is that glucose levels are taken from the interstitial fluid rather than the blood. As it takes time for glucose to travel from the bloodstream into the interstitial fluid, there is an inherent lag behind the current blood glucose level and the level measured by the CGM. This lag time varies based on the person and the device, and is generally 5–20 minutes.
+
+
+== History ==
+
+
+=== United States ===
+The first CGM system was approved by the FDA in 1999. Continued development has extended the length of time sensors can be worn, options for receiving and reading data, and settings for alerting users of high and low glucose levels.
+The first iteration of the Medtronic MiniMed took glucose readings every ten seconds with average readings reported every five minutes. Sensors could be worn for up to 72 hours.A second system, developed by Dexcom, was approved in 2006. The sensor was approved for use for up to 72 hours, and the receiver needed to be within five feet for transmission of data. 
+In 2008, the third model was approved, Abbott Laboratories' Freestyle Navigator. Sensors could be worn for up to five days.In 2012, Dexcom released a new device that allowed for the sensor to be worn for seven days and had a transmission distance of 20 feet. Dexcom later introduced an app allowing data from the sensor to be transmitted to an iPhone. This system was approved for pediatric use in 2015.In September 2017, the FDA approved the first CGM that does not require calibration with fingerstick measurement, the FreeStyle Libre. This device could be worn for up to ten days, but required 12 hours to start readings. and was followed by an updated device that could be worn for up to 14 days, and needed only one hour to start a new sensor. The FreeStyle Libre 2 was approved in Europe in October 2018, and enabled configuration of alerts when glucose is out of range.
+In June 2018, the FDA approved the Eversense CGM system for use in people 18 years of age and older with diabetes. This is the first FDA-approved CGM to include a fully implantable sensor to detect glucose, which can be worn for up to 90 days. The Eversense XL, a 180-day version of the system, was approved in Europe in October 2017.
+
+
+== Device characteristics ==
+Continuous vs flash monitoring: Dexcom and Eversense use continuous monitoring where information on the glucose levels are continuously updated. Continuous monitoring allows to set automatic alarms that are triggered when the glucose level goes out of pre-configured thresholds. With Freestyle Libre the glucose level is read on user request, but the glucose information returned contains all the data since the previous read. FreeStyle Libre 2 allows configuration of alarms when glucose reaches a pre-determined level.
+Internal vs external sensors: Dexcom and Freestyle Libre use external sensors while Eversense uses an internal one but a transmitter has to be placed on top of the skin where the sensor lies.
+
+
+== Closed loop system ==
+The CGM is a key element in the development of a "closed-loop" system for the treatment of type I diabetes. A closed-loop system involves blood glucose monitored by CGM and the data sent to an insulin pump for calculated delivery of insulin without user intervention.
+
+
+== See also ==
+Artificial pancreas
+
+
+== References ==

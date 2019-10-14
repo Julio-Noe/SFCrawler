@@ -1,0 +1,65 @@
+LiquidFeedback is free software for political opinion formation and decision making, combining aspects of  representative and direct democracy. Its most important feature is the implementation of a delegated voting system ("liquid democracy") which is to establish a new form of political representation and participation that takes into account the knowledge disparity of its participants.
+
+
+== Description ==
+LiquidFeedback helps groups (such as societies or organizations, political or not) make decisions, without the limitations of a traditional Internet forum. 
+It aims to create an accurate representation of the opinions held by the members of the group without them being distorted by social hierarchies and knowledge disparities. Each individual is encouraged to further their own initiatives within the limitations set by the operators.
+The proxy voting feature creates power structures similar to representative democracy, even though delegations can be withdrawn at any time. This is necessary to produce results that reflect the mood of the majority, even when they don't find the time to participate in person, in order to avoid the domination of the extroverts, which is the problem that regularly arises with grassroots democracy.
+
+
+== Usage ==
+The proposition development process can be summarized as follows: 
+
+user driven, self organized process (collective moderation, no request commission necessary)
+every member can start an initiative
+quantified constructive feedback (support, suggestions, implementation assessment)
+initiators decide about implementation
+no fundamental opposition within an initiative
+every member can start an alternative initiative
+alternative initiatives define the issue and are voted upon together using Cloneproof Schwartz Sequential Dropping (Schulze Method)To allow different values for timings and supporter quorums, and to allow the possibility of supermajority requirements for certain decisions, LiquidFeedback allows its users to have so-called "policies" for different kinds of decisions. The results can be used for information, suggestion, directive, or as binding decisions depending on the organizational needs and the national legislation.
+
+
+== History ==
+LiquidFeedback was co-written by Andreas Nitsche, Jan Behrens, Axel Kistner and Bjoern Swierczek.  The software incorporates the concepts of Liquid Democracy, Proposition development process, Preferential voting or the Schulze method, and Interactive Democracy into the operation of the software.  The software was first published in October 2009 by Public Software Group e. V. after being suggested by some members of Germany's Pirate Party unsatisfied with conventional means of political opinion formation. Despite this affiliation, its developers are fully independent from the users of the software and they allow the software's usage by other parties and organizations. The first stable version of its back end was released in April 2010.
+The software has been successfully used for the preparation of several national conventions by the Pirate Parties of Germany, Austria, Italy, Switzerland and Brazil. It is also used by Slow Food Germany and some local branches of the Five Star Movement in Italy.
+
+
+== Protection of minorities ==
+LiquidFeedback provides several mechanisms to protect minorities. Even though decisions are finally made by majorities (see also: Majority rule), the software allows
+
+minorities and even individuals to present their point of views,
+minorities of a certain size to put their proposals to the vote.In this context, all text contributions are sorted in a way that a proportional representation of the minorities is assured. Depending on the integration of the software, this may empower minorities to put their viewpoints to discussion directly at the top level of an organization without the necessity to go through a hierarchy.
+
+
+== Technical specifications ==
+The front end is written in Lua while the back end is written in PL/pgSQL. Both parts are released under the MIT License. There is also an API available which allows external applications to add additional features to the program.
+
+
+== Criticism ==
+The implementation of LiquidFeedback led to heated discussion among the members of the German Pirate Party: Defenders of data protection criticized the software's ability to match each statement and vote to its individual author, although that was the intention. Because the software only allows for voting by a recorded vote, it is easily possible to identify the participants' political opinions by their voting behaviour. This improves the transparency of the political process as it makes any special interest openly visible.
+Some have argued that the ability to delegate votes could create and enforce power structures, even though delegations can be withdrawn at any time. The authors of the program later introduced an option for the organisation to activate automatic removal of inactive users.
+
+
+== See also ==
+Liquid democracy
+Schulze method
+German Pirate Party
+E-democracy
+Radical transparency
+Participatory culture and technology
+Participatory democracy
+Collaborative e-democracy
+
+
+== References ==
+
+
+== External links ==
+Official website
+Public Software Group
+CNN: Fed up with politics?... - The "Liquid Feedback" generation
+Spiegel Magazine: Web Platform Makes Professor Most Powerful Pirate
+The Economist: The ayes have it
+The New York Times: Direct Democracy, 2.0
+The New York Times: New Politics, Ahoy!
+"David Meyer talks about the Piratenpartei Deutschland (Pirate Party Germany)" YouTube interview with David Meyer, a freelance reporter in Germany that writes for ZDNet. Mark Strassman from Etopia News conducted the interview on 15 May 2012.  Coverage of the Liquid Feedback software occurs during duration 8:53-14:56.  Retrieved 23 December 2012.

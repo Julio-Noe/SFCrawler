@@ -1,0 +1,185 @@
+The Data processing inequality is an information theoretic concept which states that the information content of a signal cannot be increased via a local physical operation.  This can be expressed concisely as 'post-processing cannot increase information'. As explained by Kinney and Atwal, the DPI means that information is generally lost (never gained) when transmitted through a noisy channel.
+
+
+== Definition ==
+Let three random variables form the Markov chain 
+  
+    
+      
+        X
+        →
+        Y
+        →
+        Z
+      
+    
+    {\displaystyle X\rightarrow Y\rightarrow Z}
+  , implying that the conditional distribution of 
+  
+    
+      
+        Z
+      
+    
+    {\displaystyle Z}
+   depends only on 
+  
+    
+      
+        Y
+      
+    
+    {\displaystyle Y}
+   and is conditionally independent of 
+  
+    
+      
+        X
+      
+    
+    {\displaystyle X}
+  . Specifically, we have such a Markov chain if the joint probability mass function can be written as
+
+  
+    
+      
+        p
+        (
+        x
+        ,
+        y
+        ,
+        z
+        )
+        =
+        p
+        (
+        x
+        )
+        p
+        (
+        y
+        
+          |
+        
+        x
+        )
+        p
+        (
+        z
+        
+          |
+        
+        y
+        )
+      
+    
+    {\displaystyle p(x,y,z)=p(x)p(y|x)p(z|y)}
+  In this setting, no processing of Y , deterministic or random, can increase the information that Y contains about X. Using the mutual information, this can be written as :
+
+  
+    
+      
+        I
+        (
+        X
+        ;
+        Y
+        )
+        ⩾
+        I
+        (
+        X
+        ;
+        Z
+        )
+      
+    
+    {\displaystyle I(X;Y)\geqslant I(X;Z)}
+  With the equality 
+  
+    
+      
+        I
+        (
+        X
+        ;
+        Y
+        )
+        =
+        I
+        (
+        X
+        ;
+        Z
+        )
+      
+    
+    {\displaystyle I(X;Y)=I(X;Z)}
+   if and only if 
+  
+    
+      
+        I
+        (
+        X
+        ;
+        Y
+        
+          |
+        
+        Z
+        )
+        =
+        0
+      
+    
+    {\displaystyle I(X;Y|Z)=0}
+  , i.e. 
+  
+    
+      
+        Z
+      
+    
+    {\displaystyle Z}
+   and 
+  
+    
+      
+        Y
+      
+    
+    {\displaystyle Y}
+   contain the same information about 
+  
+    
+      
+        X
+      
+    
+    {\displaystyle X}
+  , and 
+  
+    
+      
+        X
+        →
+        Z
+        →
+        Y
+      
+    
+    {\displaystyle X\rightarrow Z\rightarrow Y}
+   also forms a Markov chain.
+
+
+== See also ==
+Garbage in, garbage out
+
+
+== References ==
+
+
+== External links ==
+http://www.scholarpedia.org/article/Mutual_information

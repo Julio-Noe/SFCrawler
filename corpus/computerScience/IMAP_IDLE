@@ -1,0 +1,20 @@
+In email technology, IDLE is an IMAP feature described in RFC 2177 that allows a client to indicate to the server that it is ready to accept real-time notifications.
+
+
+== Significance ==
+The IDLE feature allows IMAP email users to immediately receive any mailbox changes without having to undertake any action such as clicking on a refresh button, or having the email client automatically and repeatedly ask the server for new messages.
+
+
+== Usage ==
+IMAP4 servers that support IDLE will include the string "IDLE" in the result of their CAPABILITY command. This allows email users to receive near instant notification of a new email.
+
+
+== See also ==
+Push-IMAP
+
+
+== Notes ==
+
+
+== External links ==
+RFC 2177: IMAP4 IDLE

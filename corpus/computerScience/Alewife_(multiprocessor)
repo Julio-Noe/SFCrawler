@@ -1,0 +1,8 @@
+Alewife was a cache coherent multiprocessor developed in the early 1990s by a group led by Anant Agarwal at the Massachusetts Institute of Technology. It was based on a network of up to 512 processing nodes, each of which used the Sparcle computer architecture, which was formed by modifying a Sun Microsystems SPARC CPU to include the APRIL techniques for fast context switches.The Alewife project was one of two predecessors cited by the creators of the popular Beowulf cluster multiprocessor.
+
+
+== References ==
+
+
+== External links ==
+MIT Alewife Project

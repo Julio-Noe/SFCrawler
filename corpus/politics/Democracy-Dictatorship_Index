@@ -1,0 +1,64 @@
+Democracy-Dictatorship (DD), index of democracy and dictatorship or simply the DD index or the DD datasets refers to the binary measure of democracy and dictatorship first proposed by Adam Przeworski et al. (2010), and further developed and maintained by Cheibub, Gandhi, and Vreeland (2009). Though the most recent data set is only updated for 2008, there is planning by Cheibub to update it to the present year.
+Based on the regime binary classification idea proposed by Alvarez in 1996, and the Democracy and Development (or DD measure, ACLP dataset) proposed by Przeworski et al. (2010), Cheibub, Gandhi, and Vreeland developed a six-fold regime classification scheme, resulting what the authors called as  the DD datasets.:68The DD dataset covers the annual data points of 199 countries from 1946 (or date of independence) to 2008.:68 The figures at the left show the results in 1998 and 2008.
+
+
+== Six-fold regime classification scheme and its rules ==
+The DD index first classifies the regimes into two types: democracies and dictatorships. For democracies, it categorizes them into three types: parliamentary, semi-presidential and presidential democracies. For dictatorships, monarchic, military and civilian dictatorship.
+"
+Based on a "minimalist" theory of democracy, the index relies on rules regarding the existence of competitive elections. Resorting to democratic concepts by Karl Popper and Joseph Schumpeter, Przeworkski defended the minimalist approach, citing Popper that "the only system in which citizens can get rid of governments without bloodshed."
+
+
+=== Four rules ===
+For a regime to be considered as a democracy by the DD scheme, it must meet the requirement of four rules below::69
+
+The chief executive must be chosen by popular election or by a body that was itself popularly elected.
+The legislature must be popularly elected.
+There must be more than one party competing in the elections.
+An alternation in power under electoral rules identical to the ones that brought the incumbent to office must have taken place.
+Some regimes may meet the first three rules, but lack an alternation in power in its historical past; these regimes are classified as dictatorships and marked with a type II value, signalling potential classification errors where a democratic regime may be falsely classified as dictatorship:70.
+The authors acknowledged that the last rule is more complicated to implement but argued that it helps researchers to control potential errors and enhance the classification schemes' scientific reproducibility.:70In DD dataset, the Type II variable does not indicate cases of semi-democracy or cases of semi-dictatorship.:71.
+
+
+== Countries ==
+The Democracy-Dictatorship Index has the main regime types of "democracy" and "dictatorship" and three sub-types for each as well. Democracies can be either parliamentary, semi-presidential, or presidential and dictatorships can be civilian, military, or royal. Many countries which are seen as otherwise democratic are dictatorships because there has yet to be an alternation in power since their incumbent government has never lost an election. Therefore, it is impossible to know if the regime is a democracy or a dictatorship, so DD Index considers them dictatorships until an alternation in power occurs.
+
+
+== Democracy classification ==
+
+Democracies are classified by the rules in which executives can be appointed or removed and can be either presidential, mixed or semi-presidential, or parliamentary.:454 It is important to note that these names do not have to correspond to the official or colloquial titles of any of the countries offices. For example, DD could classify a country which has a legislative assembly whose official name is "the parliament" but still classify it in any of the three categories. The classification depends on the rules outlining the relationship between a country's government, legislative assembly (often called the legislature), and head of state.:454 The government is the chief executive the heads of the executive departments. The chief executive can take many names including chancellor, prime minister, or premier and the heads of the executive departments can bear different names and be called different things. In the United Kingdom, for example, the chief executive is the prime minister, and the ministers are the heads of the executive departments, which together compose the government. 
+
+
+=== Legislative responsibility ===
+The first distinction made is whether a country has a government has legislative responsibility, i.e. whether a majority vote in the legislature can remove the sitting government without cause. The required majority needed to remove the sitting government varies between countries but is termed a vote of no confidence.:455 Some countries (such as Spain, Belgium, Germany, and Israel) require that the vote of no confidence also specify who is going to replace the sitting government to minimize the time without an interim government, essentially replacing one government with another. This type of vote is termed a constructive vote of no confidence.:455 Sometimes sitting governments will attach a vote of no confidence clause to a piece of legislation they want passed, effectively tying the survival of the government on the piece of legislation.:456
+
+
+=== Head of state ===
+The second distinction made is whether the head of state is popularly elected for a fixed term. Who the head of state is can vary between countries. The head of state can be unelected, and the country still classified a democracy if it still meets all four of DD's criteria as the head of state is not used to classify countries as being either democracies or dictatorships but instead to distinguish between democracies. Popularly elected means that the head of state is directly elected by the citizens or elected by an assembly which then elects them (an example being the electoral college in the United States). In Germany, the head of state is elected by regional legislatures and not popularly elected.:457 It is important to note that countries may have an office called "president" can still have the office be unelected or have the office refer to the chief executive. If the head of state is popularly elected, they are often called a president, and if they are not, they are often called a monarch. However, this can be confusing as some countries (e.g. Germany) have a head of state which is elected but not popularly but is called the president. Names alone are not how DD classifies democracies. It focuses instead on the powers and responsibilities of offices to classify and not the official name. The phrase "fixed term" indicates the once the head of state is chosen, they serve a known and a limited number of years before another election is held, and they cannot be removed from the office in the meantime.:456The main job of the head of state is to pick the formateur. It is the person who tries to form a government, typically immediately following an election.:465  Some countries delegate the job of picking the formateur away one step to reduce political manipulation and so have an informateur whose job is to pick the formateur. More countries, such as Greece and Bulgaria, still delegate the power of choosing the formateur away entirely and opt for an automated process by which the head of state must choose the head of the party with the highest number of seats in the legislature as the formateur. Typically, heads of state choose the formateur as the head of the party which holds the most seats in the legislature.
+
+
+=== Classification ===
+The first distinction made is whether a democracy's government is responsible to the legislature. If it is not responsible, it is a presidential democracy. If it is, then a further distinction is made between democracies where the head of state is popularly elected and those where the head of state is not popularly elected. If the head of state is popularly elected for a fixed term then, the democracy is mixed or semi-presidential. If the head of state serves for life or is not popularly elected or a fixed term, then the democracy is parliamentary.The table below offers a full list of which countries are what type of democracy. Keep note that the head of state, chief executive, government, and legislatures can have their official names be seemingly contradictory to this classification. The name a democracy gives itself or its office does not indicate what type of democracy it is.
+
+
+=== Definitions ===
+A presidential democracy has a government that does not need the majority support of a legislature to stay in power. A semi-presidential (mixed) democracy has a government that needs the majority of support from a legislature to exist and whose head of state is popularly elected for a fixed term. Parliamentary democracy is the same as semi-presidential but has heads of state which are not popularly elected for a fixed term, typically either monarchs or officials not chosen by popular elections. :457
+
+
+== Comparison with other democracy-measuring data sets ==
+The DD dataset is limited to 199 countries after 1946, whereas Boix, Miller, & Rosato, 2013 proposed a data set from 1800 to 2007, covering 219 countries. The 2010 version of Polity data series covers 189 countries from 1800 to 2009.Gugiu & Centellas developed the Democracy Cluster Classification Index that integrates five democracy indicators (including the DD dataset, Polity dataset), clustering 24 American and 39 European regimes over 30 years.
+
+
+== See also ==
+Democracy Index
+List of freedom indices
+Polity data series
+List of regimes
+
+
+== References ==
+
+
+== External links ==
+DD dataset and citations 
+ACLP datsset and citations
+Przeworski, Alvarez, Cheibub, and Limongi: Democracy and development From WikiSummary, the Free Social Science Summary Database

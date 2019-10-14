@@ -1,0 +1,11 @@
+Maskin monotonicity is a desired property of voting systems, suggested by Eric Maskin.Each voter reports his entire preference relation over the set of alternatives. The set of reports is called a preference profile. A social choice rule maps the preference profile to the selected alternative.
+For a preference profile P1 with a chosen alternative A1, there is another preference profile P2 such that, the position of A1 relative to each of the other alternatives either improves
+or stays the same as in P1. With Maskin monotonicity, A1 should still be chosen at P2.Maskin monotonicity is a necessary condition for implementability in Nash equilibrium. Moreover, any social choice rule that satisfies Maskin monotonicity and another property called "no veto power" can be implemented in Nash equilibrium form if there are three or more voters.
+
+
+== See also ==
+Monotonicity (mechanism design)
+The monotonicity criterion in voting systems
+
+
+== References ==

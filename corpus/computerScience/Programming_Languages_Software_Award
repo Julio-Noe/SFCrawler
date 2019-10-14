@@ -1,0 +1,192 @@
+SIGPLAN is the Association for Computing Machinery's Special Interest Group on programming languages.
+
+
+== Conferences ==
+Principles of Programming Languages (POPL)
+Programming Language Design and Implementation (PLDI)
+International Symposium on Memory Management (ISMM)
+Languages, Compilers, and Tools for Embedded Systems (LCTES)
+Symposium on Principles and Practice of Parallel Programming (PPoPP)
+International Conference on Functional Programming (ICFP)
+Systems, Programming, Languages, and Applications: Software for Humanity (SPLASH)
+Object-Oriented Programming, Systems, Languages, and Applications (OOPSLA)
+History of Programming Languages (HOPL)
+Dynamic Languages Symposium (DLS)
+
+
+== Associated journals ==
+ACM Transactions on Architecture and Code Optimization
+ACM Transactions on Programming Languages and Systems
+
+
+== Newsletters ==
+SIGPLAN Notices - ISSN 1558-1160 ISSN 0362-1340 - Home page at ACM
+Fortran Forum - ISSN 1061-7264 ISSN 1931-1311
+Lisp Pointers (final issue 1995) - ISSN 1045-3563
+OOPS Messenger (1990–1996) - ISSN 1558-0253 ISSN 1055-6400
+
+
+== Awards ==
+
+
+=== Programming Languages Software Award ===
+2019: Scala (programming language)
+2018: Racket (programming language)
+2016: V8 (JavaScript engine)
+2015: Z3 (theorem prover)
+2014: GNU Compiler Collection (GCC)
+2013: Coq proof assistant
+2012: Jikes Research Virtual Machine (RVM)
+2011: Simon Peyton Jones and Simon Marlow (Glasgow Haskell Compiler)
+2010: Chris Lattner (LLVM)
+
+
+=== Programming Languages Achievement Award ===
+Recognizes an individual or individuals who has made a significant and lasting contribution to the field of programming languages.
+2017: Thomas W. Reps
+2016: Simon Peyton Jones
+2015: Luca Cardelli
+2014: Neil D. Jones
+2013: Patrick Cousot and Radhia Cousot
+2012: Matthias Felleisen
+2011: Tony Hoare
+2010: Gordon Plotkin
+2009: Rod Burstall
+2008: Barbara Liskov
+2007: Niklaus Wirth
+2006: Ron Cytron, Jeanne Ferrante, Barry K. Rosen, Mark Wegman, and Kenneth Zadeck
+2005: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+2004: John Backus
+2003: John C. Reynolds
+2002: John McCarthy
+2001: Robin Milner
+2000: Susan Graham
+1999: Ken Kennedy
+1998: Fran Allen
+1997: Guy Steele
+
+
+=== Robin Milner Young Researcher Award ===
+Recognizes outstanding contributions by young researchers in the area of programming languages. The award is named after the computer scientist Robin Milner.
+2018: Ranjit Jhala
+2017: Derek Dreyer
+2016: Stephanie Weirich
+2015: David Walker
+2014: Sumit Gulwani
+2013: Lars Birkedal
+2012: Shriram Krishnamurthi
+
+
+=== SIGPLAN Doctoral Dissertation Award ===
+The full name of this award is the John C. Reynolds Doctoral Dissertation Award, after the computer scientist John C. Reynolds. It is "presented annually to the author of the outstanding doctoral dissertation in the area of Programming Languages."
+2018: Justin Hsu and David Menendez
+2017: Ramana Kumar
+2016: Shachar Itzhaky and Vilhelm Sjöberg
+2015: Mark Batty
+2014: Aaron Turon
+2013: Patrick Rondon
+2012: Dan Marino
+2010: Robert L. Bocchino
+2009: Akash Lai and William Thies
+2008: Michael Bond and Viktor Vafeiadis
+2007: Swarat Chaudhuri
+2006: Xiangyu Zhang
+2005: Sumit Gulwani
+2003: Godmar Back
+2002: Michael Hicks
+2001: Rastislav Bodik
+
+
+=== SIGPLAN Distinguished Service Award ===
+2016: Phil Wadler
+2015: Dan Grossman
+2014: Simon Peyton Jones
+2013: Kathleen Fisher
+2012: Jens Palsberg
+2011: Kathryn S. McKinley
+2010: Jack W. Davidson
+2009: Mamdouh Ibrahim
+2008: Michael Burke
+2007: Linda M. Northrop
+2006: Hans  Boehm
+2005: no award made
+2004: Ron Cytron
+2003: Mary Lou Soffa
+2002: Andrew Appel
+2001: Barbara G. Ryder
+2000: David Wise
+1999: Loren Meissner
+1998: Brent Hailpern
+1997: J.A.N. Lee and Jean E. Sammet
+1996: Dick Wexelblat and John Richards
+
+
+=== Most Influential PLDI Paper Award ===
+2017 (for 2007): Valgrind: a framework for heavyweight dynamic binary instrumentation, Nicholas Nethercote, Julian Seward
+2016 (for 2006): DieHard: probabilistic memory safety for unsafe languages, Emery Berger, Benjamin Zorn
+2015 (for 2005): Pin: building customized program analysis tools with dynamic instrumentation, Chi-Keung Luk, Robert Cohn, Robert Muth, Harish Patil, Artur Klauser, Geoff Lowney, Steven Wallace, Vijay Janapa Reddi, and Kim Hazelwood
+2014 (for 2004): Scalable Lock-Free Dynamic Memory Allocation, Maged M. Michael
+2013 (for 2003): The nesC language: A holistic approach to networked embedded systems, David Gay, Philip Levis, J. Robert von Behren, Matt Welsh, Eric Brewer, and David E. Culler
+2012 (for 2002): Extended Static Checking for Java, Cormac Flanagan, K. Rustan M. Leino, Mark Lillibridge, Greg Nelson, James B. Saxe, and Raymie Stata
+2011 (for 2001): Automatic predicate abstraction of C programs, Thomas Ball, Rupak Majumdar, Todd Millstein, and Sriram K. Rajamani
+2010 (for 2000): Dynamo: A Transparent Dynamic Optimization System, Vasanth Bala, Evelyn Duesterwald, Sanjeev Banerji
+2009 (for 1999): A Fast Fourier Transform Compiler, Matteo Frigo
+2008 (for 1998): The implementation of the Cilk-5 multithreaded language, Matteo Frigo, Charles E. Leiserson, Keith H. Randall
+2007 (for 1997): Exploiting hardware performance counters with flow and context sensitive profiling, Glenn Ammons, Thomas Ball, and James R. Larus
+2006 (for 1996): TIL: A Type-Directed Optimizing Compiler for ML, David Tarditi, Greg Morrisett, Perry Cheng, Christopher Stone, Robert Harper, and Peter Lee
+2005 (for 1995): Selective Specialization for Object-Oriented Languages, Jeffrey Dean, Craig Chambers, and David Grove
+2004 (for 1994): ATOM: a system for building customized program analysis tools, Amitabh Srivastava and Alan Eustace
+2003 (for 1993): Space Efficient Conservative Garbage Collection, Hans  Boehm
+2002 (for 1992): Lazy Code Motion, Jens Knoop, Oliver Rüthing, Bernhard Steffen
+2001 (for 1991): A data locality optimizing algorithm, Michael E. Wolf and Monica S. Lam
+2000 (for 1990): Profile guided code positioning, Karl Pettis and Robert C. Hansen
+
+
+=== Most Influential POPL Paper Award ===
+2018 (for 2008): Multiparty asynchronous session types, Kohei Honda, Nobuko Yoshida, Marco Carbone
+2017 (for 2007): JavaScript Instrumentation for Browser Security, Dachuan Yu, Ajay Chander, Nayeem Islam, Igor Serikov
+2016 (for 2006): Formal certification of a compiler back-end or: programming a compiler with a proof assistant, Xavier Leroy
+2015 (for 2005): Combinators for Bidirectional Tree Transformations: A Linguistic Approach to the View Update Problem, Nate Foster, Michael B. Greenwald, Jonathan T. Moore, Benjamin C. Pierce, Alan Schmitt
+2014 (for 2004): Abstractions from proofs,  Thomas Henzinger, Ranjit Jhala, Rupak Majumdar, Kenneth McMillan
+2013 (for 2003): A real-time garbage collector with low overhead and consistent utilization, David F. Bacon, Perry Cheng, VT Rajan
+2012 (for 2002): CCured: Type-Safe Retrofitting of Legacy Code, George C. Necula, Scott McPeak, and Westley Weimer
+2011 (for 2001): BI as an Assertion Language for Mutable Data Structures, Samin Ishtiaq and Peter W. O'Hearn
+2010 (for 2000): Anytime, Anywhere: Modal Logics for Mobile Ambients, Luca Cardelli and Andrew D. Gordon
+2009 (for 1999): JFlow: Practical Mostly-Static Information Flow Control, Andrew C. Myers
+2008 (for 1998): From System F to Typed Assembly Language, Greg Morrisett, David Walker, Karl Crary, and Neal Glew
+2007 (for 1997): Proof-carrying Code, George Necula
+2006 (for 1996): Points-to Analysis in Almost Linear Time, Bjarne Steensgaard
+2005 (for 1995): A Language with Distributed Scope, Luca Cardelli
+2004 (for 1994): Implementation of the Typed Call-by-Value lambda-calculus using a Stack of Regions, Mads Tofte and Jean-Pierre Talpin
+2003 (for 1993): Imperative functional programming, Simon Peyton Jones and Philip Wadler
+
+
+=== Most Influential OOPSLA Paper Award ===
+2017 (for 2007): Statistically Rigorous Java Performance Evaluation, Andy Georges, Dries Buytaert, Lieven Eeckhout
+2016 (for 2006): The DaCapo benchmarks: Java benchmarking development and analysis, Stephen M. Blackburn, Robin Garner, Chris Hoffmann, Asjad M. Khan, Kathryn S. McKinley, Rotem Bentzur, Amer Diwan, Daniel Feinberg, Daniel Frampton, Samuel Z. Guyer, Martin Hirzel, Antony Hosking, Maria Jump, Han Lee, J. Eliot B. Moss, Aashish Phansalkar, Darko Stefanović, Thomas VanDrunen, Daniel von Dincklage, Ben Wiedermann
+2015 (for 2005): X10: An Object-Oriented Approach to Non-Uniform Cluster Computing, Philippe Charles, Christian Grothoff, Vijay Saraswat, Christopher Donawa, Allan Kielstra, Kemal Ebcioglu, Christoph von Praun, and Vivek Sarkar
+2014 (for 2004): Mirrors: Design Principles for Meta-level Facilities of Object-Oriented Programming Languages, Gilad Bracha and David Ungar
+2013 (for 2003): Language Support for Lightweight Transactions, Tim Harris and Keir Fraser
+2012 (for 2002): Reconsidering Custom Memory Allocation, Emery D. Berger, Benjamin G. Zorn, and Kathryn S. McKinley
+2010 (for 2000): Adaptive Optimization in the Jalapeño JVM, Matthew Arnold, Stephen Fink, David Grove, Michael Hind, and Peter F. Sweeney
+2009 (for 1999): Implementing Jalapeño in Java, Bowen Alpern, C. R. Attanasio, John J. Barton, Anthony Cocchi, Susan Flynn Hummel, Derek Lieber, Ton Ngo, Mark Mergen, Janice C. Shepherd, and Stephen Smith
+2008 (for 1998): Ownership Types for Flexible Alias Protection, David G. Clarke, John M. Potter, and James Noble
+2007 (for 1997): Call Graph Construction in Object-Oriented Languages, David Grove, Greg DeFouw, Jeffrey Dean, and Craig Chambers
+2006 (for 1986–1996):
+Subject Oriented Programming: A Critique of Pure Objects, William Harrison and Harold Ossher
+Concepts and Experiments in Computational Reflection, Pattie Maes
+Self: The Power of Simplicity, David Ungar and Randall B. Smith
+
+
+=== Most Influential ICFP Paper Award ===
+2009 (for 1999): Haskell and XML: Generic combinators or type-based translation?, Malcolm Wallace and Colin Runciman
+2008 (for 1998): Cayenne — a language with dependent types, Lennart Augustsson
+2007 (for 1997): Functional Reactive Animation, Conal Elliott and Paul Hudak
+2006 (for 1996): Optimality and inefficiency: what isn't a cost model of the lambda calculus?, Julia L. Lawall and Harry G. Mairson
+
+
+== References ==
+
+
+== External links ==
+SIGPLAN homepage

@@ -1,0 +1,48 @@
+The New Zealand Attitudes and Values Study (NZAVS) is a longitudinal study conducted in New Zealand. The NZAVS was started in 2009 by Chris Sibley, a professor in psychology at the University of Auckland. The NZAVS was inspired by major social surveys conducted internationally, such as the National Election Studies, the World Values Survey and the General Social Survey, and aims to provide a similar resource for New Zealand. As of November 8, 2016, the NZAVS research team had published 100 peer reviewed publications using data from the study.
+
+
+== Sample details ==
+
+
+=== Questionnaires ===
+The NZAVS uses a self-report inventory to collect information. The questionnaire is administered via both postal mail and an online survey. The NZAVS includes a large range of scales including those measuring self-esteem, national and personal wellbeing, satisfaction with life, religious beliefs, personality, psychological distress, ideologies, political and environmental attitudes.
+
+
+=== Data structure ===
+The NZAVS has a nested data structure. Participants are modeled as the Level 1 or lower-level unit. The NZAVS contains geographic information from mesh blocks for each participant. Mesh blocks contain information about each participants local neighborhood based on census data from each meshblock. This information is modeled as the Level 2, or higher-level unit in many of the NZAVS research papers. Mesh blocks are small geographic area units, each containing roughly 100 people, with defined boundaries. Each mesh block is in turn nested within larger census area units (CAU; roughly 1000 people in size). Statistics New Zealand provide detailed demographic information about the population  of each mesh block based on census data, such as median income, ethnic proportions and size, religious affiliation, etc. This information is integrated into the NZAVS datasets. Of particular note are the New Zealand Deprivation Index (an index of poverty or socio-economic status based on a principal components analysis of indicators of deprivation for each area unit); and a CAU-based Gini coefficient derived by Chris Sibley for use in the NZAVS, which provides an indicator of the income disparity within each region of New Zealand.
+
+
+=== Data analysis ===
+The NZAVS is a quantitative study, and data analysis for the NZAVS is conducted primarily in Mplus. Scripts outlining the statistical models developed using data from the NZAVS are provided online at the official NZAVS website. These scripts are provided to help promote research collaboration and transparency in data analysis. The study employs many different types of statistical analyses, including Latent Growth Modeling, Bayesian Linear Regression, Structural Equation Modeling, and analyses employing Mixture model and Multilevel model designs.
+
+
+== Key findings ==
+The NZAVS has been central in answering a variety of important research questions. This section lists research findings from the NZAVS that have received academic and media attention.
+
+
+=== Religion and the Christchurch earthquakes ===
+NZAVS researchers Joseph Bulbulia and Chris Sibley published a study in PLoS ONE looking at how the Christchurch earthquakes may be linked to change in religious affiliation.
+
+
+=== Personality in New Zealand ===
+Data from the NZAVS has also been used to help validate and extend a public domain personality test assessing the Big-Six dimensions of personality in New Zealand. This personality scale is known as the Mini-IPIP6, and is based on the International Personality Item Pool. The Mini-IPIP6 is a 24-item self-report personality measure, which extends the original Big-Five Mini-IPIP scale to also include a sixth dimension of personality based on the HEXACO model of personality structure. The Mini-IPIP provides marker items for the following six dimensions of personality: Extraversion, Agreeableness, Conscientiousness, Neuroticism, Openness to Experience, and Honesty-humility. The Mini-IPIP6 has been validated for use in New Zealand in a series of peer-reviewed publications, and is in the public domain.
+
+
+=== The Multi-dimensional Model of Māori and Cultural Engagement ===
+NZAVS researchers, Carla Houkamau and Chris Sibley, have also used data from the NZAVS to help design programmes that benefit Māori people particularly in relation to health and education. They studied Māori identity and the factors that make Māori feel positive about themselves and Māori culture. This identity scale is known as the Multi-dimensional Model of Maori Identity and Cultural Engagement (MMM-ICE) and consists of six dimensions;(1) Group Membership Evaluation, (2) Socio- Political Consciousness, (3) Cultural Efficacy and Active Identity Engagement, (4) Spirituality, (5) Interdependent Self-Concept, and (6) Authenticity Beliefs.
+
+
+=== The Pacific Identity and Wellbeing Scale ===
+Sam Manuela, a doctoral candidate from the University of Auckland, used the NZAVS data to develop a culturally sensitive self-report inventory to assess identity and subjective well-being among Pacific populations in New Zealand. The measure, known as The Pacific Identity and Wellbeing Scale, assesses five distinct, yet interconnected dimensions of Pacific identity and wellbeing; (1) Group Membership Evaluation, (2) Pacific Connectedness and Belonging, (3) Religious Centrality and Embeddedness, (4) Perceived Familial Wellbeing, (5) Perceived Societal Wellbeing.
+
+
+== See also ==
+Dunedin Multidisciplinary Health and Development Study - another study on personality based in New Zealand
+
+
+== References ==
+
+
+== External links ==
+New Zealand Attitudes and Values Study
+The New Zealand Attitudes and Values Study Facebook Page

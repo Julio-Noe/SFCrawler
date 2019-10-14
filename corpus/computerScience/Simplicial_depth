@@ -1,0 +1,300 @@
+In robust statistics and computational geometry, simplicial depth is a measure of central tendency determined by the simplices that contain a given point. For the Euclidean plane, it counts the number of triangles of sample points that contain a given point.
+
+
+== Definition ==
+The simplicial depth of a point 
+  
+    
+      
+        p
+      
+    
+    {\displaystyle p}
+   in 
+  
+    
+      
+        d
+      
+    
+    {\displaystyle d}
+  -dimensional Euclidean space, with respect to a set of sample points in that space, is the number of 
+  
+    
+      
+        d
+      
+    
+    {\displaystyle d}
+  -dimensional simplices (the convex hulls of sets of 
+  
+    
+      
+        d
+        +
+        1
+      
+    
+    {\displaystyle d+1}
+   sample points) that contain 
+  
+    
+      
+        p
+      
+    
+    {\displaystyle p}
+  .
+The same notion can be generalized to any probability distribution on points of the plane, not just the empirical distribution given by a set of sample points, by defining the depth to be the probability that a randomly chosen 
+  
+    
+      
+        (
+        d
+        +
+        1
+        )
+      
+    
+    {\displaystyle (d+1)}
+  -tuple of points has a convex hull that contains 
+  
+    
+      
+        p
+      
+    
+    {\displaystyle p}
+  . This probability can be calculated, from the number of simplices that contain 
+  
+    
+      
+        p
+      
+    
+    {\displaystyle p}
+  , by dividing by 
+  
+    
+      
+        
+          
+            
+              
+                (
+              
+              
+                n
+                
+                  d
+                  +
+                  1
+                
+              
+              
+                )
+              
+            
+          
+        
+      
+    
+    {\displaystyle {\tbinom {n}{d+1}}}
+   where 
+  
+    
+      
+        n
+      
+    
+    {\displaystyle n}
+   is the number of sample points.[L88][L90]Under the standard definition of simplicial depth, the simplices that have 
+  
+    
+      
+        p
+      
+    
+    {\displaystyle p}
+   on their boundaries count equally much as the simplices with 
+  
+    
+      
+        p
+      
+    
+    {\displaystyle p}
+   in their interiors. In order to avoid some problematic behavior of this definition, Burr, Rafalin & Souvaine (2004) proposed a modified definition of simplicial depth, in which the simplices with 
+  
+    
+      
+        p
+      
+    
+    {\displaystyle p}
+   on their boundaries count only half as much. Equivalently, their definition is the average of the number of open simplices and the number of closed simplices that contain 
+  
+    
+      
+        p
+      
+    
+    {\displaystyle p}
+  .[BRS]
+
+
+== Properties ==
+Simplicial depth is robust against outliers: if a set of sample points is represented by the point of maximum depth, then up to a constant fraction of the sample points can be arbitrarily corrupted without significantly changing the location of the representative point. It is also invariant under affine transformations of the plane.[D][ZS][BRS]However, simplicial depth fails to have some other desirable properties for robust measures of central tendency. When applied to centrally symmetric distributions, it is not necessarily the case that there is a unique point of maximum depth in the center of the distribution. And, along a ray from the point of maximum depth, it is not necessarily the case that the simplicial depth decreases monotonically.[ZS][BRS]
+
+
+== Algorithms ==
+For sets of 
+  
+    
+      
+        n
+      
+    
+    {\displaystyle n}
+   sample points in the Euclidean plane (
+  
+    
+      
+        d
+        =
+        2
+      
+    
+    {\displaystyle d=2}
+  ),
+the simplicial depth of any other point 
+  
+    
+      
+        p
+      
+    
+    {\displaystyle p}
+   can be computed in time 
+  
+    
+      
+        O
+        (
+        n
+        log
+        ⁡
+        n
+        )
+      
+    
+    {\displaystyle O(n\log n)}
+  ,[KM][GSW][RR]
+optimal in some models of computation.[ACG]
+In three dimensions, the same problem can be solved in time 
+  
+    
+      
+        O
+        (
+        
+          n
+          
+            2
+          
+        
+        )
+      
+    
+    {\displaystyle O(n^{2})}
+  .[CO]
+It possible to construct a data structure using ε-nets that can approximate the simplicial depth of a query point (given either a fixed set of samples, or a set of samples undergoing point insertions) in near-constant time per query, in any dimension, with an approximation whose error is a small fraction of the total number of triangles determined by the samples.[BCE] In two dimensions, a more accurate approximation algorithm is known, for which the approximation error is a small multiple of the simplicial depth itself. The same methods also lead to fast approximation algorithms in higher dimensions.[ASS]Spherical depth, 
+  
+    
+      
+        S
+        p
+        h
+        D
+        (
+        q
+        ;
+        F
+        )
+      
+    
+    {\displaystyle SphD(q;F)}
+   is defined to be the probability that a point 
+  
+    
+      
+        q
+      
+    
+    {\displaystyle q}
+   is contained inside a random closed hyperball obtained from a pair of points from 
+  
+    
+      
+        F
+        ∈
+        
+          
+            R
+          
+          
+            n
+          
+        
+      
+    
+    {\displaystyle F\in \mathbb {R} ^{n}}
+  . While the time complexity of most other data depths grows exponentially, the spherical depth grows only linearly in the dimension 
+  
+    
+      
+        d
+      
+    
+    {\displaystyle d}
+   – the straightforward algorithm for computing the spherical depth takes 
+  
+    
+      
+        O
+        (
+        d
+        
+          n
+          
+            2
+          
+        
+        )
+      
+    
+    {\displaystyle O(dn^{2})}
+  . Simplicial depth (SD) is linearly bounded by spherical depth (
+  
+    
+      
+        S
+        p
+        h
+        D
+        ≥
+        
+          
+            2
+            3
+          
+        
+        S
+        D
+      
+    
+    {\displaystyle SphD\geq {\frac {2}{3}}SD}
+  ).[BS]
+
+
+== References ==

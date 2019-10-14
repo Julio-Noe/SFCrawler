@@ -1,0 +1,27 @@
+In distributed programming, a portable object is an object which can be accessed through a normal method call while possibly residing in memory on another computer.  It is portable in the sense that it moves from machine to machine, irrespective of operating system or computer architecture.  This mobility is the end goal of many remote procedure call systems.
+The advantage of portable objects is that they are easy to use and very expressive, allowing programmers to be completely unaware that objects reside in other locations.  Detractors cite this as a fault, as naïve programmers will not expect network-related errors or the unbounded nondeterminism associated with large networks.
+
+
+== See also ==
+CORBA Common Object Request Broker Architecture, cross-language cross-platform object model
+Portable Object Adapter part of the CORBA standard
+D-Bus current open cross-language cross-platform Freedesktop.org Object Model
+Bonobo deprecated GNOME cross-language Object Model
+DCOP deprecated KDE interprocess and software componentry communication system
+KParts KDE component framework
+XPCOM Mozilla applications cross-platform Component Object Model
+COM Microsoft Windows only cross-language Object Model
+DCOM Distributed COM, extension making COM able to work in networks
+Common Language Infrastructure current .NET cross-language cross-platform Object Model
+IBM System Object Model SOM, a component system from IBM used in OS/2
+Java Beans
+Java Remote Method Invocation (Java RMI)
+Internet Communications Engine
+Language binding
+Foreign function interface
+Calling convention
+Name mangling
+Application programming interface - API
+Application Binary Interface - ABI
+Comparison of application virtual machines
+SWIG open source automatic interfaces bindings generator from many languages to many languages

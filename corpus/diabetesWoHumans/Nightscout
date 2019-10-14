@@ -1,0 +1,27 @@
+Nightscout is a free and open-source project, and associated social movement, that enables accessing and working with continuous glucose monitor (CGM) data.
+Nightscout software aims to give users access to their real time blood sugar data by putting this data in the cloud. In addition to browser-based data visualization, Nightscout can also be used to review data from a phone or smartwatch, or to remotely monitor CGM data for individuals with type 1 diabetes. Associated with Nightscout software is a broader "CGM in the Cloud" social movement, supporting individuals seeking to access and use realtime CGM data through commercial and do-it-yourself (DIY) approaches.
+
+
+== History ==
+The Nightscout Project traces its origin to February 2013, when the parents of a 4-year-old boy newly diagnosed with type 1 diabetes began using a continuous glucose monitoring system.
+
+This data was inaccessible to the parents when the child was at school – there was no commercially available way to access the data in real time. The boy's father, John Costik, a software engineer, developed software to access and transfer CGM data to cloud computing infrastructure. Costik shared his accomplishment on Twitter and, after others expressed interest, privately shared the source code.
+Costik's uploader was expanded by Lane Desborough and Ross Naylor, to develop "Nightscout": adding a blood glucose chart display that could be viewed throughout a home. Further development to make the software accessible to the general public occurred within a private community of developers, including Ben West, Ross Naylor, Kevin Lee, Jason Calabrese, Jason Adams, and Toby Canning.  Because this software was, in effect, an unlicensed medical device, the community delayed releasing the code as open source to explore and address legal concerns. Once this was done, the combined code was released in 2014 as the Nightscout Project.A website and Facebook groups were also created to support new users. The primary Facebook group for the movement is "CGM in the Cloud", broadly supporting individuals seeking to use realtime CGM data, via commercial and/or DIY methods. As of May 2017, this group has over 23,000 members. In addition a related 501(c)(3) organization, Nightscout Foundation, was formed in 2014 to encourage and support open source technology projects for individuals with Type 1 Diabetes.The #WeAreNotWaiting hashtag used by the group was initially coined by Lane Desborough and Howard Look, in reference to call for a "diabetes data exchange" hosted by Tidepool and DiabetesMine in November 2013.A survey of the Nightscout community indicated that the software was most highly used by parents of young children with type 1 diabetes (less than 12 years of age), but is also used by adolescents and adults.
+
+
+== Regulatory concerns ==
+Because Nightscout software displays information relevant to medical care, there are safety concerns regarding reliability, liability, and regulation. The United States Food and Drug Administration (FDA) expressed concern that a singular entity was needed to review code, monitor safety, and respond to issues. As of 2016, no such entity had arisen, beyond the unstructured approach of community communication channels (e.g. Facebook group and Gitter channel).As a non-commercial open source project, Nightscout software has not been regulated by the FDA. The software is released with a strong disclaimer:
+
+Highly experimental. Not intended for therapy. Use at your own risk. Intended only as an investigational and educational tool to learn about this technology.
+
+
+== Commercial alternatives ==
+In 2015, subsequent to the development of the Nightscout Project, Dexcom released a CGM system that included 'Share', providing software for transferring data to cell phones via Bluetooth, and sharing CGM data with others via cell phone apps.
+In 2017 the company Instead Technologies launched the continuous reading system for Free Freestyle GlucoAngel. In 2018 independent developers connected the GlucoAngel device with NightScout, giving users a new tool
+
+
+== Related projects ==
+The OpenAPS project has extended Nightscout to create a do-it-yourself "artificial pancreas", by automating basal insulin delivery by an insulin pump to create a "closed loop" system.
+
+
+== References ==

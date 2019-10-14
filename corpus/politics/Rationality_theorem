@@ -1,0 +1,706 @@
+In algebra, the rational root theorem (or rational root test, rational zero theorem, rational zero test or p/q theorem) states a constraint on rational solutions of a polynomial equation
+
+  
+    
+      
+        
+          a
+          
+            n
+          
+        
+        
+          x
+          
+            n
+          
+        
+        +
+        
+          a
+          
+            n
+            −
+            1
+          
+        
+        
+          x
+          
+            n
+            −
+            1
+          
+        
+        +
+        ⋯
+        +
+        
+          a
+          
+            0
+          
+        
+        =
+        0
+      
+    
+    {\displaystyle a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots +a_{0}=0}
+  with integer coefficients 
+  
+    
+      
+        
+          a
+          
+            i
+          
+        
+        ∈
+        
+          Z
+        
+      
+    
+    {\displaystyle a_{i}\in \mathbb {Z} }
+   and 
+  
+    
+      
+        
+          a
+          
+            0
+          
+        
+        ,
+        
+          a
+          
+            n
+          
+        
+        ≠
+        0
+      
+    
+    {\displaystyle a_{0},a_{n}\neq 0}
+  . Solutions of the equation are also called roots or zeroes of the polynomial on the left side.
+The theorem states that each rational solution x = p/q, written in lowest terms so that p and q are relatively prime, satisfies:
+
+p is an integer factor of the constant term a0, andq is an integer factor of the leading coefficient an.The rational root theorem is a special case (for a single linear factor) of Gauss's lemma on the factorization of polynomials. The integral root theorem is the special case of the rational root theorem when the leading coefficient is an = 1.
+
+
+== Application ==
+The theorem is used to find all rational roots of a polynomial, if any. It gives a finite number of possible fractions which can be checked to see if they are roots. If a rational root x = r is found, a linear polynomial (x-r) can be factored out of the polynomial using polynomial long division, resulting in a polynomial of lower degree whose roots are also roots of the original polynomial.
+
+
+=== Cubic equation ===
+The general cubic equation
+
+  
+    
+      
+        a
+        
+          x
+          
+            3
+          
+        
+        +
+        b
+        
+          x
+          
+            2
+          
+        
+        +
+        c
+        x
+        +
+        d
+        =
+        0
+      
+    
+    {\displaystyle ax^{3}+bx^{2}+cx+d=0}
+  with integer coefficients has three solutions in the complex plane. If the rational root test finds no rational solutions, then the only way to express the solutions algebraically uses cube roots. But if the test finds a rational solution r, then factoring out (x – r) leaves a quadratic polynomial whose two roots, found with the quadratic formula, are the remaining two roots of the cubic, avoiding cube roots.
+
+
+== Proofs ==
+
+
+=== First proof ===
+Let 
+
+  
+    
+      
+        P
+        (
+        x
+        )
+         
+        =
+         
+        
+          a
+          
+            n
+          
+        
+        
+          x
+          
+            n
+          
+        
+        +
+        
+          a
+          
+            n
+            −
+            1
+          
+        
+        
+          x
+          
+            n
+            −
+            1
+          
+        
+        +
+        ⋯
+        +
+        
+          a
+          
+            1
+          
+        
+        x
+        +
+        
+          a
+          
+            0
+          
+        
+        ,
+        
+        
+          a
+          
+            0
+          
+        
+        ,
+        …
+        
+          a
+          
+            n
+          
+        
+        ∈
+        
+          Z
+        
+        .
+      
+    
+    {\displaystyle P(x)\ =\ a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots +a_{1}x+a_{0},\qquad a_{0},\ldots a_{n}\in \mathbf {Z} .}
+  Suppose P(p/q) = 0 for some coprime p, q ∈ Z:
+
+  
+    
+      
+        P
+        
+          (
+          
+            
+              
+                p
+                q
+              
+            
+          
+          )
+        
+        =
+        
+          a
+          
+            n
+          
+        
+        
+          
+            (
+            
+              
+                
+                  p
+                  q
+                
+              
+            
+            )
+          
+          
+            n
+          
+        
+        +
+        
+          a
+          
+            n
+            −
+            1
+          
+        
+        
+          
+            (
+            
+              
+                
+                  p
+                  q
+                
+              
+            
+            )
+          
+          
+            n
+            −
+            1
+          
+        
+        +
+        ⋯
+        +
+        
+          a
+          
+            1
+          
+        
+        
+          (
+          
+            
+              
+                p
+                q
+              
+            
+          
+          )
+        
+        +
+        
+          a
+          
+            0
+          
+        
+        =
+        0.
+      
+    
+    {\displaystyle P\left({\tfrac {p}{q}}\right)=a_{n}\left({\tfrac {p}{q}}\right)^{n}+a_{n-1}\left({\tfrac {p}{q}}\right)^{n-1}+\cdots +a_{1}\left({\tfrac {p}{q}}\right)+a_{0}=0.}
+  If we multiply both sides by qn, shift the constant term to the right side, and factor out p on the left side, we get
+
+  
+    
+      
+        p
+        
+          (
+          
+            
+              a
+              
+                n
+              
+            
+            
+              p
+              
+                n
+                −
+                1
+              
+            
+            +
+            
+              a
+              
+                n
+                −
+                1
+              
+            
+            q
+            
+              p
+              
+                n
+                −
+                2
+              
+            
+            +
+            ⋯
+            +
+            
+              a
+              
+                1
+              
+            
+            
+              q
+              
+                n
+                −
+                1
+              
+            
+          
+          )
+        
+        =
+        −
+        
+          a
+          
+            0
+          
+        
+        
+          q
+          
+            n
+          
+        
+        .
+      
+    
+    {\displaystyle p\left(a_{n}p^{n-1}+a_{n-1}qp^{n-2}+\cdots +a_{1}q^{n-1}\right)=-a_{0}q^{n}.}
+  We see that p divides a0qn. But p is coprime to q and therefore to qn, so by Euclid's lemma p must divide the remaining factor a0 of the product.
+If we instead shift the leading term to the right side and factor out q on the left side, we get
+
+  
+    
+      
+        q
+        
+          (
+          
+            
+              a
+              
+                n
+                −
+                1
+              
+            
+            
+              p
+              
+                n
+                −
+                1
+              
+            
+            +
+            
+              a
+              
+                n
+                −
+                2
+              
+            
+            q
+            
+              p
+              
+                n
+                −
+                2
+              
+            
+            +
+            ⋯
+            +
+            
+              a
+              
+                0
+              
+            
+            
+              q
+              
+                n
+                −
+                1
+              
+            
+          
+          )
+        
+        =
+        −
+        
+          a
+          
+            n
+          
+        
+        
+          p
+          
+            n
+          
+        
+        .
+      
+    
+    {\displaystyle q\left(a_{n-1}p^{n-1}+a_{n-2}qp^{n-2}+\cdots +a_{0}q^{n-1}\right)=-a_{n}p^{n}.}
+  Reasoning as before, we conclude that q divides an.
+
+
+=== Proof using Gauss' lemma ===
+Should there be a nontrivial factor dividing all the coefficients of the polynomial, then one can divide by the greatest common divisor of the coefficients so as to obtain a primitive polynomial in the sense of Gauss's lemma; this does not alter the set of rational roots and only strengthens the divisibility conditions. That lemma says that if the polynomial factors in Q[X], then it also factors in Z[X] as a product of primitive polynomials. Now any rational root p/q corresponds to a factor of degree 1 in Q[X] of the polynomial, and its primitive representative is then qx − p, assuming that p and q are coprime. But any multiple in Z[X] of qx − p has leading term divisible by q and constant term divisible by p, which proves the statement. This argument shows that more generally, any irreducible factor of P can be supposed to have integer coefficients, and leading and constant coefficients dividing the corresponding coefficients of P.
+
+
+== Examples ==
+
+
+=== First ===
+In the polynomial
+
+  
+    
+      
+        2
+        
+          x
+          
+            3
+          
+        
+        +
+        x
+        −
+        1
+        ,
+      
+    
+    {\displaystyle 2x^{3}+x-1,}
+  any rational root fully reduced would have to have a numerator that divides evenly into 1 and a denominator that divides evenly into 2. Hence the only possible rational roots are ±1/2 and ±1; since neither of these equates the polynomial to zero, it has no rational roots.
+
+
+=== Second ===
+In the polynomial
+
+  
+    
+      
+        
+          x
+          
+            3
+          
+        
+        −
+        7
+        x
+        +
+        6
+      
+    
+    {\displaystyle x^{3}-7x+6}
+  the only possible rational roots would have a numerator that divides 6 and a denominator that divides 1, limiting the possibilities to ±1, ±2, ±3, and ±6. Of these, 1, 2, and –3 equate the polynomial to zero, and hence are its rational roots. (In fact these are its only roots since a cubic has only three roots; in general, a polynomial could have some rational and some irrational roots.)
+
+
+=== Third ===
+Every rational root of the polynomial
+
+  
+    
+      
+        3
+        
+          x
+          
+            3
+          
+        
+        −
+        5
+        
+          x
+          
+            2
+          
+        
+        +
+        5
+        x
+        −
+        2
+      
+    
+    {\displaystyle 3x^{3}-5x^{2}+5x-2}
+  must be among the numbers symbolically indicated by:
+
+  
+    
+      
+        ±
+        
+          
+            
+              
+                1
+                ,
+                2
+              
+              
+                1
+                ,
+                3
+              
+            
+          
+        
+         
+        =
+         
+        ±
+        {
+        1
+        ,
+        2
+        ,
+        
+          
+            
+              1
+              3
+            
+          
+        
+        ,
+        
+          
+            
+              2
+              3
+            
+          
+        
+        }
+        .
+      
+    
+    {\displaystyle \pm {\tfrac {1,2}{1,3}}\ =\ \pm \{1,2,{\tfrac {1}{3}},{\tfrac {2}{3}}\}.}
+  These 8 root candidates x = r can be tested by evaluating P(r), for example using Horner's method. It turns out there is exactly one with P(r) = 0. 
+This process may be made more efficient: if P(r) ≠ 0, it can be used to shorten the list of remaining candidates. For example, x = 1 does not work, as P(1) = 1. Substituting x = 1 + t yields a polynomial in t with constant term P(1) = 1, while the coefficient of t3 remains the same as the coefficient of x3. Applying the rational root theorem thus yields the  possible roots 
+  
+    
+      
+        t
+        =
+        ±
+        
+          
+            
+              1
+              
+                1
+                ,
+                3
+              
+            
+          
+        
+      
+    
+    {\displaystyle t=\pm {\tfrac {1}{1,3}}}
+  , so that 
+
+  
+    
+      
+        x
+        =
+        1
+        +
+        t
+        =
+        2
+        ,
+        0
+        ,
+        
+          
+            
+              4
+              3
+            
+          
+        
+        ,
+        
+          
+            
+              2
+              3
+            
+          
+        
+        .
+      
+    
+    {\displaystyle x=1+t=2,0,{\tfrac {4}{3}},{\tfrac {2}{3}}.}
+  True roots must occur on both lists, so list of rational root candidates has shrunk to just x = 2 and x = 2/3.
+If k ≥ 1 rational roots are found, Horner's method will also yield a polynomial of degree n − k whose roots, together with the rational roots, are exactly the roots of the original polynomial. If none of the candidates is a solution, there can be no rational solution.
+
+
+== See also ==
+Integrally closed domain
+Descartes' rule of signs
+Gauss–Lucas theorem
+Properties of polynomial roots
+Content (algebra)
+Eisenstein's criterion
+
+
+== Notes ==
+
+
+== References ==
+Charles D. Miller, Margaret L. Lial, David I. Schneider: Fundamentals of College Algebra. Scott & Foresman/Little & Brown Higher Education, 3rd edition 1990, ISBN 0-673-38638-4, pp. 216–221
+Phillip S. Jones, Jack D. Bedient: The historical roots of elementary mathematics. Dover Courier Publications 1998, ISBN 0-486-25563-8, pp. 116–117  (online copy, p. 116, at Google Books)
+Ron Larson: Calculus: An Applied Approach. Cengage Learning 2007, ISBN 978-0-618-95825-2, pp. 23–24  (online copy, p. 23, at Google Books)
+
+
+== External links ==
+Weisstein, Eric W. "Rational Zero Theorem". MathWorld.
+RationalRootTheorem at PlanetMath
+Another proof that nth roots of integers are irrational, except for perfect nth powers by Scott E. Brodie
+The Rational Roots Test at purplemath.com

@@ -1,0 +1,9 @@
+Structured content is information or content that is  organized in a predictable way and is usually classified with metadata. XML is a common storage format, but structured content can also be stored in other standard or proprietary formats.
+When working in structured content, writers need to build the structure of their content as well as add the text, images, etc. They build the structure by adding elements, and there are elements for different types of content. The structure must be valid according to the standard being used, and it is often enforced by the authoring tool. This helps to ensure consistency, as writers must use the appropriate elements in a consistent way.
+
+
+== See also ==
+Structure mining
+
+
+== References ==

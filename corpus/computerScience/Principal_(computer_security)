@@ -1,0 +1,10 @@
+A principal in computer security is an entity that can be authenticated by a computer system or network. It is referred to as a security principal in Java and Microsoft literature.Principals can be individual people, computers, services, computational entities such as processes and threads, or any group of such things. They need to be identified and authenticated before they can be assigned rights and privileges over resources in the network. A principal typically has an associated identifier (such as a security identifier) that allows it to be referenced for identification or assignment of properties and permissions.
+
+
+== References ==
+
+
+== External links ==
+RFC 2744 - Generic Security Service API Version 2.
+RFC 5397 - WebDAV Current Principal Extension.
+RFC 4121 - The Kerberos Version 5 Generic Security Service Application Program Interface (GSS-API) Mechanism: Version 2.

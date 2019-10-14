@@ -1,0 +1,63 @@
+Munther A. Dahleh (born 1962, Tulkarem, Palestine) is the William Coolidge Professor of Electrical Engineering and Computer Science and Director of the Massachusetts Institute of Technology (MIT) Institute for Data, Systems, and Society (IDSS).
+Prof. Dahleh is internationally known for his contributions to Robust control theory, computational methods for controller design, the interplay between information and control, statistical learning of controlled systems and its relations to model reduction of stochastic systems, the fundamental limits of learning, decisions and risk in networked systems including physical, social, and economic networks with applications to transportation and power networks, and the understanding of the Economics of data and the design of real-time markets for data and digital goods. For his work in these areas, he was awarded the Axelby best paper award four times, the Donald P. Eckman Award for best control engineer under age 35, and the presidential young investigator award. He is a fellow of both the Institute of Electrical and Electronics Engineers (IEEE) and International Federation of Automatic Control (IFAC) societies. Dahleh is a current member of IEEE.
+
+
+== Education ==
+Prof. Dahleh received his BS degree in Electrical Engineering from Texas A&M University (College Station, TX) in 1983, and his Ph.D in Electrical Engineering from Rice University (Houston, TX) in 1987.
+
+
+== Biographical ==
+Dahleh was raised in Amman, Jordan, and moved to the United States when he was 17 years old to attend Texas A&M. He lived in Texas for seven years while earning his degrees in electrical engineering. Following graduation, in 1987 Dahleh joined MIT as an assistant professor, and achieved multiple teaching, research and leadership roles in academia, industry, and business sectors. He currently resides in Cambridge, MA with his wife and their three children.
+
+
+== Research and leadership ==
+In the late 1980s, Dahleh solved the L1 optimal control problem- an open problem at the time that addresses robustness in the presence of persistent disturbances- using linear programming techniques. This work pioneered the development of computational approaches for robust controller synthesis. More recently, his work has advanced the development of a foundational theory for information propagation, decisions, and robustness of large dynamic networks arising in transportation, energy, finance, and social networks. On the applied side, Dahleh has developed and patented a methodology for managing both engine and motor switching in hybrid vehicles based on path characteristics; the patent was co-owned by Ford. He also developed a Robust-Hybrid-Automaton architecture for designing autonomous vehicles that combines planning and control.
+Dahleh is the founding director of the MIT Institute for Data, Systems, and Society(IDSS) effective July 1, 2015. The mission of IDSS is to provide an interdisciplinary home for decision theory, machine learning, statistics, and data science in the context of broad societal challenges. IDSS is a unique, multi-school initiative spanning the five schools of MIT: School of Architecture and Planning, School of Engineering, School of Humanities, Arts, and Social Sciences, Sloan School of Management, and School of Science. MIT's Provost Martin Schmidt announced the newly formed institute as an effort to "create a new entity that focuses on complex socio-technical systems, information and decision systems, and statistics." Dahleh has served as the associate department head of Electrical Engineering & Computer Science (EECS) and acting director of the MIT Engineering Systems Division (ESD), which operated from 1998 to June 30, 2015. He is also a member of MIT’s Laboratory for Information and Decision Systems (LIDS), where he was Associate Director of 2007-2009 and Acting Director in 2010.
+
+
+=== Research interests ===
+Networked Systems: Foundational theory for the interaction between physical, social and information networks, Information propagation, co-design of distributed decisions and incentives, learning network structure from data.
+Fragility and Systemic Risk: The development of a foundational theory for the early detection and control of systemic risk resulting from idiosyncratic disturbance affecting components of a networked system.
+Social Networks: Information cascades in stochastic networks, opinion dynamics, global games in modeling outcomes of crises, incentive mechanisms, interactions with physical systems.
+Economics of Data: Characterization of the value of data, creation of a data market place, generalizations to digital goods.
+The Future Electric Grid: Renewable generation, real-time demand response, impact of storage, market volatility, risk analysis, outages, Market Architecture.
+Transportation Systems: Dynamic models of congestion under disruptions, dependence of fragility on network topology, cascaded failures, value of side information on performance.
+Learning and control of unstructured systems: understanding the interplay between model reduction and learning low dimensional models, learning for control, learning behaviors with types using stochastic jump systems, learning low dimensional Hidden Markov Models.
+
+
+== Industry ==
+Dahleh has served on multiple panels, boards and visiting committees. He is the chair of the visiting committee for Los Alamos National Laboratory, and currently serves on proposal review panels for the National Science Foundation.
+
+Dahleh is currently working with Booz Allen Hamilton, WorldQuant, Thomson Reuters, Ford.
+NASA (JSC) and Draper Labs (1987-1990): Attitude control of the space station, underwater autonomous vehicles.
+Brigham and Women's (1998-2002): Hyperthermia treatment of prostate cancer.
+Crescent Technologies (1996-2000): Founder, Supply chain systems for large-scale production.
+BAE (2009–present): Fast simulations and multi-agent systems.
+Member: Board of Directors, Pointright, MA (2014–present); Advisory Board, EnterWorks, VA (2018-present); Scientific Advisory Board, C6 Bank, Brazil.
+
+
+== In the media ==
+"For his Ph.D in electrical engineering at Rice University" wrote Leda Zimmerman, of RiverRunMedia, for the Connector (MIT News) in 2014, "Dahleh was motivated by the potential for new approaches to control systems for such complex engineering feats as the Boeing 777 and the International Space Station. He created a computational framework for designing feedback control systems in the presence of uncertainty, a mathematical approach that allowed for a much simpler and systematic way to address complex performance requirements without sacrificing robustness or increasing risk. Because his computational formulas streamlined design processes, it became integral in many areas of manufacturing."In an interview with MIT News in 2015, Dahleh explains that “in order to understand things like power outages and bank failures, you still need electrical engineers and economists — but today you also need anthropologists and data scientists, too. Our ability to collect and aggregate data is already well beyond our ability to understand what it could tell us — and no single discipline, on its own, holds the keys to solving this problem.”Introducing Dahleh as the keynote speaker of WEP2018, Jeff S. Shamma, Prof. Electrical Engineering at King Abdullah University of Science and Technology (KAUST) in Saudi Arabia, described Dahleh's work with IDSS as "working on how humans and machines make decisions together." Dahleh continued by speaking about the "networks that we are experiencing these days, how these networks have fragilities, and how these fragilities can be either mitigated or exemplified because of the human interaction."
+
+
+== Awards ==
+The IFAC Fellow Award, in 2016, "for innovative applications of advanced control and signal processing methods that have been commercialized worldwide", awarded by the International Federation of Automatic Control (IFAC).
+The George S. Axelby Outstanding Paper Award, awarded by the IEEE Control Systems Society (CSS), awarded on four papers: in 2015 for Robust Distributed Routing in Dynamical Networks-Part II: Strong Resilience, Equilibrium Selection and Cascaded Failures (with Como, Savla, Acemoglu, Frazzoli); 2010 for Feedback Control in the Presence of Noisy Channels: 'Bode-Like' Fundamental Limitations of Performance (with Martins); 2004 for Distributed Control of Spatially Invariant Systems (with Bamieh and Paganini); 1990 for L1-Optimal Feedback Controllers for MIMO Discrete-Time Systems (with Pearson). The award is given to recognize outstanding papers published in the IEEE Transactions on Automatic Control. The IEEE Control Systems Society (CSS) "presents several awards annually for technical achievements in the areas of interest to the Society, as well as awards for service to the Society."
+The Hugo Schuck Award for Theory, in 2008 for Fundamental Limitations of Performance in the Presence of Finite Capacity Feedback (with Martins), awarded by The American Automatic Control Council, in recognition of "excellence in scientific, technological, or educational contributions to automatic control."
+The Donald P. Eckman Award, in 1993, awarded by the American Automatic Control Council, for the best control engineer, under the age of 35. The Eckman Award recognizes an outstanding young engineer in the field of automatic control.
+
+
+== Selected publications ==
+M.A. Dahleh and I. Diaz-Bobillo. “Control of Uncertain Systems: A Linear Programming Approach,”Prentice-Hall, 1995. ISBN-13: 978-0132806459
+N. Elia, and M. A. Dahleh. “Computational Methods for Controller Design”, Lecture notes in Information Sciences Series, Springer Ver-Lag, 1998. ISBN-13: 978-1852330750
+M.A. Dahleh, M. Dahleh, and G. Verghese. “Lectures on Dynamic Systems and Control”, In-progress, see on-line notes.
+M. A. Dahleh, “11 Robust Control: Theory, Computation and Design.” Control Handbook, CRC Press, pp. 27–44, 1995. ISBN-13: 978-0849385704
+
+
+== Notes and references ==
+
+
+== External links ==
+Prof. Dahleh's website
+Prof. Dahleh's CV and biographical information
+Google Scholar

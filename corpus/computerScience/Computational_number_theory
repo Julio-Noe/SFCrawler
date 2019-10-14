@@ -1,0 +1,52 @@
+In mathematics and computer science, computational number theory, also known as algorithmic number theory, is the study of algorithms for performing number theoretic computations. The aim of the computational number theory is to study the most relevant algorithm from the number theory.
+
+
+== Algorithms ==
+There are many algorithms in the computational number theory. The following are some of the algorithms and their complexities:
+
+
+=== Multiplication ===
+The lower bound for the computational complexity of multiplication has been a focus since the first computer appeared. The standard multiplication algorithm has complexity O(n²), but the time complexity has been long conjectured to be O(n log(n)), which was proved in 2019.
+
+
+=== Exponential ===
+As the multiplication, exponential has been an aim  for the number theory. If we try to compute an exponential operation with successive multiplication, we get a complexity as same as the multiplication with the standard algorithm (O(n²)). To improve this, we can use the repeated multiplication and reduction algorithm. With this, we reduce the complexity to O(M(n) 2k). Other algorithms are Exponentiation by squaring or Montgomery reduction that reduce the complexity to O(M(n) k).
+
+
+=== Primality test ===
+A very important part of the computational number theory is to know if a number is prime. This can be difficult because it requires a large amount of computer power to prove primality in a large number.
+An easier algorithm to help identify if a number is prime is a successive division by all of its lower numbers. If we depart from that, the standard division takes a complexity of O(n2). If we want to know if a number n is prime, then the global complexity is O(n × n2). To improve this, we can go to AKS primality test, and if we assume Agrawal's conjecture, the complexity is O((log n)3); otherwise it takes O((log n)6).
+
+
+=== Integer factorials ===
+The factorial is the product of all the positive integer numbers from 1 to the number n.
+With successive multiplication, the factorial can be found using a complexity of O(n × n2)). With the Bottom-up multiplication algorithm, this complexity can be reduced to O(M(m2) log m).
+
+
+=== Greatest common divisor ===
+The greatest common divisor is a main scope of the computational number theory. One method to calculate this is by comparing all the divisors between two numbers (however this is inefficient). The computational number theory has developed algorithms to improve this, such as the Euclidean algorithm, which can compute the GCD with complexity of O(n2). There is also the Binary GCD which can solve this problem with the same complexity. There are other algorithms that go further, such as the Stehlé–Zimmermann algorithm, which can get the GCD with the complexity of O(M(n) log n).
+
+
+== Uses ==
+One of the main uses of algorithms from the computational number theory is for cryptography.
+
+
+== See also ==
+Computational complexity of mathematical operations
+SageMath
+Number Theory Library
+PARI/GP
+Fast Library for Number Theory
+
+
+== Further reading ==
+Eric Bach and Jeffrey Shallit, Algorithmic Number Theory, volume 1: Efficient Algorithms. MIT Press, 1996, ISBN 0-262-02405-5
+D. M. Bressoud (1989). Factorisation and Primality Testing. Springer-Verlag. ISBN 0-387-97040-1.Buhler, J.P.; P., Stevenhagen, eds. (2008). Algorithmic Number Theory: Lattices, Number Fields, Curves and Cryptography. MSRI Publications. 44. Cambridge University Press. ISBN 978-0-521-20833-8. Zbl 1154.11002.
+Henri Cohen, A Course in Computational Algebraic Number Theory, Graduate Texts in Mathematics 138, Springer-Verlag, 1993.
+Richard Crandall and Carl Pomerance, Prime Numbers: A Computational Perspective, Springer-Verlag, 2001, ISBN 0-387-94777-9
+Riesel, Hans (1994). Prime Numbers and Computer Methods for Factorization. Progress in Mathematics. 126 (second ed.). Boston, MA: Birkhäuser. ISBN 0-8176-3743-5. Zbl 0821.11001.
+Victor Shoup, A Computational Introduction to Number Theory and Algebra.  Cambridge, 2005, ISBN 0-521-85154-8
+Samuel S. Wagstaff, Jr. (2013). The Joy of Factoring. Providence, RI: American Mathematical Society. ISBN 978-1-4704-1048-3.
+
+
+== References ==

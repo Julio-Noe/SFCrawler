@@ -1,0 +1,14 @@
+Implicit invocation is a term used by some authors for a style of software architecture in which a system is structured around event handling, using a form of callback. It is closely related to inversion of control and what is known informally as the Hollywood principle.
+
+The idea behind implicit invocation is that instead of invoking a procedure directly, a component can announce (or broadcast) one or more events. Other components in the system can register an interest in an event by associating a procedure with the event. When the event is announced the system itself invokes all of the procedures that have been registered for the event. Thus an event announcement implicitly causes the invocation of procedures in other modules.
+
+Implicit invocation is the core technique behind the observer pattern.
+
+
+== See also ==
+Spring Framework
+
+
+== External links ==
+An Introduction to Software Architecture by David Garlan and Mary Shaw
+An Introduction to Implicit Invocation Architectures by Benjamin Edwards

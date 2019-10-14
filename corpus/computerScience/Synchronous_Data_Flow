@@ -1,0 +1,12 @@
+Synchronous Dataflow is a restriction of Kahn process networks where nodes produce and consume a fixed number of data items per firing. This allows static scheduling.
+
+
+== See also ==
+Dataflow architecture
+
+
+== External links ==
+Synchronous Data Flow, Edward A. Lee and David G. Messerschmitt, 1987
+Embedded Software Systems course - Synchronous Dataflow
+SDF analysis and visualization tools
+Kahn Process Networks and a Reactive Extension

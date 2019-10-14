@@ -1,0 +1,16 @@
+PowerNex is a computer kernel written in D programming language. The first iteration was produced in 2015. The sole developer is Dan Printzell.
+The projects goal is to have a whole OS written in D
+
+
+== See also ==
+TempleOS – another operating system developed largely from scratch
+ToaruOS – a Unix-like independently developed OS
+Redox OS – a Unix-like independently developed OS
+
+
+== References ==
+
+
+== External links ==
+Official website
+PowerNex on GitHub

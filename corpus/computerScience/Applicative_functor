@@ -1,0 +1,10 @@
+In functional programming, an applicative functor is a structure intermediate between functors and monads, in that they allow sequencing of functorial computations (unlike plain functors) but without deciding on which computation to perform on the basis of the result of a previous computation (unlike monads). Applicative functors are the programming equivalent of lax monoidal functors with tensorial strength in category theory.
+Applicative functors were introduced in 2007 by Conor McBride and Ross Paterson in their paper Functional Pearl: applicative programming with effects.Applicative functors first appeared as a library feature in Haskell, but have since spread to other languages as well, including  Idris, Agda, and Scala. Both Glasgow Haskell and Idris now offer language features designed to ease programming with applicative functors.
+In Haskell, applicative functors are implemented in the Applicative type class.
+
+
+== See also ==
+Current definition of the Applicative class in Haskell
+
+
+== References ==
