@@ -1,6 +1,7 @@
 package nlp;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import com.mongodb.BasicDBObject;
@@ -8,6 +9,7 @@ import com.mongodb.DBObject;
 
 import annotation.DBPediaSpotlight;
 import annotation.Entity;
+import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.simple.Document;
 import edu.stanford.nlp.simple.Sentence;
 
@@ -16,15 +18,19 @@ public class TextAnalisys {
 	public static void cleanStanfordDocument(String documentContent) {
 		DBPediaSpotlight nel = new DBPediaSpotlight();
 		Document doc2 = new Document(documentContent);
+		
 		List<Sentence> listSent = doc2.sentences();
 		System.out.println("List of sentences: " + listSent.size());
 		//Mongo code
 		List<DBObject> sentenceList = new ArrayList<DBObject>();
+		
 		for (int i = 0; i < listSent.size(); i++) { // Will iterate over two sentences
 			List<String> listWords = listSent.get(i).words();
 			String sentence = listSent.get(i).rawSentence().getText();
 			String annotation = nel.sendPost(sentence);
+			
 			List<Entity> entityList = nel.readOutput(annotation);
+			
 			System.out.println("Sentence: " + sentence);
 			DBObject sentenceObj = new BasicDBObject("sentence", sentence);
 			List<String> lemmaNNList = new ArrayList<String>();
@@ -33,6 +39,12 @@ public class TextAnalisys {
 				String lemma = listSent.get(i).lemmas().get(j);
 				String posTag = listSent.get(i).posTag(j);
 				String ner = listSent.get(i).nerTag(j);
+				Collection<RelationTriple> textTriples = listSent.get(i).openieTriples();
+				for(RelationTriple triple : textTriples) {
+					triple.subjectLemmaGloss();
+					triple.relationLemmaGloss();
+					triple.objectLemmaGloss();
+				}
 
 				for (Entity entity : entityList) {
 					String anchor = entity.getSurfaceText();
