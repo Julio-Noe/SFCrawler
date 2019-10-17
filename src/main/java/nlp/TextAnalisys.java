@@ -24,6 +24,10 @@ public class TextAnalisys {
 		//Mongo code
 		List<DBObject> sentenceList = new ArrayList<DBObject>();
 		
+		//To calculate tf-idf
+		List<String> docTerms = new ArrayList<String>(); //To TF
+		List<List<String>> corpusTerms = new ArrayList<List<String>>(); //to IDF
+		
 		for (int i = 0; i < listSent.size(); i++) { // Will iterate over two sentences
 			List<String> listWords = listSent.get(i).words();
 			String sentence = listSent.get(i).rawSentence().getText();
@@ -33,28 +37,31 @@ public class TextAnalisys {
 			
 			System.out.println("Sentence: " + sentence);
 			DBObject sentenceObj = new BasicDBObject("sentence", sentence);
-			List<String> lemmaNNList = new ArrayList<String>();
-			List<String> lemmaPosTagList = new ArrayList<String>();
+			List<Annotation> annotationList = new ArrayList<Annotation>();
 			for (int j = 0; j < listWords.size(); j++) {
-				String lemma = listSent.get(i).lemmas().get(j);
 				String posTag = listSent.get(i).posTag(j);
-				String ner = listSent.get(i).nerTag(j);
-				Collection<RelationTriple> textTriples = listSent.get(i).openieTriples();
-				for(RelationTriple triple : textTriples) {
-					triple.subjectLemmaGloss();
-					triple.relationLemmaGloss();
-					triple.objectLemmaGloss();
-				}
-
-				for (Entity entity : entityList) {
-					String anchor = entity.getSurfaceText();
-					if (lemma.equalsIgnoreCase(anchor))
-						System.out.println("URI: " + entity.getURI());
-				}
-
-				int begin = listSent.get(i).characterOffsetBegin(j);
-				int end = listSent.get(i).characterOffsetEnd(j);
+				if(!posTag.contains("NN"))
+					continue;
+				Annotation ann = new Annotation();
+				ann.setLemma(listSent.get(i).lemmas().get(j));
+				ann.setNer(listSent.get(i).nerTag(j));
+				ann.setBegin(listSent.get(i).characterOffsetBegin(j));
+				ann.setEnd(listSent.get(i).characterOffsetEnd(j));
+				docTerms.add(ann.getLemma());
 				// String sentence = listSent.get(i).rawSentence().getText();
+			}
+			
+			for (Entity entity : entityList) {
+				String anchor = entity.getSurfaceText();
+				if (lemma.equalsIgnoreCase(anchor))
+					System.out.println("URI: " + entity.getURI());
+			}
+			
+			Collection<RelationTriple> textTriples = listSent.get(i).openieTriples();
+			for(RelationTriple triple : textTriples) {
+				triple.subjectLemmaGloss();
+				triple.relationLemmaGloss();
+				triple.objectLemmaGloss();
 			}
 			
 			//DBObject sentences = new DBObject("sentences", sentencesList);
