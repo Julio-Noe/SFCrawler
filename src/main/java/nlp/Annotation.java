@@ -5,6 +5,7 @@ public class Annotation {
 	private String lemma;
 	private String posTag;
 	private String ner;
+	private String uri;
 	private int begin;
 	private int end;
 	private int itf;
@@ -51,6 +52,12 @@ public class Annotation {
 	}
 	public void setIdf(int idf) {
 		this.idf = idf;
+	}
+	public String getUri() {
+		return uri;
+	}
+	public void setUri(String uri) {
+		this.uri = uri;
 	}
 
 }

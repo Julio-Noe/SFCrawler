@@ -18,6 +18,7 @@ public class TextAnalisys {
 	public static void cleanStanfordDocument(String documentContent) {
 		DBPediaSpotlight nel = new DBPediaSpotlight();
 		Document doc2 = new Document(documentContent);
+		TextAnalisys ta = new TextAnalisys();
 		
 		List<Sentence> listSent = doc2.sentences();
 		System.out.println("List of sentences: " + listSent.size());
@@ -53,8 +54,7 @@ public class TextAnalisys {
 			
 			for (Entity entity : entityList) {
 				String anchor = entity.getSurfaceText();
-				if (lemma.equalsIgnoreCase(anchor))
-					System.out.println("URI: " + entity.getURI());
+				ta.hasEntity(annotationList, anchor, entity.getURI());
 			}
 			
 			Collection<RelationTriple> textTriples = listSent.get(i).openieTriples();
@@ -63,51 +63,15 @@ public class TextAnalisys {
 				triple.relationLemmaGloss();
 				triple.objectLemmaGloss();
 			}
-			
-			//DBObject sentences = new DBObject("sentences", sentencesList);
-			
-			// for(int j = 0; j < listWords.size(); j++) {
-			//// System.out.println("word: " + listWords.get(j));
-			//// // When we ask for the lemma, it will load and run the part of speech
-			// tagger
-			//// System.out.println("lemma " + listSent.get(i).lemmas().get(j));
-			//// // When we ask for the parse, it will load and run the parser
-			//// //System.out.println("The parse of the sentence '" + sent + "' is " +
-			// sent.parse());
-			////
-			//// System.out.println("Part of speech: " + listSent.get(i).posTags().get(j));
-			// String lemma = listSent.get(i).lemmas().get(j);
-			// String posTag = listSent.get(i).posTags().get(j);
-			// int begin = listSent.get(i).characterOffsetBegin(j);
-			// int end = listSent.get(i).characterOffsetEnd(j);
-			// //String sentence = listSent.get(i).rawSentence().getText();
-			//
-			// if(lemma.length() <= 1)
-			// continue;
-			// if(posTagConfig.equals("NN")) {
-			// if(posTag.contains("NN")) {
-			// listCleanDocumentWords.add(lemma+":"+posTag);
-			// //System.out.println(listSent.get(i).lemmas().get(j) + " start: " + begin + "
-			// end: " + end + " sentence: " + sentence);
-			// }
-			// }else if(posTagConfig.equals("NNJJ")) {
-			// if(posTag.contains("NN") ||
-			// posTag.contains("JJ")) {
-			// listCleanDocumentWords.add(lemma+":"+posTag);
-			// //System.out.println(listSent.get(i).lemmas().get(j));
-			// }
-			// }else if(posTagConfig.equals("NNJJVB")) {
-			// if(posTag.contains("NN") ||
-			// posTag.contains("JJ") ||
-			// posTag.contains("VB")) {
-			// listCleanDocumentWords.add(lemma+":"+posTag);
-			// //System.out.println(listSent.get(i).lemmas().get(j));
-			// }
-			//
-			// }
-			// }
 		}
-
 		// return listCleanDocumentWords;
+	}
+	
+	public void hasEntity(List<Annotation> annotationList, String anchor, String uri) {
+		for(Annotation ann : annotationList) {
+			if(anchor.equalsIgnoreCase(ann.getLemma())) {
+				ann.setUri(uri);
+			}
+		}
 	}
 }
