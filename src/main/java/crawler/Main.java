@@ -9,6 +9,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 
 import annotation.DBPediaSpotlight;
+import nlp.DocumentAnnotation;
 import nlp.TextAnalisys;
 
 public class Main {
@@ -24,8 +25,8 @@ public class Main {
 			try {
 				String content = FileUtils.readFileToString(document);
 				if(!content.isEmpty()){
-					DBObject documentId = new BasicDBObject("_id", document.getName());
-					DBObject contentObj = new BasicDBObject("content",content);
+					DocumentAnnotation docAnn = ta.stanfordDocumentAnalizer(content);
+					
 				}else
 					System.out.println("Document: " + document.getName() + " is empty");
 				
