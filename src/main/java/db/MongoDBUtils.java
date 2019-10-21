@@ -14,6 +14,7 @@ import com.mongodb.client.MongoDatabase;
 
 import nlp.Annotation;
 import nlp.DocumentAnnotation;
+import nlp.OpenRelation;
 
 public class MongoDBUtils {
 
@@ -27,12 +28,14 @@ public class MongoDBUtils {
 		MongoDatabase db = client.getDatabase("SFWV");
 		MongoCollection<Document> coll = db.getCollection("computerScience");
 		
-		DBObject documentObj = new BasicDBObject()
+		Document documentObj = new Document()
 				.append("_id", documentName)
 				.append("content", documentContent)
-				.append("EN", createListAnnotations(docAnn.getAnnotationList()));
-		//TODO create rel list objects
+				.append("EN", createListAnnotations(docAnn.getAnnotationList()))
+				.append("rel", createListRelations(docAnn.getOpenRelationList()));
 		
+		System.out.println("Inserting document");
+		coll.insertOne(documentObj);
 	}
 	
 	private List<DBObject> createListAnnotations(List<Annotation> annotationList){
@@ -51,5 +54,17 @@ public class MongoDBUtils {
 		}
 		return annotationObjList;
 	}
-
+	
+	private List<DBObject> createListRelations(List<OpenRelation> relationList){
+		List<DBObject> relationObjList = new ArrayList<DBObject>();
+		for(OpenRelation rel : relationList) {
+			DBObject annObj = new BasicDBObject()
+					.append("subject", rel.getSubject())
+					.append("object", rel.getObject())
+					.append("sentence", rel.getOrigSentence())
+					.append("relation", rel.getRel());
+			relationObjList.add(annObj);
+		}
+		return relationObjList;
+	}
 }

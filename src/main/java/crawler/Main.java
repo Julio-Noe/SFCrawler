@@ -5,10 +5,8 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
-
 import annotation.DBPediaSpotlight;
+import db.MongoDBUtils;
 import nlp.DocumentAnnotation;
 import nlp.TextAnalisys;
 
@@ -22,11 +20,14 @@ public class Main {
 		TextAnalisys ta = new TextAnalisys();
 		File[] documents = new File("./corpus/computerScience").listFiles();
 		for(File document : documents){
+			System.out.println("Processing document: " + document.getName());
+			MongoDBUtils mongoUtils = new MongoDBUtils();
 			try {
 				String content = FileUtils.readFileToString(document);
 				if(!content.isEmpty()){
+					System.out.println("text annotation....");
 					DocumentAnnotation docAnn = ta.stanfordDocumentAnalizer(content);
-					
+					mongoUtils.sotoreDocument(docAnn, document.getName(), content);
 				}else
 					System.out.println("Document: " + document.getName() + " is empty");
 				

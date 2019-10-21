@@ -29,10 +29,11 @@ public class TextAnalisys {
 		List<OpenRelation> openRelationList = new ArrayList<OpenRelation>();
 		
 		for (int i = 0; i < listSent.size(); i++) { // Will iterate over sentences
+			System.out.println("Processing sentence: " + i +" of " + listSent.size());
 			List<String> listWords = listSent.get(i).words();
 			String sentence = listSent.get(i).rawSentence().getText();
 			String annotation = nel.sendPost(sentence);
-			
+			System.out.println("Getting NEL from DBpedia");
 			List<Entity> entityList = nel.readOutput(annotation);
 			
 			System.out.println("Sentence: " + sentence);
@@ -50,6 +51,7 @@ public class TextAnalisys {
 				// String sentence = listSent.get(i).rawSentence().getText();
 			}
 			
+			System.out.println("Number of NEL: " + entityList.size());
 			for (Entity entity : entityList) {
 				String anchor = entity.getSurfaceText();
 				ta.hasEntity(annotationList, anchor, entity.getURI());
@@ -70,7 +72,7 @@ public class TextAnalisys {
 		}
 		docAnn.setAnnotationList(annotationList);
 		docAnn.setOpenRelationList(openRelationList);
-		
+		System.out.println("Returning document annotation");
 		return docAnn;
 	}
 	
