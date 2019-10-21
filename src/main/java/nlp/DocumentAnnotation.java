@@ -1,11 +1,12 @@
 package nlp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DocumentAnnotation {
 	
-	private List<Annotation> annotationList = null;
-	private List<OpenRelation> openRelationList = null;
+	private List<Annotation> annotationList = new ArrayList<Annotation>();
+	private List<OpenRelation> openRelationList = new ArrayList<OpenRelation>();
 	
 	public List<Annotation> getAnnotationList() {
 		return annotationList;

@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
-
 import annotation.DBPediaSpotlight;
 import annotation.Entity;
 import edu.stanford.nlp.ie.util.RelationTriple;
@@ -24,7 +21,6 @@ public class TextAnalisys {
 		List<Sentence> listSent = doc2.sentences();
 		System.out.println("List of sentences: " + listSent.size());
 		//Mongo code
-		List<DBObject> sentenceList = new ArrayList<DBObject>();
 		List<Annotation> annotationList = new ArrayList<Annotation>();
 		List<OpenRelation> openRelationList = new ArrayList<OpenRelation>();
 		
@@ -35,40 +31,49 @@ public class TextAnalisys {
 			String annotation = nel.sendPost(sentence);
 			System.out.println("Getting NEL from DBpedia");
 			List<Entity> entityList = nel.readOutput(annotation);
+			List<Annotation> sentenceAnnotations = new ArrayList<Annotation>();
 			
 			System.out.println("Sentence: " + sentence);
-			DBObject sentenceObj = new BasicDBObject("sentence", sentence);
 			
 			for (int j = 0; j < listWords.size(); j++) {
 				String posTag = listSent.get(i).posTag(j);
+				String lemma = listSent.get(i).lemmas().get(j);
 				if(!posTag.contains("NN"))
 					continue;
+				if(lemma.length() < 3)
+					continue;
 				Annotation ann = new Annotation();
-				ann.setLemma(listSent.get(i).lemmas().get(j));
+				ann.setLemma(lemma);
 				ann.setNer(listSent.get(i).nerTag(j));
 				ann.setBegin(listSent.get(i).characterOffsetBegin(j));
 				ann.setEnd(listSent.get(i).characterOffsetEnd(j));
+				ann.setPosTag(posTag);
 				// String sentence = listSent.get(i).rawSentence().getText();
+				sentenceAnnotations.add(ann);
 			}
 			
 			System.out.println("Number of NEL: " + entityList.size());
 			for (Entity entity : entityList) {
 				String anchor = entity.getSurfaceText();
-				ta.hasEntity(annotationList, anchor, entity.getURI());
+				ta.hasEntity(sentenceAnnotations, anchor, entity.getURI());
 			}
 			
 			Collection<RelationTriple> textTriples = listSent.get(i).openieTriples();
 			for(RelationTriple triple : textTriples) {
-				OpenRelation rel = ta.hasRelation(annotationList, triple.subjectLemmaGloss(), triple.objectLemmaGloss());
+				OpenRelation rel = ta.hasRelation(sentenceAnnotations, triple.subjectLemmaGloss(), triple.objectLemmaGloss());
 				if(rel != null) {
 					rel.setRel(triple.relationLemmaGloss());
 					rel.setOrigSentence(sentence);
+					//openRelationList.add(rel);
 				}
-				if(openRelationList.size() > 1) {
+				if(rel != null) {
 					if(!ta.repeatedAnnotation(openRelationList, rel))
 						openRelationList.add(rel);
+					else
+						System.out.println("same relation");
 				}
 			}
+			annotationList.addAll(sentenceAnnotations);
 		}
 		docAnn.setAnnotationList(annotationList);
 		docAnn.setOpenRelationList(openRelationList);

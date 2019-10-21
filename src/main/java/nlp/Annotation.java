@@ -5,7 +5,7 @@ public class Annotation {
 	private String lemma;
 	private String posTag;
 	private String ner;
-	private String uri;
+	private String uri = "";
 	private int begin;
 	private int end;
 	private int tf;
