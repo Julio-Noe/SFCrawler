@@ -2,9 +2,13 @@ package db;
 
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import org.apache.log4j.Logger;
 import org.bson.Document;
+import org.bson.conversions.Bson;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
@@ -13,14 +17,18 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Updates;
 
 import nlp.Annotation;
 import nlp.DocumentAnnotation;
 import nlp.OpenRelation;
 
 public class MongoDBUtils {
+	
+	private static final Logger LOGGER = Logger.getLogger(MongoDBUtils.class);
+	
 	private String database = "SFWC";
-	private String collection = "computerScience";
+	private String collection = "diabetes";
 	
 
 	public static void main(String[] args) {
@@ -37,6 +45,8 @@ public class MongoDBUtils {
 		
 		if(doc != null)
 			coll.deleteOne(new BasicDBObject("_id", documentName));
+		
+		client.close();
 	}
 	
 	public void sotoreDocument(DocumentAnnotation docAnn, String documentName, String documentContent) {
@@ -52,6 +62,8 @@ public class MongoDBUtils {
 		
 		System.out.println("Inserting document");
 		coll.insertOne(documentObj);
+		
+		client.close();
 	}
 	
 	private List<DBObject> createListAnnotations(List<Annotation> annotationList){
@@ -117,7 +129,26 @@ public class MongoDBUtils {
 			lemmaList.add(doc.getString("lemma"));
 		}
 		
+		client.close();
 		return lemmaList;
+	}
+	
+	public List<String> getDocsId(){
+		MongoClient client = new MongoClient();
+		MongoDatabase db = client.getDatabase(database);
+		MongoCollection<Document> coll = db.getCollection(collection);
+		
+		List<String> documentsIdList = new ArrayList<String>();
+		
+		FindIterable<Document> mongoDocument = coll.find();
+		
+		for(Document doc : mongoDocument) {
+			String id = doc.getString("_id");
+			documentsIdList.add(id);
+		}
+		
+		client.close();
+		return documentsIdList;
 	}
 	
 	public int numberOfDocumentsWithTerm(String lemma) {
@@ -132,7 +163,51 @@ public class MongoDBUtils {
 			counter++;
 		}
 		
+		client.close();
 		return counter;
+	}
+	
+	public void updateDocumentTF(String documentId, String lemma, double tf, int position) {
+		MongoClient client = new MongoClient();
+		MongoDatabase db = client.getDatabase(database);
+		MongoCollection<Document> coll = db.getCollection(collection);
+		
+		Bson filter = Filters.eq("_id",documentId);
+		Bson setUpdate = Updates.set("EN."+position+".tf", String.valueOf(tf));
+
+		coll.updateOne(filter, setUpdate);
+		client.close();
+	}
+	
+	public void updateDocumentIDF(String documentId, String lemma, double idf, int position) {
+		MongoClient client = new MongoClient();
+		MongoDatabase db = client.getDatabase(database);
+		MongoCollection<Document> coll = db.getCollection(collection);
+		
+		Bson filter = Filters.eq("_id",documentId);
+		Bson setUpdate = Updates.set("EN."+position+".idf", String.valueOf(idf));
+
+		coll.updateOne(filter, setUpdate);
+		client.close();
+	}
+	
+	public Set<String> generateLemmaIndex() {
+		MongoClient client = new MongoClient();
+		MongoDatabase db = client.getDatabase(database);
+		MongoCollection<Document> coll = db.getCollection(collection);
+		
+		FindIterable<Document> documents = coll.find();
+		Set<String> lemmaSet = new HashSet<String>();
+		
+		for(Document doc : documents) {
+			List<Document> lemmas = doc.get("EN",ArrayList.class);
+			for(Document lemma : lemmas) {
+				lemmaSet.add(lemma.getString("lemma"));
+			}
+		}
+		client.close();
+		return lemmaSet;
+		
 	}
 	
 }
