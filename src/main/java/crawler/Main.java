@@ -2,15 +2,23 @@ package crawler;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.vocabulary.RDF;
+import org.bson.Document;
 
 import db.MongoDBUtils;
 import nlp.DocumentAnnotation;
 import nlp.TextAnalisys;
+import schema.SFWCSchema;
 
 public class Main {
 
@@ -32,10 +40,13 @@ public class Main {
 //		m.computeTF();
 //		m.computeIDF();
 		MongoDBUtils ut = new MongoDBUtils();
-		Set<String> index = ut.generateLemmaIndex();
-		System.out.println("Index size = " + index.size());
 		
-		m.computeIDFWord(index);
+//		Set<String> index = ut.generateLemmaIndex();
+//		System.out.println("Index size = " + index.size());
+		
+//		m.computeIDFWord(index);
+		List<Document> documentList = ut.getAllDocs();
+		m.createModel(documentList.get(0));
 		long endTime = System.currentTimeMillis();
 		
 		long totalTime = endTime - startTime;
@@ -169,7 +180,7 @@ public class Main {
 		int counterProgress = 0;
 		System.out.println("----------Begin------------");
 		System.out.print("Progress: ");
-		File processedDocuments = new File("IDF-diabetes.txt");
+		File processedDocuments = new File("IDF-politics.txt");
 		for(String word : index) {
 			System.out.println(counterProgress++ + "/" + index.size() + ": lemma - " 
 					+ word);
@@ -203,6 +214,113 @@ public class Main {
 		
 		tf = count /(double) totalLemmas;
 		return tf;			
+	}
+	
+	public void createModel(Document document) throws IOException {
+		String documentName = document.getString("_id");
+		@SuppressWarnings("unchecked")
+		List<Document> NEs = (List<Document>) document.get("EN", ArrayList.class);
+		@SuppressWarnings("unchecked")
+		List<Document> Rels = (List<Document>) document.get("rel", ArrayList.class);
+		
+		Model model = SFWCSchema.getModel();
+		
+		Resource subject = model.createResource(SFWCSchema.SFWC_URI+"Document_"+documentName);
+		model.add(subject, RDF.type, SFWCSchema.DOCUMENT);
+		model.add(subject, RDF.type, model.createResource(SFWCSchema.SFWC_URI+"ComputerScience"));
+		
+		model = addDocument(model, subject, NEs, Rels);
+		
+		model.write(System.out, "TTL");
+		
+	}
+	
+	private Model addDocument(Model model, Resource subject, List<Document> NEs, List<Document> Rels) throws IOException {
+		
+		File idfFile = new File("IDF-diabetes.txt");
+		List<String> idfLines = FileUtils.readLines(idfFile);
+		Map<String,Double> mapIdf = generateIDFValues(idfLines);
+		
+		//add NEs
+		for(Document ne : NEs) {
+			String lemma = ne.getString("lemma");
+			String nifType = "";
+			if(lemma.split(" ").length > 1)
+				nifType = "Phrase";
+			else
+				nifType = "Word";
+			Resource lemmaObj = model.createResource(SFWCSchema.SFWC_URI+lemma);
+			if(mapIdf.containsKey(lemma))
+				model = addNE(model, subject, lemma, lemmaObj, nifType, ne, mapIdf.get(lemma));
+			else
+				model = addNE(model, subject, lemma, lemmaObj, nifType, ne, 0.0d);
+			
+			model.add(subject, SFWCSchema.hasNE, lemmaObj);
+		}
+		
+		//add Rels
+		for(Document rel : Rels) {
+			Document relSubject = (Document) rel.get("subject", ArrayList.class).get(0);
+			Document relObject = (Document) rel.get("object", ArrayList.class).get(0);
+			String lemmaSbj = relSubject.getString("lemma");
+			String lemmaObj = relObject.getString("lemma");
+			String sentence = rel.getString("sentence");
+			String correlation = "0.0";
+			
+			Resource relSbj = model.createResource(SFWCSchema.SFWC_URI+lemmaSbj+"-"+lemmaObj);
+			model = addRels(model, relSbj, lemmaSbj, lemmaObj, sentence, correlation);
+			
+			model.add(subject, SFWCSchema.hasRel, relSbj);
+		}
+		return model;
+	}
+	
+	private Model addNE(Model model, Resource docRes, String lemmaString, Resource lemma, 
+			String nifType, Document NE, Double idfValue) {
+		String posTag = NE.getString("posTag");
+		String ner = NE.getString("ner");
+		String uri = NE.getString("uri");
+		String tf = String.valueOf(NE.get("tf", Object.class));
+		String idf = String.valueOf(idfValue);
+		
+		model.add(lemma, RDF.type, SFWCSchema.ENTITY);
+		model.add(lemma, RDF.type, SFWCSchema.NIF_URI+nifType);
+		model.add(lemma, model.createProperty(SFWCSchema.NIF_URI+"anchorOf"), lemmaString);
+		model.add(lemma, model.createProperty(SFWCSchema.NIF_URI+"posTag"), posTag);
+		if(uri.contains("http"));
+			model.add(lemma, model.createProperty(SFWCSchema.ITSRDF_URI+"taIdentRef"), model.createResource(uri));
+		if(!ner.equals("O"))
+			model.add(lemma, SFWCSchema.ner, ner);
+		model.add(lemma, SFWCSchema.inDocument, docRes);
+		model.add(lemma, SFWCSchema.tfValue, tf);
+		model.add(lemma, SFWCSchema.idfValue, idf);
+		return model;
+	}
+	
+	private Model addRels(Model model, Resource relSbj, String lemmaSbj, String lemmaObj, 
+			String sentence, String correlation) {
+		
+		model.add(relSbj, RDF.type, SFWCSchema.RELATION);
+		
+		model.add(relSbj, SFWCSchema.subject, model.createResource(SFWCSchema.SFWC_URI+lemmaSbj));
+		model.add(relSbj, SFWCSchema.object, model.createResource(SFWCSchema.SFWC_URI+lemmaObj));
+		model.add(relSbj, SFWCSchema.sentence, sentence);
+		model.add(relSbj, SFWCSchema.correlationValue, correlation);
+		
+		return model;
+	}
+	
+	private Map<String, Double> generateIDFValues(List<String> idfLines){
+		Map<String, Double> mapIdf = new HashMap<String, Double>();
+		for(String idf: idfLines) {
+			String[] idfSplit = idf.split("\t");
+			if(idfSplit[0] != null 
+					&& idfSplit[1] != null)
+				mapIdf.put(idfSplit[0], Double.parseDouble(idfSplit[1]));
+			else
+				System.out.println("idf = " + idf + "\n====FAIL in split task");
+		}
+		return mapIdf;
 	}
 
 }

@@ -151,6 +151,23 @@ public class MongoDBUtils {
 		return documentsIdList;
 	}
 	
+	public List<Document> getAllDocs(){
+		MongoClient client = new MongoClient();
+		MongoDatabase db = client.getDatabase(database);
+		MongoCollection<Document> coll = db.getCollection(collection);
+		
+		List<Document> documentsList = new ArrayList<Document>();
+		
+		FindIterable<Document> mongoDocument = coll.find();
+		
+		for(Document doc : mongoDocument) {
+			documentsList.add(doc);
+		}
+		
+		client.close();
+		return documentsList;
+	}
+	
 	public int numberOfDocumentsWithTerm(String lemma) {
 		MongoClient client = new MongoClient();
 		MongoDatabase db = client.getDatabase(database);
