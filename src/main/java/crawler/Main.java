@@ -29,24 +29,32 @@ public class Main {
 //	    root.setLevel(Level.ERROR);
 //	}
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
 		Main m = new Main();
+		String corpusPath = "./corpus/computerScience";
+		String pathProcessedDocuments = "ProcessedDocuments-CS.txt";
+		String idfFilePath = "IDF-diabetes.txt";
 		
 		long startTime = System.currentTimeMillis();
 		
-//		m.informationExtraction(); //step 1: already finish for computerScience, politics and diabetes
+//		m.informationExtraction(corpusPath, pathProcessedDocuments); //step 1: already finish for computerScience, politics and diabetes
 		
 		//second part: tf, idf, tf-idf, correlation
 //		m.computeTF();
 //		m.computeIDF();
-		MongoDBUtils ut = new MongoDBUtils();
+//		MongoDBUtils ut = new MongoDBUtils();
 		
 //		Set<String> index = ut.generateLemmaIndex();
 //		System.out.println("Index size = " + index.size());
 		
 //		m.computeIDFWord(index);
-		List<Document> documentList = ut.getAllDocs();
-		m.createModel(documentList.get(0));
+//		List<Document> documentList = ut.getAllDocs();
+//		m.createModel(documentList.get(0));
+		
+//		m.addIDFToMongoDB(idfFilePath);
+		
+		m.temporalDeleteDocuments();
+		
 		long endTime = System.currentTimeMillis();
 		
 		long totalTime = endTime - startTime;
@@ -57,12 +65,36 @@ public class Main {
 		
 	}
 	
+	public void temporalDeleteDocuments() {
+		File[] path = new File("./corpus/computerScience").listFiles();
+		MongoDBUtils utils = new MongoDBUtils();
+		
+		List<String> docNames = new ArrayList<String>();
+		
+		for(File f : path) {
+			docNames.add(f.getName());
+		}
+		
+		List<String> docsIds = utils.getDocsId();
+		List<String> removeList = new ArrayList<String>();
+		System.out.println(docsIds.size());
+		System.out.println(path.length);
+		for(String id : docsIds) {
+			if(!docNames.contains(id)) {
+				removeList.add(id);
+			}
+		}
+		utils.deleteDocuments(removeList);
+		System.out.println(removeList.size());
+		
+	}
+	
 	@SuppressWarnings("deprecation")
-	public void informationExtraction() throws IOException {
+	public void informationExtraction(String corpusPath, String pathProcessedDocuments) throws IOException {
 		TextAnalisys ta = new TextAnalisys();
 		MongoDBUtils mongoUtils = new MongoDBUtils();
-		File[] documents = new File("./corpus/diabetesWoHumans").listFiles();
-		File processedDocuments = new File("ProcessedDocuments-Diabetes.txt");
+		File[] documents = new File(corpusPath).listFiles();
+		File processedDocuments = new File(pathProcessedDocuments);
 		
 		int counter = 0;
 		int counterProcessed = 0;
@@ -101,8 +133,8 @@ public class Main {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			if(counter == 100)
-				break;
+//			if(counter == 100)
+//				break;
 			counter ++;
 			counterProcessed++;
 			//ta.cleanStanfordDocument(text);
@@ -112,10 +144,11 @@ public class Main {
 		System.out.println("Number of Documents processed: " + counter);
 	}
 	
-	public void computeTF() throws IOException {
+	@SuppressWarnings("deprecation")
+	public void computeTF() throws IOException, InterruptedException {
 		MongoDBUtils utils = new MongoDBUtils();
 		List<String> documentsId = utils.getDocsId();
-		File processedDocuments = new File("ProcessedDocuments-CS-TF.txt");
+		File processedDocuments = new File("ProcessedDocuments-diabetes-TF.txt");
 		int counterProgress = 0;
 		for(String docId : documentsId) {
 			if(processedDocuments.exists() 
@@ -127,7 +160,10 @@ public class Main {
 			FileUtils.write(processedDocuments, docId+"\n", "UTF8", true);
 			
 			List<String> lemmaList = utils.getDocLemmas(docId);
+			System.out.println("Processing document "+ counterProgress++ + "/"+documentsId.size()+": " + docId);
+			Thread.sleep(2000);
 			for(int i = 0; i < lemmaList.size(); i++) {
+				
 				double tf = tf(lemmaList, lemmaList.get(i));
 				utils.updateDocumentTF(docId, lemmaList.get(i), tf, i);
 			}
@@ -136,41 +172,65 @@ public class Main {
 		
 	}
 	
-	public void computeIDF() throws IOException {
+//	public void computeIDF() throws IOException {
+//		MongoDBUtils utils = new MongoDBUtils();
+//		List<String> documentsId = utils.getDocsId();
+//		File processedDocuments = new File("ProcessedDocuments-CS-IDF.txt");
+//		int counterProgress = 0;
+//		
+//		int documentsIdSize = documentsId.size();
+//		for(String docId : documentsId) {
+//			if(processedDocuments.exists() 
+//					&& isProcessed(docId, FileUtils.readLines(processedDocuments))){
+//				System.out.println("File " + docId + " already processed");
+//				counterProgress++;
+//				continue;
+//			}
+//			
+//			FileUtils.write(processedDocuments, docId+"\n", "UTF8", true);
+//			List<String> lemmaList = utils.getDocLemmas(docId);
+//			System.out.println("----------Begin------------");
+//			System.out.println(counterProgress++ + "/" + documentsIdSize + ": _id - " 
+//					+ docId
+//					+ " Number of words: " + lemmaList.size());
+//			System.out.print("Progress: ");
+//			long startTime = System.currentTimeMillis();
+//			for(int i = 0; i < lemmaList.size(); i++) {
+//				System.out.print(i + ", ");
+//				int n = utils.numberOfDocumentsWithTerm(lemmaList.get(i));
+//				double idf = documentsId.size()/(double)n;
+////				utils.updateDocumentIDF(docId, lemmaList.get(i), idf, i);
+//			}
+//			long endTime = System.currentTimeMillis() - startTime;
+//			System.out.println("\n Time elpased: " + TimeUnit.MILLISECONDS.toMinutes(endTime) + " min.");
+//			System.out.println("----------END--------------");
+//			
+//		}
+//		
+//	}
+	
+	public void addIDFToMongoDB(String idfFilePath) throws IOException {
 		MongoDBUtils utils = new MongoDBUtils();
-		List<String> documentsId = utils.getDocsId();
-		File processedDocuments = new File("ProcessedDocuments-CS-IDF.txt");
-		int counterProgress = 0;
-		
-		int documentsIdSize = documentsId.size();
-		for(String docId : documentsId) {
-			if(processedDocuments.exists() 
-					&& isProcessed(docId, FileUtils.readLines(processedDocuments))){
-				System.out.println("File " + docId + " already processed");
-				counterProgress++;
-				continue;
-			}
-			
-			FileUtils.write(processedDocuments, docId+"\n", "UTF8", true);
-			List<String> lemmaList = utils.getDocLemmas(docId);
-			System.out.println("----------Begin------------");
-			System.out.println(counterProgress++ + "/" + documentsIdSize + ": _id - " 
-					+ docId
-					+ " Number of words: " + lemmaList.size());
-			System.out.print("Progress: ");
-			long startTime = System.currentTimeMillis();
-			for(int i = 0; i < lemmaList.size(); i++) {
-				System.out.print(i + ", ");
-				int n = utils.numberOfDocumentsWithTerm(lemmaList.get(i));
-				double idf = documentsId.size()/(double)n;
-				utils.updateDocumentIDF(docId, lemmaList.get(i), idf, i);
-			}
-			long endTime = System.currentTimeMillis() - startTime;
-			System.out.println("\n Time elpased: " + TimeUnit.MILLISECONDS.toMinutes(endTime) + " min.");
-			System.out.println("----------END--------------");
-			
+		@SuppressWarnings("deprecation")
+		List<String> idfList = FileUtils.readLines(new File(idfFilePath));
+		for(String idf : idfList) {
+			String[] idfArray = idf.split("\t");
+			if(idfArray != null && 
+					idfArray.length > 2) {
+				List<Document> documentList = utils.documentsWithTerm(idfArray[0]);
+				for(Document doc : documentList) {
+					@SuppressWarnings("unchecked")
+					List<Document> enList = (List<Document>) doc.get("EN", ArrayList.class);
+					for(int i = 0; i < enList.size(); i++) {
+						if(enList.get(i).getString("lemma").equals(idfArray[0])) {
+							double idfValue = Double.parseDouble(idfArray[1]);
+							double idfFinal = Math.log(idfValue)/Math.log(2);
+							utils.updateDocumentIDF(doc.getString("_id"), idfArray[0], String.valueOf(idfFinal), i);
+						}
+					}
+				}
+			}			
 		}
-		
 	}
 	
 	public void computeIDFWord(Set<String> index) throws IOException {
@@ -190,6 +250,37 @@ public class Main {
 		}
 		System.out.println("----------END--------------");
 		
+	}
+	
+	public void computeCorrelation(List<Document> rels) {
+		MongoDBUtils utils = new MongoDBUtils();
+		for(Document rel : rels) {
+			String lemmaX = ((Document) rel.get("subject", ArrayList.class).get(0)).getString("lemma");
+			String lemmaY = ((Document) rel.get("object", ArrayList.class).get(0)).getString("lemma");
+			
+			int n_11 = utils.correlationXandY(lemmaX, lemmaY);
+			int n_10 = utils.correlationXNotY(lemmaX, lemmaY);
+			int n_01 = utils.correlationNotXY(lemmaX, lemmaY);
+			int n_00 = utils.correlationNotXNotY(lemmaX, lemmaY);
+			int n_1_ = n_11 + n_10;
+			int n_0_ = n_01 + n_00;
+			int n__1 = n_11 + n_01;
+			int n__0 = n_10 + n_00;
+			
+			//n_11*n_00
+			int mult1 = n_11 * n_00;
+			//n_10 * n_01
+			int mult2 = n_10 * n_01;
+			
+			int result1 = mult1 - mult2;
+			
+			int mult3 = n_1_ * n_0_ * n__0 * n__1;
+			
+			double result2 = Math.sqrt(mult3);
+			
+			double correlation = result1/result2;
+			
+		}
 	}
 	
 	

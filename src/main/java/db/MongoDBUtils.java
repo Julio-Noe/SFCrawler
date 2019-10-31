@@ -2,6 +2,7 @@ package db;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -16,6 +17,8 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Aggregates;
+import com.mongodb.client.model.Field;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
 
@@ -28,12 +31,105 @@ public class MongoDBUtils {
 	private static final Logger LOGGER = Logger.getLogger(MongoDBUtils.class);
 	
 	private String database = "SFWC";
-	private String collection = "diabetes";
+	private String collection = "computerScience";
 	
 
 	public static void main(String[] args) {
+		MongoDBUtils utils = new MongoDBUtils();
 		
+//		utils.correlationNotXNotY("food", "blood");
+		utils.addField();
 
+	}
+	
+	public void deleteDocuments(List<String> idList) {
+		MongoClient client = new MongoClient();
+		MongoDatabase db = client.getDatabase(database);
+		MongoCollection<Document> coll = db.getCollection(collection);
+		
+		for(String id : idList) {
+			coll.deleteOne(Filters.eq("_id", id));
+			System.out.println(id + " ----> DELETED");
+		}
+		
+		client.close();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void addField() {
+		MongoClient client = new MongoClient();
+		MongoDatabase db = client.getDatabase(database);
+		MongoCollection<Document> coll = db.getCollection(collection);
+		
+		coll.aggregate(Arrays.asList(Aggregates.addFields(new Field("rel.correlation", "0.0"))));
+		
+		client.close();
+	}
+	
+	public int correlationXandY(String lemmaX, String lemmaY) {
+		MongoClient client = new MongoClient();
+		MongoDatabase db = client.getDatabase(database);
+		MongoCollection<Document> coll = db.getCollection(collection);
+		
+		FindIterable<Document> andQuery = coll.find(Filters.and(Arrays.asList(Filters.eq("EN.lemma", lemmaX), Filters.eq("EN.lemma", lemmaY))));
+		
+		int counter = 0;
+		for(Document doc : andQuery) {
+			counter ++;
+		}
+//		System.out.println("counter = " + counter);
+		client.close();
+		
+		return counter;
+	}
+	
+	public int correlationXNotY(String lemmaX, String lemmaY) {
+		MongoClient client = new MongoClient();
+		MongoDatabase db = client.getDatabase(database);
+		MongoCollection<Document> coll = db.getCollection(collection);
+		
+		FindIterable<Document> andQuery = coll.find(Filters.and(Arrays.asList(Filters.eq("EN.lemma", lemmaX), Filters.not(Filters.eq("EN.lemma", lemmaY)))));
+		
+		int counter = 0;
+		for(Document doc : andQuery) {
+			counter ++;
+		}
+//		System.out.println("counter = " + counter);
+		client.close();
+		
+		return counter;
+	}
+	
+	public int correlationNotXY(String lemmaX, String lemmaY) {
+		MongoClient client = new MongoClient();
+		MongoDatabase db = client.getDatabase(database);
+		MongoCollection<Document> coll = db.getCollection(collection);
+		
+		FindIterable<Document> andQuery = coll.find(Filters.and(Arrays.asList(Filters.not(Filters.eq("EN.lemma", lemmaX)), Filters.eq("EN.lemma", lemmaY))));
+		
+		int counter = 0;
+		for(Document doc : andQuery) {
+			counter ++;
+		}
+//		System.out.println("counter = " + counter);
+		client.close();
+		return counter;
+	}
+	
+	public int correlationNotXNotY(String lemmaX, String lemmaY) {
+		MongoClient client = new MongoClient();
+		MongoDatabase db = client.getDatabase(database);
+		MongoCollection<Document> coll = db.getCollection(collection);
+		
+		FindIterable<Document> andQuery = coll.find(Filters.and(Arrays.asList(Filters.not(Filters.eq("EN.lemma", lemmaX)), Filters.not(Filters.eq("EN.lemma", lemmaY)))));
+		
+		int counter = 0;
+		for(Document doc : andQuery) {
+			counter ++;
+		}
+//		System.out.println("counter = " + counter);
+		client.close();
+		return counter;
 	}
 	
 	public void dropCollection(String documentName) {
@@ -184,6 +280,23 @@ public class MongoDBUtils {
 		return counter;
 	}
 	
+	public List<Document> documentsWithTerm(String lemma) {
+		MongoClient client = new MongoClient();
+		MongoDatabase db = client.getDatabase(database);
+		MongoCollection<Document> cll = db.getCollection(collection);
+		
+		FindIterable<Document> containsLemmaList = cll.find(new BasicDBObject("EN.lemma",lemma));
+		List<Document> documentList = new ArrayList<Document>();
+		
+		int counter = 0;
+		for(Document doc : containsLemmaList) {
+			documentList.add(doc);
+		}
+		
+		client.close();
+		return documentList;
+	}
+	
 	public void updateDocumentTF(String documentId, String lemma, double tf, int position) {
 		MongoClient client = new MongoClient();
 		MongoDatabase db = client.getDatabase(database);
@@ -191,12 +304,12 @@ public class MongoDBUtils {
 		
 		Bson filter = Filters.eq("_id",documentId);
 		Bson setUpdate = Updates.set("EN."+position+".tf", String.valueOf(tf));
-
+		
 		coll.updateOne(filter, setUpdate);
 		client.close();
 	}
 	
-	public void updateDocumentIDF(String documentId, String lemma, double idf, int position) {
+	public void updateDocumentIDF(String documentId, String lemma, String idf, int position) {
 		MongoClient client = new MongoClient();
 		MongoDatabase db = client.getDatabase(database);
 		MongoCollection<Document> coll = db.getCollection(collection);
