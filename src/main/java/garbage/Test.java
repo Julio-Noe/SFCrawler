@@ -17,7 +17,7 @@ public class Test {
 		
 		System.out.println(res);
 		
-		MongoDBUtils  utils = new MongoDBUtils();
+		MongoDBUtils  utils = new MongoDBUtils("SFCW", "computerScience");
 		
 //		utils.updateDocumentTF("AdipoRon", "AdipoRon", 1.45d, 0);
 		

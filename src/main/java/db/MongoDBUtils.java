@@ -17,8 +17,6 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Aggregates;
-import com.mongodb.client.model.Field;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
 
@@ -28,20 +26,25 @@ import nlp.OpenRelation;
 
 public class MongoDBUtils {
 	
+	@SuppressWarnings("unused")
 	private static final Logger LOGGER = Logger.getLogger(MongoDBUtils.class);
 	
-	private String database = "SFWC";
-	private String collection = "computerScience";
-	
+	private String database;
+	private String collection;
+
+	public MongoDBUtils(String database, String collection) {
+		this.database = database;
+		this.collection = collection;
+	}
 
 	public static void main(String[] args) {
-		MongoDBUtils utils = new MongoDBUtils();
+		MongoDBUtils utils = new MongoDBUtils("SFWC", "computerScience");
 		
-//		utils.correlationNotXNotY("food", "blood");
-		utils.addField();
+		utils.correlationNotXNotY("food", "blood");
 
 	}
 	
+	//use one time to delete computerScience documents wrongly added
 	public void deleteDocuments(List<String> idList) {
 		MongoClient client = new MongoClient();
 		MongoDatabase db = client.getDatabase(database);
@@ -54,18 +57,7 @@ public class MongoDBUtils {
 		
 		client.close();
 	}
-	
-	@SuppressWarnings("unchecked")
-	public void addField() {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
 		
-		coll.aggregate(Arrays.asList(Aggregates.addFields(new Field("rel.correlation", "0.0"))));
-		
-		client.close();
-	}
-	
 	public int correlationXandY(String lemmaX, String lemmaY) {
 		MongoClient client = new MongoClient();
 		MongoDatabase db = client.getDatabase(database);
@@ -74,7 +66,7 @@ public class MongoDBUtils {
 		FindIterable<Document> andQuery = coll.find(Filters.and(Arrays.asList(Filters.eq("EN.lemma", lemmaX), Filters.eq("EN.lemma", lemmaY))));
 		
 		int counter = 0;
-		for(Document doc : andQuery) {
+		for(@SuppressWarnings("unused") Document doc : andQuery) {
 			counter ++;
 		}
 //		System.out.println("counter = " + counter);
@@ -91,7 +83,7 @@ public class MongoDBUtils {
 		FindIterable<Document> andQuery = coll.find(Filters.and(Arrays.asList(Filters.eq("EN.lemma", lemmaX), Filters.not(Filters.eq("EN.lemma", lemmaY)))));
 		
 		int counter = 0;
-		for(Document doc : andQuery) {
+		for(@SuppressWarnings("unused") Document doc : andQuery) {
 			counter ++;
 		}
 //		System.out.println("counter = " + counter);
@@ -108,7 +100,7 @@ public class MongoDBUtils {
 		FindIterable<Document> andQuery = coll.find(Filters.and(Arrays.asList(Filters.not(Filters.eq("EN.lemma", lemmaX)), Filters.eq("EN.lemma", lemmaY))));
 		
 		int counter = 0;
-		for(Document doc : andQuery) {
+		for(@SuppressWarnings("unused") Document doc : andQuery) {
 			counter ++;
 		}
 //		System.out.println("counter = " + counter);
@@ -124,7 +116,7 @@ public class MongoDBUtils {
 		FindIterable<Document> andQuery = coll.find(Filters.and(Arrays.asList(Filters.not(Filters.eq("EN.lemma", lemmaX)), Filters.not(Filters.eq("EN.lemma", lemmaY)))));
 		
 		int counter = 0;
-		for(Document doc : andQuery) {
+		for(@SuppressWarnings("unused") Document doc : andQuery) {
 			counter ++;
 		}
 //		System.out.println("counter = " + counter);
@@ -272,7 +264,7 @@ public class MongoDBUtils {
 		FindIterable<Document> containsLemmaList = cll.find(new BasicDBObject("EN.lemma",lemma));
 		
 		int counter = 0;
-		for(Document doc : containsLemmaList) {
+		for(@SuppressWarnings("unused") Document doc : containsLemmaList) {
 			counter++;
 		}
 		
@@ -288,7 +280,6 @@ public class MongoDBUtils {
 		FindIterable<Document> containsLemmaList = cll.find(new BasicDBObject("EN.lemma",lemma));
 		List<Document> documentList = new ArrayList<Document>();
 		
-		int counter = 0;
 		for(Document doc : containsLemmaList) {
 			documentList.add(doc);
 		}
@@ -297,7 +288,7 @@ public class MongoDBUtils {
 		return documentList;
 	}
 	
-	public void updateDocumentTF(String documentId, String lemma, double tf, int position) {
+	public void updateDocumentTF(String documentId, double tf, int position) {
 		MongoClient client = new MongoClient();
 		MongoDatabase db = client.getDatabase(database);
 		MongoCollection<Document> coll = db.getCollection(collection);
@@ -309,13 +300,37 @@ public class MongoDBUtils {
 		client.close();
 	}
 	
-	public void updateDocumentIDF(String documentId, String lemma, String idf, int position) {
+	public void updateDocumentIDF(String documentId, String idf, int position) {
 		MongoClient client = new MongoClient();
 		MongoDatabase db = client.getDatabase(database);
 		MongoCollection<Document> coll = db.getCollection(collection);
 		
 		Bson filter = Filters.eq("_id",documentId);
 		Bson setUpdate = Updates.set("EN."+position+".idf", String.valueOf(idf));
+
+		coll.updateOne(filter, setUpdate);
+		client.close();
+	}
+	
+	public void updateDocumentTFIDF(String documentId, String idf, int position) {
+		MongoClient client = new MongoClient();
+		MongoDatabase db = client.getDatabase(database);
+		MongoCollection<Document> coll = db.getCollection(collection);
+		
+		Bson filter = Filters.eq("_id",documentId);
+		Bson setUpdate = Updates.set("EN."+position+".tfIdf", String.valueOf(idf));
+
+		coll.updateOne(filter, setUpdate);
+		client.close();
+	}
+	
+	public void updateDocumentCorrelation(String documentId, String correlation, int position) {
+		MongoClient client = new MongoClient();
+		MongoDatabase db = client.getDatabase(database);
+		MongoCollection<Document> coll = db.getCollection(collection);
+		
+		Bson filter = Filters.eq("_id",documentId);
+		Bson setUpdate = Updates.set("rel."+position+".correlation", String.valueOf(correlation));
 
 		coll.updateOne(filter, setUpdate);
 		client.close();
@@ -330,7 +345,8 @@ public class MongoDBUtils {
 		Set<String> lemmaSet = new HashSet<String>();
 		
 		for(Document doc : documents) {
-			List<Document> lemmas = doc.get("EN",ArrayList.class);
+			@SuppressWarnings("unchecked")
+			List<Document> lemmas = (List<Document>) doc.get("EN",ArrayList.class);
 			for(Document lemma : lemmas) {
 				lemmaSet.add(lemma.getString("lemma"));
 			}

@@ -13,6 +13,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.vocabulary.RDF;
+import org.apache.jena.vocabulary.RDFS;
 import org.bson.Document;
 
 import db.MongoDBUtils;
@@ -29,31 +30,52 @@ public class Main {
 //	    root.setLevel(Level.ERROR);
 //	}
 	
+	private String mongoDB = "SFWC";
+	private String mongoColl = "diabetes";
+	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		Main m = new Main();
 		String corpusPath = "./corpus/computerScience";
 		String pathProcessedDocuments = "ProcessedDocuments-CS.txt";
 		String idfFilePath = "IDF-diabetes.txt";
+		String topic = "Computer Science";
+		MongoDBUtils ut = new MongoDBUtils(m.mongoDB, m.mongoColl);
 		
+		int task = 4;
+		
+		/*
+		 * Task 1: extract tokens, NER, NEL from a corpus and save result in MongDB 
+		 * Task 2: calculate TF value for each token - save result in MongoDB
+		 * Task 3: calculate IDF for each token - save result in a file
+		 * Task 4: add IDF result to MongoDB
+		 * Task 5: compute correlation - save result in MongoDB
+		 * Task 6: calculate TF-IDF - save result in MongoDB
+		 * Task 7: create RDF model
+		 * Task 8: emergency function : delete unrelated documents in MongoDB 
+		 */
 		long startTime = System.currentTimeMillis();
-		
-//		m.informationExtraction(corpusPath, pathProcessedDocuments); //step 1: already finish for computerScience, politics and diabetes
-		
-		//second part: tf, idf, tf-idf, correlation
-//		m.computeTF();
-//		m.computeIDF();
-//		MongoDBUtils ut = new MongoDBUtils();
-		
-//		Set<String> index = ut.generateLemmaIndex();
-//		System.out.println("Index size = " + index.size());
-		
-//		m.computeIDFWord(index);
-//		List<Document> documentList = ut.getAllDocs();
-//		m.createModel(documentList.get(0));
-		
-//		m.addIDFToMongoDB(idfFilePath);
-		
-		m.temporalDeleteDocuments();
+		switch (task){
+			case 1:  m.informationExtraction(corpusPath, pathProcessedDocuments); //step 1: already finish for computerScience, politics and diabetes
+					break;
+			case 2: m.computeTF();
+					break;
+			case 3: Set<String> index = ut.generateLemmaIndex();
+					System.out.println("Index size = " + index.size());
+					m.computeIDFWord(index, idfFilePath);
+					break;
+			case 4: m.addIDFToMongoDB(idfFilePath);
+					break;
+			case 5: m.correlation();
+					break;
+			case 6: m.addTFIDFToMongoDB();
+					break;
+			case 7: List<Document> documentList = ut.getAllDocs();
+					m.createModel(documentList.get(0), topic);
+					break;
+			case 8: m.temporalDeleteDocuments();
+					break;
+			default: break;
+		}
 		
 		long endTime = System.currentTimeMillis();
 		
@@ -61,13 +83,11 @@ public class Main {
 		
 		System.out.format("%d Miliseconds = %d minutes\n", totalTime, TimeUnit.MILLISECONDS.toMinutes(totalTime));
 		
-		
-		
 	}
 	
 	public void temporalDeleteDocuments() {
 		File[] path = new File("./corpus/computerScience").listFiles();
-		MongoDBUtils utils = new MongoDBUtils();
+		MongoDBUtils utils = new MongoDBUtils(mongoDB, mongoColl);
 		
 		List<String> docNames = new ArrayList<String>();
 		
@@ -92,7 +112,7 @@ public class Main {
 	@SuppressWarnings("deprecation")
 	public void informationExtraction(String corpusPath, String pathProcessedDocuments) throws IOException {
 		TextAnalisys ta = new TextAnalisys();
-		MongoDBUtils mongoUtils = new MongoDBUtils();
+		MongoDBUtils mongoUtils = new MongoDBUtils(mongoDB, mongoColl);
 		File[] documents = new File(corpusPath).listFiles();
 		File processedDocuments = new File(pathProcessedDocuments);
 		
@@ -146,9 +166,9 @@ public class Main {
 	
 	@SuppressWarnings("deprecation")
 	public void computeTF() throws IOException, InterruptedException {
-		MongoDBUtils utils = new MongoDBUtils();
+		MongoDBUtils utils = new MongoDBUtils(mongoDB, mongoColl);
 		List<String> documentsId = utils.getDocsId();
-		File processedDocuments = new File("ProcessedDocuments-diabetes-TF.txt");
+		File processedDocuments = new File("ProcessedDocuments-CS-TF.txt");
 		int counterProgress = 0;
 		for(String docId : documentsId) {
 			if(processedDocuments.exists() 
@@ -165,7 +185,7 @@ public class Main {
 			for(int i = 0; i < lemmaList.size(); i++) {
 				
 				double tf = tf(lemmaList, lemmaList.get(i));
-				utils.updateDocumentTF(docId, lemmaList.get(i), tf, i);
+				utils.updateDocumentTF(docId, tf, i);
 			}
 
 		}
@@ -209,15 +229,18 @@ public class Main {
 //		
 //	}
 	
-	public void addIDFToMongoDB(String idfFilePath) throws IOException {
-		MongoDBUtils utils = new MongoDBUtils();
+	public void addIDFToMongoDB(String idfFilePath) throws IOException, InterruptedException {
+		MongoDBUtils utils = new MongoDBUtils(mongoDB, mongoColl);
 		@SuppressWarnings("deprecation")
 		List<String> idfList = FileUtils.readLines(new File(idfFilePath));
+		int counter = 0;
 		for(String idf : idfList) {
+			Thread.sleep(2000);
 			String[] idfArray = idf.split("\t");
 			if(idfArray != null && 
 					idfArray.length > 2) {
 				List<Document> documentList = utils.documentsWithTerm(idfArray[0]);
+				System.out.println(counter++ + "/"+idfList.size()+" - Lemma: " + idfArray[0] + " Documents with lemma: " + documentList.size());
 				for(Document doc : documentList) {
 					@SuppressWarnings("unchecked")
 					List<Document> enList = (List<Document>) doc.get("EN", ArrayList.class);
@@ -225,7 +248,7 @@ public class Main {
 						if(enList.get(i).getString("lemma").equals(idfArray[0])) {
 							double idfValue = Double.parseDouble(idfArray[1]);
 							double idfFinal = Math.log(idfValue)/Math.log(2);
-							utils.updateDocumentIDF(doc.getString("_id"), idfArray[0], String.valueOf(idfFinal), i);
+							utils.updateDocumentIDF(doc.getString("_id"), String.valueOf(idfFinal), i);
 						}
 					}
 				}
@@ -233,14 +256,31 @@ public class Main {
 		}
 	}
 	
-	public void computeIDFWord(Set<String> index) throws IOException {
-		MongoDBUtils utils = new MongoDBUtils();
+	public void addTFIDFToMongoDB() throws InterruptedException {
+		MongoDBUtils utils = new MongoDBUtils(mongoDB, mongoColl);
+		
+		List<Document> allDocuments = utils.getAllDocs();
+		for(int i = 0 ; i < allDocuments.size(); i++) {
+			@SuppressWarnings("unchecked")
+			List<Document> enList = (List<Document>) allDocuments.get(i).get("EN", ArrayList.class);
+			System.out.println("TFIDF: " + i + "/" + allDocuments.size() + " --"+allDocuments.get(i).getString("_id")+"-- :::" + enList.size() + " ::: entities to process");
+			Thread.sleep(2000);
+			for(int j = 0; j < enList.size(); j++) {
+				double tf = Double.parseDouble(enList.get(j).getString("tf"));
+				double idf = Double.parseDouble(enList.get(j).getString("idf"));
+				utils.updateDocumentTFIDF(allDocuments.get(i).getString("_id"), String.valueOf(tf*idf), j);
+			}
+		}
+	}
+	
+	public void computeIDFWord(Set<String> index, String idfFilePath) throws IOException {
+		MongoDBUtils utils = new MongoDBUtils(mongoDB, mongoColl);
 		List<String> documentsId = utils.getDocsId();
 
 		int counterProgress = 0;
 		System.out.println("----------Begin------------");
 		System.out.print("Progress: ");
-		File processedDocuments = new File("IDF-politics.txt");
+		File processedDocuments = new File(idfFilePath);
 		for(String word : index) {
 			System.out.println(counterProgress++ + "/" + index.size() + ": lemma - " 
 					+ word);
@@ -252,11 +292,26 @@ public class Main {
 		
 	}
 	
-	public void computeCorrelation(List<Document> rels) {
-		MongoDBUtils utils = new MongoDBUtils();
-		for(Document rel : rels) {
-			String lemmaX = ((Document) rel.get("subject", ArrayList.class).get(0)).getString("lemma");
-			String lemmaY = ((Document) rel.get("object", ArrayList.class).get(0)).getString("lemma");
+	public void correlation() throws InterruptedException {
+		MongoDBUtils utils = new MongoDBUtils(mongoDB, mongoColl);
+		
+		List<Document> allDocuments = utils.getAllDocs();
+
+		for(int i = 0; i < allDocuments.size(); i++) {
+			@SuppressWarnings("unchecked")
+			List<Document> rels = (List<Document>) allDocuments.get(i).get("rel", ArrayList.class);
+			System.out.println("CORRELATION: "+ i + "/" + allDocuments.size() + " --Document-- :" + rels.size() + " relations to process");
+			Thread.sleep(2000);
+			computeCorrelation(rels, allDocuments.get(i).getString("_id"));
+		}
+		
+	}
+	
+	public void computeCorrelation(List<Document> rels, String documentId) {
+		MongoDBUtils utils = new MongoDBUtils(mongoDB, mongoColl);
+		for(int i = 0; i < rels.size(); i++) {
+			String lemmaX = ((Document) rels.get(i).get("subject", ArrayList.class).get(0)).getString("lemma");
+			String lemmaY = ((Document) rels.get(i).get("object", ArrayList.class).get(0)).getString("lemma");
 			
 			int n_11 = utils.correlationXandY(lemmaX, lemmaY);
 			int n_10 = utils.correlationXNotY(lemmaX, lemmaY);
@@ -279,6 +334,8 @@ public class Main {
 			double result2 = Math.sqrt(mult3);
 			
 			double correlation = result1/result2;
+			
+			utils.updateDocumentCorrelation(documentId, String.valueOf(correlation), i);
 			
 		}
 	}
@@ -307,7 +364,7 @@ public class Main {
 		return tf;			
 	}
 	
-	public void createModel(Document document) throws IOException {
+	public void createModel(Document document, String topic) throws IOException {
 		String documentName = document.getString("_id");
 		@SuppressWarnings("unchecked")
 		List<Document> NEs = (List<Document>) document.get("EN", ArrayList.class);
@@ -319,6 +376,8 @@ public class Main {
 		Resource subject = model.createResource(SFWCSchema.SFWC_URI+"Document_"+documentName);
 		model.add(subject, RDF.type, SFWCSchema.DOCUMENT);
 		model.add(subject, RDF.type, model.createResource(SFWCSchema.SFWC_URI+"ComputerScience"));
+		model.add(subject, SFWCSchema.topic, SFWCSchema.TOPIC);
+		model.add(SFWCSchema.TOPIC, RDFS.label, topic);
 		
 		model = addDocument(model, subject, NEs, Rels);
 		
@@ -329,6 +388,7 @@ public class Main {
 	private Model addDocument(Model model, Resource subject, List<Document> NEs, List<Document> Rels) throws IOException {
 		
 		File idfFile = new File("IDF-diabetes.txt");
+		@SuppressWarnings("deprecation")
 		List<String> idfLines = FileUtils.readLines(idfFile);
 		Map<String,Double> mapIdf = generateIDFValues(idfLines);
 		
@@ -359,9 +419,9 @@ public class Main {
 			String correlation = "0.0";
 			
 			Resource relSbj = model.createResource(SFWCSchema.SFWC_URI+lemmaSbj+"-"+lemmaObj);
-			model = addRels(model, relSbj, lemmaSbj, lemmaObj, sentence, correlation);
+			model = addRels(model, relSbj, subject, lemmaSbj, lemmaObj, sentence, correlation);
 			
-			model.add(subject, SFWCSchema.hasRel, relSbj);
+			model.add(subject, SFWCSchema.hasRelation, relSbj);
 		}
 		return model;
 	}
@@ -381,21 +441,25 @@ public class Main {
 		if(uri.contains("http"));
 			model.add(lemma, model.createProperty(SFWCSchema.ITSRDF_URI+"taIdentRef"), model.createResource(uri));
 		if(!ner.equals("O"))
-			model.add(lemma, SFWCSchema.ner, ner);
+			model.add(lemma, SFWCSchema.neTag, ner);
 		model.add(lemma, SFWCSchema.inDocument, docRes);
 		model.add(lemma, SFWCSchema.tfValue, tf);
 		model.add(lemma, SFWCSchema.idfValue, idf);
+		model.add(lemma, SFWCSchema.tfIdfValue, idf);
 		return model;
 	}
 	
-	private Model addRels(Model model, Resource relSbj, String lemmaSbj, String lemmaObj, 
+	private Model addRels(Model model, Resource relSbj, Resource relDoc, String lemmaSbj, String lemmaObj, 
 			String sentence, String correlation) {
 		
 		model.add(relSbj, RDF.type, SFWCSchema.RELATION);
 		
-		model.add(relSbj, SFWCSchema.subject, model.createResource(SFWCSchema.SFWC_URI+lemmaSbj));
-		model.add(relSbj, SFWCSchema.object, model.createResource(SFWCSchema.SFWC_URI+lemmaObj));
+		model.add(relSbj, SFWCSchema.subjectEntity, model.createResource(SFWCSchema.SFWC_URI+lemmaSbj));
+		model.add(relSbj, SFWCSchema.objectEntity, model.createResource(SFWCSchema.SFWC_URI+lemmaObj));
+		model.add(relSbj, SFWCSchema.subjectLabel, model.createResource(SFWCSchema.SFWC_URI+lemmaSbj));
+		model.add(relSbj, SFWCSchema.objectLabel, model.createResource(SFWCSchema.SFWC_URI+lemmaObj));
 		model.add(relSbj, SFWCSchema.sentence, sentence);
+		model.add(relSbj, SFWCSchema.inDocument, relDoc);
 		model.add(relSbj, SFWCSchema.correlationValue, correlation);
 		
 		return model;

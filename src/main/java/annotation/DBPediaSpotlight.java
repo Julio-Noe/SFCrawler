@@ -32,21 +32,6 @@ public class DBPediaSpotlight{
 
 	public static void main(String[] args) throws Exception {
 
-		DBPediaSpotlight http = new DBPediaSpotlight();
-
-		// DBPediaSpotlight http = new
-		// DBPediaSpotlight("http://alpha.tamps.cinvestav.mx:8085/rest/annotate");
-
-		String text = "Bryan Lee Cranston is an American actor.  He is known for portraying \"Walter White\" in the drama series Breaking Bad.";
-
-		text = "Their vivid anecdotal qualities have made some of them favorites of painters since the Renaissance, the result being that they stand out more prominently in the modern imagination.Daphne was a nymph, daughter of the river god Peneus, who had scorned Apollo.";
-		// text="New York city is located in USA";
-		Long intime = System.currentTimeMillis();
-		Long endtime = System.currentTimeMillis();
-
-		Long total = (endtime - intime);// 1000;
-
-		System.out.println("Response time " + total);
 	}
 
 	// HTTP POST request

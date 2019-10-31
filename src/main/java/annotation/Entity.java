@@ -3,6 +3,10 @@ package annotation;
 import java.io.Serializable;
 
 public class Entity implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String surfaceText = ""; // surface text
 	private String source = ""; // extraction tool e.g. spotlight, tagme
 	private String URI; // identifier
@@ -10,7 +14,7 @@ public class Entity implements Serializable{
 	private String types = ""; //
 	private int start = 0;
 	private int end = 0;
-	private String offsetKey="";
+//	private String offsetKey="";
 
 	public Entity() {
 	}
