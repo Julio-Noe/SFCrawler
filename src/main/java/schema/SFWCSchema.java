@@ -24,7 +24,7 @@ public class SFWCSchema {
 	
 	//Properties
 	
-	public static Property hasNE;
+	public static Property hasEntity;
 	public static Property hasRelation;
 	public static Property inDocument;
 	public static Property tfValue;
@@ -37,7 +37,7 @@ public class SFWCSchema {
 	public static Property sentence;
 	public static Property subjectEntity;
 	public static Property objectEntity;
-	public static Property topic;
+	public static Property hasAssociatedTopic;
 	
 	private static Model MODEL = ModelFactory.createDefaultModel();
 	
@@ -60,9 +60,9 @@ public class SFWCSchema {
 		MODEL.add(TOPIC, SKOS.prefLabel, "Topic");
 		
 		//Properties
-		hasNE = MODEL.createProperty(SFWC_URI+"hasNE");
-		MODEL.add(hasNE, RDF.type, OWL.DatatypeProperty);
-		MODEL.add(hasNE, RDFS.domain, DOCUMENT);
+		hasEntity = MODEL.createProperty(SFWC_URI+"hasNE");
+		MODEL.add(hasEntity, RDF.type, OWL.DatatypeProperty);
+		MODEL.add(hasEntity, RDFS.domain, DOCUMENT);
 		
 		hasRelation = MODEL.createProperty(SFWC_URI+"hasRel");
 		MODEL.add(hasRelation, RDF.type, OWL.DatatypeProperty);
@@ -112,9 +112,9 @@ public class SFWCSchema {
 		MODEL.add(objectEntity, RDF.type, OWL.DatatypeProperty);
 		MODEL.add(objectEntity, RDFS.domain, RELATION);
 		
-		topic = MODEL.createProperty(SFWC_URI+"topic");
-		MODEL.add(topic, RDF.type, OWL.DatatypeProperty);
-		MODEL.add(topic, RDFS.domain, DOCUMENT);
+		hasAssociatedTopic = MODEL.createProperty(SFWC_URI+"hasAssociatedTopic");
+		MODEL.add(hasAssociatedTopic, RDF.type, OWL.DatatypeProperty);
+		MODEL.add(hasAssociatedTopic, RDFS.domain, DOCUMENT);
 		
 		//Prefixes
 		MODEL.setNsPrefix("rdf", RDF.uri);

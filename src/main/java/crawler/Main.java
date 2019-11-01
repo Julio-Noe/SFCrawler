@@ -31,17 +31,17 @@ public class Main {
 //	}
 	
 	private String mongoDB = "SFWC";
-	private String mongoColl = "diabetes";
+	private String mongoColl = "computerScience";
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		Main m = new Main();
 		String corpusPath = "./corpus/computerScience";
 		String pathProcessedDocuments = "ProcessedDocuments-CS.txt";
-		String idfFilePath = "IDF-diabetes.txt";
+		String idfFilePath = "IDF-CS.txt";
 		String topic = "Computer Science";
 		MongoDBUtils ut = new MongoDBUtils(m.mongoDB, m.mongoColl);
 		
-		int task = 4;
+		int task = 5;
 		
 		/*
 		 * Task 1: extract tokens, NER, NEL from a corpus and save result in MongDB 
@@ -233,22 +233,21 @@ public class Main {
 		MongoDBUtils utils = new MongoDBUtils(mongoDB, mongoColl);
 		@SuppressWarnings("deprecation")
 		List<String> idfList = FileUtils.readLines(new File(idfFilePath));
-		int counter = 0;
-		for(String idf : idfList) {
-			Thread.sleep(2000);
-			String[] idfArray = idf.split("\t");
+		for(int i = 0; i < idfList.size(); i++) {
+//			Thread.sleep(2000);
+			String[] idfArray = idfList.get(i).split("\t");
 			if(idfArray != null && 
 					idfArray.length > 2) {
 				List<Document> documentList = utils.documentsWithTerm(idfArray[0]);
-				System.out.println(counter++ + "/"+idfList.size()+" - Lemma: " + idfArray[0] + " Documents with lemma: " + documentList.size());
+				System.out.println(i + "/"+idfList.size()+" - Lemma: " + idfArray[0] + " Documents with lemma: " + documentList.size());
 				for(Document doc : documentList) {
 					@SuppressWarnings("unchecked")
 					List<Document> enList = (List<Document>) doc.get("EN", ArrayList.class);
-					for(int i = 0; i < enList.size(); i++) {
-						if(enList.get(i).getString("lemma").equals(idfArray[0])) {
+					for(int j = 0; j < enList.size(); j++) {
+						if(enList.get(j).getString("lemma").equals(idfArray[0])) {
 							double idfValue = Double.parseDouble(idfArray[1]);
 							double idfFinal = Math.log(idfValue)/Math.log(2);
-							utils.updateDocumentIDF(doc.getString("_id"), String.valueOf(idfFinal), i);
+							utils.updateDocumentIDF(doc.getString("_id"), String.valueOf(idfFinal), j);
 						}
 					}
 				}
@@ -301,7 +300,7 @@ public class Main {
 			@SuppressWarnings("unchecked")
 			List<Document> rels = (List<Document>) allDocuments.get(i).get("rel", ArrayList.class);
 			System.out.println("CORRELATION: "+ i + "/" + allDocuments.size() + " --Document-- :" + rels.size() + " relations to process");
-			Thread.sleep(2000);
+//			Thread.sleep(2000);
 			computeCorrelation(rels, allDocuments.get(i).getString("_id"));
 		}
 		
@@ -375,8 +374,8 @@ public class Main {
 		
 		Resource subject = model.createResource(SFWCSchema.SFWC_URI+"Document_"+documentName);
 		model.add(subject, RDF.type, SFWCSchema.DOCUMENT);
-		model.add(subject, RDF.type, model.createResource(SFWCSchema.SFWC_URI+"ComputerScience"));
-		model.add(subject, SFWCSchema.topic, SFWCSchema.TOPIC);
+		model.add(subject, RDFS.label, document.getString("_id"));
+		model.add(subject, SFWCSchema.hasAssociatedTopic, SFWCSchema.TOPIC);
 		model.add(SFWCSchema.TOPIC, RDFS.label, topic);
 		
 		model = addDocument(model, subject, NEs, Rels);
@@ -406,7 +405,7 @@ public class Main {
 			else
 				model = addNE(model, subject, lemma, lemmaObj, nifType, ne, 0.0d);
 			
-			model.add(subject, SFWCSchema.hasNE, lemmaObj);
+			model.add(subject, SFWCSchema.hasEntity, lemmaObj);
 		}
 		
 		//add Rels
@@ -432,10 +431,12 @@ public class Main {
 		String ner = NE.getString("ner");
 		String uri = NE.getString("uri");
 		String tf = String.valueOf(NE.get("tf", Object.class));
-		String idf = String.valueOf(idfValue);
+		String idf = String.valueOf(NE.get("idf",Object.class));
+		String tfIdf = String.valueOf(NE.get("tfIdf", Object.class));
 		
 		model.add(lemma, RDF.type, SFWCSchema.ENTITY);
 		model.add(lemma, RDF.type, SFWCSchema.NIF_URI+nifType);
+		model.add(SFWCSchema.ENTITY, RDFS.subClassOf, SFWCSchema.NIF_URI+nifType);
 		model.add(lemma, model.createProperty(SFWCSchema.NIF_URI+"anchorOf"), lemmaString);
 		model.add(lemma, model.createProperty(SFWCSchema.NIF_URI+"posTag"), posTag);
 		if(uri.contains("http"));
@@ -445,7 +446,7 @@ public class Main {
 		model.add(lemma, SFWCSchema.inDocument, docRes);
 		model.add(lemma, SFWCSchema.tfValue, tf);
 		model.add(lemma, SFWCSchema.idfValue, idf);
-		model.add(lemma, SFWCSchema.tfIdfValue, idf);
+		model.add(lemma, SFWCSchema.tfIdfValue, tfIdf);
 		return model;
 	}
 	
@@ -456,11 +457,11 @@ public class Main {
 		
 		model.add(relSbj, SFWCSchema.subjectEntity, model.createResource(SFWCSchema.SFWC_URI+lemmaSbj));
 		model.add(relSbj, SFWCSchema.objectEntity, model.createResource(SFWCSchema.SFWC_URI+lemmaObj));
-		model.add(relSbj, SFWCSchema.subjectLabel, model.createResource(SFWCSchema.SFWC_URI+lemmaSbj));
-		model.add(relSbj, SFWCSchema.objectLabel, model.createResource(SFWCSchema.SFWC_URI+lemmaObj));
+		model.add(relSbj, SFWCSchema.subjectLabel, lemmaSbj);
+		model.add(relSbj, SFWCSchema.objectLabel, lemmaObj);
 		model.add(relSbj, SFWCSchema.sentence, sentence);
 		model.add(relSbj, SFWCSchema.inDocument, relDoc);
-		model.add(relSbj, SFWCSchema.correlationValue, correlation);
+//		model.add(relSbj, SFWCSchema.correlationValue, correlation);
 		
 		return model;
 	}
