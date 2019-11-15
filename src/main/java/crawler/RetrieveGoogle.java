@@ -2,9 +2,9 @@ package crawler;
 
 import java.io.File;
 import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.List;
-
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -13,21 +13,113 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.services.customsearch.Customsearch;
+import com.google.api.services.customsearch.CustomsearchRequestInitializer;
+import com.google.api.services.customsearch.model.Result;
+import com.google.api.services.customsearch.model.Search;
+
+
 public class RetrieveGoogle {
+	
+	String googleJSONAPI = "AIzaSyCSj2zYCyEJTlSD3rM97ErYs6LndwC-BwM";
 
 	static private Logger logger = Logger.getLogger(RetrieveGoogle.class);
 	
-	public static void main(String[] args) throws IOException {
-		RetrieveGoogle rg = new RetrieveGoogle();
+	public static void main(String[] args) throws IOException, GeneralSecurityException {
 		
-		rg.retreiveGoogleSeeds();
-		//rg.retreiveBingSeeds();
+//		RetrieveGoogle rg = new RetrieveGoogle();
+//		rg.queryTopicToGoogle("computer science", 2);
+		
+		//https://developers.google.com/custom-search/v1/overview
+		String searchQuery = "\"computer science\" -fileType:html"; //The query to search
+//	    String cx = "002845322276752338984:vxqzfa86nqc"; //Your search engine
+		String cx = "010597449755694553850:pst7fr7qkto";
+
+	    //Instance Customsearch
+	    Customsearch cs = new Customsearch.Builder(GoogleNetHttpTransport.newTrustedTransport(), JacksonFactory.getDefaultInstance(), null) 
+	                   .setApplicationName("MyApplication")
+	                   .setGoogleClientRequestInitializer(new CustomsearchRequestInitializer("AIzaSyCSj2zYCyEJTlSD3rM97ErYs6LndwC-BwM")) 
+	                   .build();
+
+	    //Set search parameter
+	    Customsearch.Cse.List list = cs.cse().list("").setExactTerms("Computer Science").setFileType("html").setStart(1l).setCx(cx); 
+	    //Execute search
+	    Search result = list.execute();
+	    if (result.getItems()!=null){
+	        for (Result ri : result.getItems()) {
+	            //Get title, link, body etc. from search
+	            System.out.println(ri.getTitle() + ", " + ri.getLink());
+	        }
+	    }
+	    System.out.println("second page: ");
+	    list = cs.cse().list("").setExactTerms("Computer Science").setFileType("html").setStart(11l).setCx(cx);
+	    result = list.execute();
+	    if (result.getItems()!=null){
+	        for (Result ri : result.getItems()) {
+	            //Get title, link, body etc. from search
+	            System.out.println(ri.getTitle() + ", " + ri.getLink());
+	        }
+	    }
+	    
+//		rg.retreiveGoogleSeeds();
+		// rg.retreiveBingSeeds();
 
 	}
+	
+	public List<String> queryTopicToGoogle(String topic, int numberGooglePagesResults) {
+//		String searchQuery = "\""+topic+"\" -fileType:html"; // The query to search
+		String cx = "010597449755694553850:pst7fr7qkto";//Your search engine
+		List<String> googleResultsList = new ArrayList<String>();
+
+		// Instance Customsearch
+		Customsearch cs = null;
+		Customsearch.Cse.List list = null;
+		Search result = null;
+		try {
+			for(int i = 0; i < numberGooglePagesResults; i++) {
+				System.out.println("Google results -- page " + (i+1));
+				cs = new Customsearch.Builder(GoogleNetHttpTransport.newTrustedTransport(),
+						JacksonFactory.getDefaultInstance(), null).setApplicationName("MyApplication")
+								.setGoogleClientRequestInitializer(
+										new CustomsearchRequestInitializer("AIzaSyCSj2zYCyEJTlSD3rM97ErYs6LndwC-BwM"))
+								.build();
+				long start = 1l;
+				if(googleResultsList.size() > 0)
+					start = Long.parseLong(String.valueOf(googleResultsList.size()));
+				
+				list = cs.cse()
+						.list("")
+						.setExactTerms(topic)
+						.setFileType("html")
+						.setStart(start)
+						.setCx(cx);
+				
+				result = list.execute();
+				
+				if (result.getItems() != null) {
+					for (Result ri : result.getItems()) {
+						// Get title, link, body etc. from search
+						System.out.println(ri.getTitle() + ", " + ri.getLink());
+						googleResultsList.add(ri.getLink());
+					}
+				}
+			}
+		} catch (GeneralSecurityException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return googleResultsList;
+
+	}
+	
 	///5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6
 	public List<String> retreiveGoogleSeeds() throws IOException {
 		Document linksDoc = null;
-		linksDoc = Jsoup.connect("https://www.google.com/search?q=define%3Acomputer&as_qdr=y&lr=lang_en&num=49")
+		linksDoc = Jsoup.connect("https://www.google.com/search?q=computer+science")
 				.userAgent("Mozilla")
 			    .get();
 		//Elements titles = linksDoc.select("h3.r > a");
@@ -36,7 +128,7 @@ public class RetrieveGoogle {
 		List<String> seeds = new ArrayList<String>();
 		for (Element e : elems) {
 			String cleanString = e.attr("href");
-
+			
 			if(cleanString.contains("/url?q=")
 					&&cleanString.contains("http")
 					&& !containsURI(cleanString)) {

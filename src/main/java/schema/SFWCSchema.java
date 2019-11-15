@@ -60,11 +60,11 @@ public class SFWCSchema {
 		MODEL.add(TOPIC, SKOS.prefLabel, "Topic");
 		
 		//Properties
-		hasEntity = MODEL.createProperty(SFWC_URI+"hasNE");
+		hasEntity = MODEL.createProperty(SFWC_URI+"hasEntity");
 		MODEL.add(hasEntity, RDF.type, OWL.DatatypeProperty);
 		MODEL.add(hasEntity, RDFS.domain, DOCUMENT);
 		
-		hasRelation = MODEL.createProperty(SFWC_URI+"hasRel");
+		hasRelation = MODEL.createProperty(SFWC_URI+"hasRelation");
 		MODEL.add(hasRelation, RDF.type, OWL.DatatypeProperty);
 		MODEL.add(hasRelation, RDFS.domain, DOCUMENT);
 		
@@ -84,19 +84,19 @@ public class SFWCSchema {
 		MODEL.add(tfIdfValue, RDF.type, OWL.DatatypeProperty);
 		MODEL.add(tfIdfValue, RDFS.domain, ENTITY);
 		
-		correlationValue = MODEL.createProperty(SFWC_URI+"correlation");
+		correlationValue = MODEL.createProperty(SFWC_URI+"correlationValue");
 		MODEL.add(correlationValue, RDF.type, OWL.DatatypeProperty);
 		MODEL.add(correlationValue, RDFS.domain, OWL.DatatypeProperty);
 		
-		subjectLabel = MODEL.createProperty(SFWC_URI+"subject");
+		subjectLabel = MODEL.createProperty(SFWC_URI+"subjectLabel");
 		MODEL.add(subjectLabel, RDF.type, OWL.DatatypeProperty);
 		MODEL.add(subjectLabel, RDFS.domain, RELATION);
 		
-		objectLabel = MODEL.createProperty(SFWC_URI+"object");
+		objectLabel = MODEL.createProperty(SFWC_URI+"objectLabel");
 		MODEL.add(objectLabel, RDF.type, OWL.DatatypeProperty);
 		MODEL.add(objectLabel, RDFS.domain, RELATION);
 		
-		neTag = MODEL.createProperty(SFWC_URI + "ner");
+		neTag = MODEL.createProperty(SFWC_URI + "nerTag");
 		MODEL.add(neTag, RDF.type, OWL.DatatypeProperty);
 		MODEL.add(neTag, RDFS.domain, ENTITY);
 		

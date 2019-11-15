@@ -1,11 +1,12 @@
 package crawler;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -17,9 +18,12 @@ import org.apache.jena.vocabulary.RDFS;
 import org.bson.Document;
 
 import db.MongoDBUtils;
+import edu.stanford.nlp.io.StringOutputStream;
+import nlp.Annotation;
 import nlp.DocumentAnnotation;
 import nlp.TextAnalisys;
 import schema.SFWCSchema;
+import sparql.QueryTopic;
 
 public class Main {
 
@@ -30,18 +34,19 @@ public class Main {
 //	    root.setLevel(Level.ERROR);
 //	}
 	
-	private String mongoDB = "SFWC";
-	private String mongoColl = "computerScience";
+	private String mongoDB = "SFWC_V2";
+	private String mongoColl = "politics";
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		Main m = new Main();
-		String corpusPath = "./corpus/computerScience";
-		String pathProcessedDocuments = "ProcessedDocuments-CS.txt";
-		String idfFilePath = "IDF-CS.txt";
-		String topic = "Computer Science";
+		String corpusPath = "./corpus/politics";
+		String pathProcessedDocuments = "ProcessedDocuments-politics.txt";
+		String idfFilePath = "IDF-Politics.txt";
+		String topic = "Politics";
 		MongoDBUtils ut = new MongoDBUtils(m.mongoDB, m.mongoColl);
+//		QueryTopic qt = new QueryTopic();
 		
-		int task = 5;
+		int task = 4;
 		
 		/*
 		 * Task 1: extract tokens, NER, NEL from a corpus and save result in MongDB 
@@ -70,7 +75,7 @@ public class Main {
 			case 6: m.addTFIDFToMongoDB();
 					break;
 			case 7: List<Document> documentList = ut.getAllDocs();
-					m.createModel(documentList.get(0), topic);
+					m.createModel(documentList, topic, "./politics_v2.ttl");
 					break;
 			case 8: m.temporalDeleteDocuments();
 					break;
@@ -82,6 +87,7 @@ public class Main {
 		long totalTime = endTime - startTime;
 		
 		System.out.format("%d Miliseconds = %d minutes\n", totalTime, TimeUnit.MILLISECONDS.toMinutes(totalTime));
+		ut.close();
 		
 	}
 	
@@ -107,6 +113,8 @@ public class Main {
 		utils.deleteDocuments(removeList);
 		System.out.println(removeList.size());
 		
+		utils.close();
+		
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -117,7 +125,7 @@ public class Main {
 		File processedDocuments = new File(pathProcessedDocuments);
 		
 		int counter = 0;
-		int counterProcessed = 0;
+		int counterProcessed = 1;
 		
 		for(File document : documents){
 			System.out.println("Processing document: " 
@@ -162,13 +170,15 @@ public class Main {
 		
 		
 		System.out.println("Number of Documents processed: " + counter);
+		
+		mongoUtils.close();
 	}
 	
 	@SuppressWarnings("deprecation")
 	public void computeTF() throws IOException, InterruptedException {
 		MongoDBUtils utils = new MongoDBUtils(mongoDB, mongoColl);
 		List<String> documentsId = utils.getDocsId();
-		File processedDocuments = new File("ProcessedDocuments-CS-TF.txt");
+		File processedDocuments = new File("ProcessedDocuments-Politics-TF.txt");
 		int counterProgress = 0;
 		for(String docId : documentsId) {
 			if(processedDocuments.exists() 
@@ -181,7 +191,7 @@ public class Main {
 			
 			List<String> lemmaList = utils.getDocLemmas(docId);
 			System.out.println("Processing document "+ counterProgress++ + "/"+documentsId.size()+": " + docId);
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 			for(int i = 0; i < lemmaList.size(); i++) {
 				
 				double tf = tf(lemmaList, lemmaList.get(i));
@@ -189,8 +199,48 @@ public class Main {
 			}
 
 		}
+		utils.close();
+	}
+	
+	public List<Annotation> computeLemmaTF(List<Annotation> annotationList) throws IOException, InterruptedException {
+		List<String> lemmaList = extractDocumentLemmas(annotationList);
+		List<Double> tfList = new ArrayList<Double>();
+		List<Annotation> topTenList = new ArrayList<Annotation>();
+		for(Annotation annotation : annotationList) {
+			double tf = tf(lemmaList, annotation.getLemma());
+			tfList.add(tf);
+			annotation.settf(tf);
+		}
+		
+		Collections.sort(tfList, Collections.reverseOrder());
+//		System.out.println(tfList);
+//		Set<String> lemmaSet = new HashSet<String>();
+//		int i = 0;
+//		while(lemmaSet.size() < 10) {
+//			System.out.println(tfList.get(i));
+//			for(Annotation annotation : annotationList) {
+//				if(annotation.gettf() == tfList.get(i) && !lemmaSet.contains(annotation.getLemma())) {
+//					topTenList.add(annotation);
+//					lemmaSet.add(annotation.getLemma());
+//					break;
+//				}
+//			}
+//			i++;
+//		}
+//		System.out.println("topTenList = " + topTenList.size());
+		return annotationList;
 		
 	}
+	
+	private List<String> extractDocumentLemmas(List<Annotation> annotationList){
+		List<String> lemmaList = new ArrayList<String>();
+		for(Annotation ann : annotationList) {
+			lemmaList.add(ann.getLemma());
+		}
+		return lemmaList;
+	}
+	
+	
 	
 //	public void computeIDF() throws IOException {
 //		MongoDBUtils utils = new MongoDBUtils();
@@ -253,6 +303,7 @@ public class Main {
 				}
 			}			
 		}
+		utils.close();
 	}
 	
 	public void addTFIDFToMongoDB() throws InterruptedException {
@@ -263,13 +314,14 @@ public class Main {
 			@SuppressWarnings("unchecked")
 			List<Document> enList = (List<Document>) allDocuments.get(i).get("EN", ArrayList.class);
 			System.out.println("TFIDF: " + i + "/" + allDocuments.size() + " --"+allDocuments.get(i).getString("_id")+"-- :::" + enList.size() + " ::: entities to process");
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 			for(int j = 0; j < enList.size(); j++) {
 				double tf = Double.parseDouble(enList.get(j).getString("tf"));
 				double idf = Double.parseDouble(enList.get(j).getString("idf"));
 				utils.updateDocumentTFIDF(allDocuments.get(i).getString("_id"), String.valueOf(tf*idf), j);
 			}
 		}
+		utils.close();
 	}
 	
 	public void computeIDFWord(Set<String> index, String idfFilePath) throws IOException {
@@ -288,8 +340,10 @@ public class Main {
 			FileUtils.write(processedDocuments, word+"\t"+idf+"\t"+documentsId.size()+"\t"+n+"\n", "UTF8", true);
 		}
 		System.out.println("----------END--------------");
-		
+		utils.close();
 	}
+	
+	
 	
 	public void correlation() throws InterruptedException {
 		MongoDBUtils utils = new MongoDBUtils(mongoDB, mongoColl);
@@ -302,6 +356,20 @@ public class Main {
 			System.out.println("CORRELATION: "+ i + "/" + allDocuments.size() + " --Document-- :" + rels.size() + " relations to process");
 //			Thread.sleep(2000);
 			computeCorrelation(rels, allDocuments.get(i).getString("_id"));
+		}
+		utils.close();
+	}
+	
+	public void sparqlCorrelation() throws InterruptedException {
+		QueryTopic qt = new QueryTopic(mongoColl);
+		
+		List<String> allDocuments = qt.queryDocuments();
+
+		for(int i = 0; i < allDocuments.size(); i++) {
+//			System.out.println(allDocuments.get(i));
+			List<String> rels = qt.queryDocumentRelation(allDocuments.get(i));
+			System.out.println("CORRELATION: "+ i + "/" + allDocuments.size() + " --Document-- :" + rels.size() + " relations to process");
+			computeSparqlCorrelation(rels, allDocuments.get(i));
 		}
 		
 	}
@@ -337,6 +405,51 @@ public class Main {
 			utils.updateDocumentCorrelation(documentId, String.valueOf(correlation), i);
 			
 		}
+		utils.close();
+	}
+	
+	public void computeSparqlCorrelation(List<String> rels, String documentURI) {
+		QueryTopic qt = new QueryTopic(mongoColl);
+		for(int i = 0; i < rels.size(); i++) {
+			String lemmaX = rels.get(i).split(":")[0];
+			String lemmaY = rels.get(i).split(":")[1];
+			
+			int n_11 = qt.queryCorrelationXandY(lemmaX, lemmaY);
+			int n_10 = qt.queryCorrelationXNotY(lemmaX, lemmaY);
+			int n_01 = qt.queryCorrelationNotXY(lemmaX, lemmaY);
+			int n_00 = qt.queryCorrelationNotXNotY(lemmaX, lemmaY);
+			int n_1_ = n_11 + n_10;
+			int n_0_ = n_01 + n_00;
+			int n__1 = n_11 + n_01;
+			int n__0 = n_10 + n_00;
+			
+			//n_11*n_00
+			int mult1 = n_11 * n_00;
+			//n_10 * n_01
+			int mult2 = n_10 * n_01;
+			
+			int result1 = mult1 - mult2;
+			
+			double mult3 = (n_1_ * n_0_) * (double)(n__0 * n__1);
+			double result2 = Math.sqrt(mult3);
+			
+			double correlation = result1/result2;
+			if(Double.isNaN(correlation)) {
+				correlation = 0.0d;
+				System.out.println("\tCorrelation = NaN");
+				System.out.print(n_11 + ", ");
+				System.out.print(n_10 + ", ");
+				System.out.print(n_01 + ", ");
+				System.out.println(n_00);
+				System.out.println("\t\t"+ result1+"/"+result2);
+			}
+			
+			
+//			System.out.println(lemmaX + " - " + lemmaY + " = " + correlation);
+			
+//			utils.updateDocumentCorrelation(documentId, String.valueOf(correlation), i);
+			
+		}
 	}
 	
 	
@@ -363,61 +476,100 @@ public class Main {
 		return tf;			
 	}
 	
-	public void createModel(Document document, String topic) throws IOException {
-		String documentName = document.getString("_id");
-		@SuppressWarnings("unchecked")
-		List<Document> NEs = (List<Document>) document.get("EN", ArrayList.class);
-		@SuppressWarnings("unchecked")
-		List<Document> Rels = (List<Document>) document.get("rel", ArrayList.class);
-		
+	public void createModel(List<Document> documentList, String topic, String outputFilePath) throws IOException {
 		Model model = SFWCSchema.getModel();
+		for(Document document : documentList) {
+			String documentName = document.getString("_id");
+			@SuppressWarnings("unchecked")
+			List<Document> NEs = (List<Document>) document.get("EN", ArrayList.class);
+			@SuppressWarnings("unchecked")
+			List<Document> Rels = (List<Document>) document.get("rel", ArrayList.class);
+			
+			Resource subject = model.createResource(SFWCSchema.SFWC_URI+"Document-"+documentName);
+			model.add(subject, RDF.type, SFWCSchema.DOCUMENT);
+			model.add(subject, RDFS.label, document.getString("_id"));
+			model.add(subject, SFWCSchema.hasAssociatedTopic, SFWCSchema.TOPIC);
+			model.add(SFWCSchema.TOPIC, RDFS.label, topic);
+			
+			model = addDocument(model, documentName, subject, NEs, Rels);
+		}
+		StringOutputStream sos = new StringOutputStream();
+		model.write(sos, "NTRIPLES");
+//		String[] content = sos.toString().split("\n");
+
+		File output = new File(outputFilePath);
+		model.write(new FileWriter(output), "TTL");
 		
-		Resource subject = model.createResource(SFWCSchema.SFWC_URI+"Document_"+documentName);
-		model.add(subject, RDF.type, SFWCSchema.DOCUMENT);
-		model.add(subject, RDFS.label, document.getString("_id"));
-		model.add(subject, SFWCSchema.hasAssociatedTopic, SFWCSchema.TOPIC);
-		model.add(SFWCSchema.TOPIC, RDFS.label, topic);
+//		QueryTopic qt = new QueryTopic();
+//		qt.insertTriplesVirtuoso(content);
 		
-		model = addDocument(model, subject, NEs, Rels);
-		
-		model.write(System.out, "TTL");
 		
 	}
 	
-	private Model addDocument(Model model, Resource subject, List<Document> NEs, List<Document> Rels) throws IOException {
-		
-		File idfFile = new File("IDF-diabetes.txt");
-		@SuppressWarnings("deprecation")
-		List<String> idfLines = FileUtils.readLines(idfFile);
-		Map<String,Double> mapIdf = generateIDFValues(idfLines);
+	
+	
+	private Model addDocument(Model model, String documentName, Resource subject, List<Document> NEs, List<Document> Rels) throws IOException {
 		
 		//add NEs
+		int counter = 0;
 		for(Document ne : NEs) {
-			String lemma = ne.getString("lemma");
+			counter++;
+			String lemma = ne.getString("lemma").toLowerCase();
 			String nifType = "";
+			int begin = ne.getInteger("begin");
+			int end = ne.getInteger("end");
+			
+			if(lemma.contains("<"))
+				System.out.println(counter + " - " + subject.getURI());
+			if(lemma.contains("/"))
+				lemma = lemma.replace("/", "_");
+			if(lemma.contains("."))
+				lemma = lemma.replace(".", "_");
+			if(lemma.contains("'"))
+				lemma = lemma.replace("'", "_");
 			if(lemma.split(" ").length > 1)
 				nifType = "Phrase";
 			else
 				nifType = "Word";
-			Resource lemmaObj = model.createResource(SFWCSchema.SFWC_URI+lemma);
-			if(mapIdf.containsKey(lemma))
-				model = addNE(model, subject, lemma, lemmaObj, nifType, ne, mapIdf.get(lemma));
-			else
-				model = addNE(model, subject, lemma, lemmaObj, nifType, ne, 0.0d);
+			Resource lemmaObj = model.createResource(SFWCSchema.SFWC_URI+documentName + "_Entity-"+lemma+"_"+begin+"-"+end);
+			
+			model = addNE(model, subject, lemma, lemmaObj, nifType, ne);
 			
 			model.add(subject, SFWCSchema.hasEntity, lemmaObj);
 		}
 		
 		//add Rels
+		counter = 0;
 		for(Document rel : Rels) {
+			counter++;
 			Document relSubject = (Document) rel.get("subject", ArrayList.class).get(0);
 			Document relObject = (Document) rel.get("object", ArrayList.class).get(0);
-			String lemmaSbj = relSubject.getString("lemma");
-			String lemmaObj = relObject.getString("lemma");
+			String lemmaSbj = relSubject.getString("lemma").toLowerCase();
+			String lemmaObj = relObject.getString("lemma").toLowerCase();
 			String sentence = rel.getString("sentence");
 			String correlation = "0.0";
 			
-			Resource relSbj = model.createResource(SFWCSchema.SFWC_URI+lemmaSbj+"-"+lemmaObj);
+			if(lemmaSbj.contains("<"))
+				System.out.println("Rel: " + counter + " - " + subject.getURI());
+			
+			if(lemmaSbj.contains("/"))
+				lemmaSbj = lemmaSbj.replace("/", "_");
+			if(lemmaSbj.contains("."))
+				lemmaSbj.replace(".", "_");
+			if(lemmaSbj.contains("'"))
+				lemmaSbj = lemmaSbj.replace("'", "_");
+			
+			if(lemmaObj.contains("<"))
+				System.out.println("Rel: " +counter + " - " + subject.getURI());
+			
+			if(lemmaObj.contains("/"))
+				lemmaObj = lemmaObj.replace("/", "_");
+			if(lemmaObj.contains("."))
+				lemmaObj.replace(".", "_");
+			if(lemmaObj.contains("'"))
+				lemmaObj = lemmaObj.replace("'", "_");
+			
+			Resource relSbj = model.createResource(SFWCSchema.SFWC_URI+documentName+"_Relation-"+lemmaSbj+"_"+lemmaObj);
 			model = addRels(model, relSbj, subject, lemmaSbj, lemmaObj, sentence, correlation);
 			
 			model.add(subject, SFWCSchema.hasRelation, relSbj);
@@ -426,7 +578,7 @@ public class Main {
 	}
 	
 	private Model addNE(Model model, Resource docRes, String lemmaString, Resource lemma, 
-			String nifType, Document NE, Double idfValue) {
+			String nifType, Document NE) {
 		String posTag = NE.getString("posTag");
 		String ner = NE.getString("ner");
 		String uri = NE.getString("uri");
@@ -439,7 +591,7 @@ public class Main {
 		model.add(SFWCSchema.ENTITY, RDFS.subClassOf, SFWCSchema.NIF_URI+nifType);
 		model.add(lemma, model.createProperty(SFWCSchema.NIF_URI+"anchorOf"), lemmaString);
 		model.add(lemma, model.createProperty(SFWCSchema.NIF_URI+"posTag"), posTag);
-		if(uri.contains("http"));
+		if(uri.contains("http"))
 			model.add(lemma, model.createProperty(SFWCSchema.ITSRDF_URI+"taIdentRef"), model.createResource(uri));
 		if(!ner.equals("O"))
 			model.add(lemma, SFWCSchema.neTag, ner);
@@ -466,17 +618,17 @@ public class Main {
 		return model;
 	}
 	
-	private Map<String, Double> generateIDFValues(List<String> idfLines){
-		Map<String, Double> mapIdf = new HashMap<String, Double>();
-		for(String idf: idfLines) {
-			String[] idfSplit = idf.split("\t");
-			if(idfSplit[0] != null 
-					&& idfSplit[1] != null)
-				mapIdf.put(idfSplit[0], Double.parseDouble(idfSplit[1]));
-			else
-				System.out.println("idf = " + idf + "\n====FAIL in split task");
-		}
-		return mapIdf;
-	}
+//	private Map<String, Double> generateIDFValues(List<String> idfLines){
+//		Map<String, Double> mapIdf = new HashMap<String, Double>();
+//		for(String idf: idfLines) {
+//			String[] idfSplit = idf.split("\t");
+//			if(idfSplit[0] != null 
+//					&& idfSplit[1] != null)
+//				mapIdf.put(idfSplit[0], Double.parseDouble(idfSplit[1]));
+//			else
+//				System.out.println("idf = " + idf + "\n====FAIL in split task");
+//		}
+//		return mapIdf;
+//	}
 
 }

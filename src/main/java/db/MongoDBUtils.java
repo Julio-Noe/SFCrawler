@@ -1,11 +1,14 @@
 package db;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 import org.bson.Document;
@@ -29,39 +32,58 @@ public class MongoDBUtils {
 	@SuppressWarnings("unused")
 	private static final Logger LOGGER = Logger.getLogger(MongoDBUtils.class);
 	
-	private String database;
-	private String collection;
+	private MongoClient client;
+	private MongoDatabase db;
+	private MongoCollection<Document> coll;
 
 	public MongoDBUtils(String database, String collection) {
-		this.database = database;
-		this.collection = collection;
+		this.client = new MongoClient();
+		this.db = client.getDatabase(database);
+		this.coll = db.getCollection(collection);
+		
+	}
+	
+	public void close() {
+		client.close();
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		MongoDBUtils utils = new MongoDBUtils("SFWC", "computerScience");
 		
-		utils.correlationNotXNotY("food", "blood");
+		//utils.correlationNotXNotY("food", "blood");
+		Set<String> indexSet = utils.generateLemmaIndex();
+		Object[] index = indexSet.toArray();
+		Pattern wordPattern = Pattern.compile("^[A-Za-z]{3,}-?[A-Za-z]*$");
+		List<String> newNouns = new ArrayList<String>();
+		System.out.println(index.length);
+		for(int i = 0, j = 0 ; i < index.length; i++, j++ ) {
+			String lemma = index[i].toString();
+			Matcher match = wordPattern.matcher(lemma);
+			if(match.find() && !lemma.contains(".") && !lemma.contains(" ") && !lemma.contains("/")) {
+				System.out.println(lemma);
+				newNouns.add(lemma);
+			}
+//			if(j == 100) {
+//				System.in.read();
+//				j = 0;
+//			}
+			
+		}
+		System.out.println(newNouns.size());
 
 	}
 	
 	//use one time to delete computerScience documents wrongly added
 	public void deleteDocuments(List<String> idList) {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
 		
 		for(String id : idList) {
 			coll.deleteOne(Filters.eq("_id", id));
 			System.out.println(id + " ----> DELETED");
 		}
 		
-		client.close();
 	}
 		
 	public int correlationXandY(String lemmaX, String lemmaY) {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
 		
 		FindIterable<Document> andQuery = coll.find(Filters.and(Arrays.asList(Filters.eq("EN.lemma", lemmaX), Filters.eq("EN.lemma", lemmaY))));
 		
@@ -70,15 +92,11 @@ public class MongoDBUtils {
 			counter ++;
 		}
 //		System.out.println("counter = " + counter);
-		client.close();
 		
 		return counter;
 	}
 	
 	public int correlationXNotY(String lemmaX, String lemmaY) {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
 		
 		FindIterable<Document> andQuery = coll.find(Filters.and(Arrays.asList(Filters.eq("EN.lemma", lemmaX), Filters.not(Filters.eq("EN.lemma", lemmaY)))));
 		
@@ -87,15 +105,11 @@ public class MongoDBUtils {
 			counter ++;
 		}
 //		System.out.println("counter = " + counter);
-		client.close();
 		
 		return counter;
 	}
 	
 	public int correlationNotXY(String lemmaX, String lemmaY) {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
 		
 		FindIterable<Document> andQuery = coll.find(Filters.and(Arrays.asList(Filters.not(Filters.eq("EN.lemma", lemmaX)), Filters.eq("EN.lemma", lemmaY))));
 		
@@ -104,15 +118,10 @@ public class MongoDBUtils {
 			counter ++;
 		}
 //		System.out.println("counter = " + counter);
-		client.close();
 		return counter;
 	}
 	
 	public int correlationNotXNotY(String lemmaX, String lemmaY) {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
-		
 		FindIterable<Document> andQuery = coll.find(Filters.and(Arrays.asList(Filters.not(Filters.eq("EN.lemma", lemmaX)), Filters.not(Filters.eq("EN.lemma", lemmaY)))));
 		
 		int counter = 0;
@@ -120,38 +129,27 @@ public class MongoDBUtils {
 			counter ++;
 		}
 //		System.out.println("counter = " + counter);
-		client.close();
 		return counter;
 	}
 	
 	public void dropCollection(String documentName) {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
-		
 		Document doc = coll.find(Filters.eq("_id", documentName)).first();
 		
 		if(doc != null)
 			coll.deleteOne(new BasicDBObject("_id", documentName));
 		
-		client.close();
 	}
 	
 	public void sotoreDocument(DocumentAnnotation docAnn, String documentName, String documentContent) {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
-		
 		Document documentObj = new Document()
 				.append("_id", documentName)
 				.append("content", documentContent)
 				.append("EN", createListAnnotations(docAnn.getAnnotationList()))
 				.append("rel", createListRelations(docAnn.getOpenRelationList()));
-		
+
 		System.out.println("Inserting document");
 		coll.insertOne(documentObj);
 		
-		client.close();
 	}
 	
 	private List<DBObject> createListAnnotations(List<Annotation> annotationList){
@@ -202,10 +200,6 @@ public class MongoDBUtils {
 	}
 	
 	public List<String> getDocLemmas(String documentId){
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
-		
 		List<String> lemmaList = new ArrayList<String>();
 		
 		Document mongoDocument = coll.find(Filters.eq("_id",documentId)).first();
@@ -217,15 +211,10 @@ public class MongoDBUtils {
 			lemmaList.add(doc.getString("lemma"));
 		}
 		
-		client.close();
 		return lemmaList;
 	}
 	
 	public List<String> getDocsId(){
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
-		
 		List<String> documentsIdList = new ArrayList<String>();
 		
 		FindIterable<Document> mongoDocument = coll.find();
@@ -235,15 +224,10 @@ public class MongoDBUtils {
 			documentsIdList.add(id);
 		}
 		
-		client.close();
 		return documentsIdList;
 	}
 	
 	public List<Document> getAllDocs(){
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
-		
 		List<Document> documentsList = new ArrayList<Document>();
 		
 		FindIterable<Document> mongoDocument = coll.find();
@@ -252,95 +236,61 @@ public class MongoDBUtils {
 			documentsList.add(doc);
 		}
 		
-		client.close();
 		return documentsList;
 	}
 	
 	public int numberOfDocumentsWithTerm(String lemma) {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> cll = db.getCollection(collection);
 		
-		FindIterable<Document> containsLemmaList = cll.find(new BasicDBObject("EN.lemma",lemma));
+		FindIterable<Document> containsLemmaList = coll.find(new BasicDBObject("EN.lemma",lemma));
 		
 		int counter = 0;
 		for(@SuppressWarnings("unused") Document doc : containsLemmaList) {
 			counter++;
 		}
 		
-		client.close();
 		return counter;
 	}
 	
 	public List<Document> documentsWithTerm(String lemma) {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> cll = db.getCollection(collection);
-		
-		FindIterable<Document> containsLemmaList = cll.find(new BasicDBObject("EN.lemma",lemma));
+		FindIterable<Document> containsLemmaList = coll.find(new BasicDBObject("EN.lemma",lemma));
 		List<Document> documentList = new ArrayList<Document>();
 		
 		for(Document doc : containsLemmaList) {
 			documentList.add(doc);
 		}
 		
-		client.close();
 		return documentList;
 	}
 	
 	public void updateDocumentTF(String documentId, double tf, int position) {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
-		
 		Bson filter = Filters.eq("_id",documentId);
 		Bson setUpdate = Updates.set("EN."+position+".tf", String.valueOf(tf));
 		
 		coll.updateOne(filter, setUpdate);
-		client.close();
 	}
 	
 	public void updateDocumentIDF(String documentId, String idf, int position) {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
-		
 		Bson filter = Filters.eq("_id",documentId);
 		Bson setUpdate = Updates.set("EN."+position+".idf", String.valueOf(idf));
 
 		coll.updateOne(filter, setUpdate);
-		client.close();
 	}
 	
 	public void updateDocumentTFIDF(String documentId, String idf, int position) {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
-		
 		Bson filter = Filters.eq("_id",documentId);
 		Bson setUpdate = Updates.set("EN."+position+".tfIdf", String.valueOf(idf));
 
 		coll.updateOne(filter, setUpdate);
-		client.close();
 	}
 	
 	public void updateDocumentCorrelation(String documentId, String correlation, int position) {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
-		
 		Bson filter = Filters.eq("_id",documentId);
 		Bson setUpdate = Updates.set("rel."+position+".correlation", String.valueOf(correlation));
 
 		coll.updateOne(filter, setUpdate);
-		client.close();
 	}
 	
 	public Set<String> generateLemmaIndex() {
-		MongoClient client = new MongoClient();
-		MongoDatabase db = client.getDatabase(database);
-		MongoCollection<Document> coll = db.getCollection(collection);
-		
 		FindIterable<Document> documents = coll.find();
 		Set<String> lemmaSet = new HashSet<String>();
 		
@@ -348,10 +298,10 @@ public class MongoDBUtils {
 			@SuppressWarnings("unchecked")
 			List<Document> lemmas = (List<Document>) doc.get("EN",ArrayList.class);
 			for(Document lemma : lemmas) {
-				lemmaSet.add(lemma.getString("lemma"));
+//				if(lemma.getString("posTag").contains("NNP"))
+					lemmaSet.add(lemma.getString("lemma"));
 			}
 		}
-		client.close();
 		return lemmaSet;
 		
 	}

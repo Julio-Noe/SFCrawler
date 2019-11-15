@@ -8,8 +8,9 @@ public class Annotation {
 	private String uri = "";
 	private int begin;
 	private int end;
-	private int tf;
-	private int idf;
+	private double tf;
+	private double idf;
+	private double tfidf;
 	
 	public String getLemma() {
 		return lemma;
@@ -41,16 +42,16 @@ public class Annotation {
 	public void setEnd(int end) {
 		this.end = end;
 	}
-	public int gettf() {
+	public double gettf() {
 		return tf;
 	}
-	public void settf(int tf) {
+	public void settf(double tf) {
 		this.tf = tf;
 	}
-	public int getIdf() {
+	public double getIdf() {
 		return idf;
 	}
-	public void setIdf(int idf) {
+	public void setIdf(double idf) {
 		this.idf = idf;
 	}
 	public String getUri() {
@@ -65,8 +66,8 @@ public class Annotation {
 		int result = 1;
 		result = prime * result + begin;
 		result = prime * result + end;
-		result = prime * result + idf;
-		result = prime * result + tf;
+		result = (int) (prime * result + idf);
+		result = (int) (prime * result + tf);
 		result = prime * result + ((lemma == null) ? 0 : lemma.hashCode());
 		result = prime * result + ((ner == null) ? 0 : ner.hashCode());
 		result = prime * result + ((posTag == null) ? 0 : posTag.hashCode());
@@ -111,6 +112,12 @@ public class Annotation {
 		} else if (!uri.equals(other.uri))
 			return false;
 		return true;
+	}
+	public double getTfidf() {
+		return tfidf;
+	}
+	public void setTfidf(double tfidf) {
+		this.tfidf = tfidf;
 	}
 
 }
