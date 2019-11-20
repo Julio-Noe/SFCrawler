@@ -48,10 +48,11 @@ public class SFWC {
 			
 			List<Double> tfidfList = new ArrayList<Double>();
 			Set<Double> idfSet = new HashSet<Double>();
-			
+			Set<String> idfLemmaSet = new HashSet<String>();
 			for (Annotation ann : listAnnotation) {
 				if(ann.getIdf() > 0d && !ann.getUri().isEmpty()) {
 					idfSet.add(ann.getIdf()); //avoid repeated values
+					idfLemmaSet.add(ann.getLemma());
 				}
 			}
 			
@@ -59,7 +60,6 @@ public class SFWC {
 			Collections.sort(tfidfList, Collections.reverseOrder()); //list values from greater to smaller
 			System.out.println("IDF values: ");
 			for(Double ann : tfidfList) {
-				System.out.println(ann);
 				avgWeight += ann;
 			}
 			System.out.println("List size: " + tfidfList.size());
@@ -70,6 +70,8 @@ public class SFWC {
 				medianIndex = tfidfList.size() / 2;
 				avgWeight = avgWeight / tfidfList.size();
 				median =  tfidfList.get(medianIndex);
+				System.out.println(idfSet);
+				System.out.println(idfLemmaSet);
 				System.out.println("Average: " + avgWeight );
 				System.out.println("Median: " + median);
 			}else {

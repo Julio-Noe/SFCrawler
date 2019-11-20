@@ -101,7 +101,7 @@ public class DBPediaSpotlight{
 			e.printStackTrace();
 
 		} catch (NullPointerException e) {
-			System.out.println("Null pointer Spotlight: " + text);
+//			System.out.println("Null pointer Spotlight: " + text);
 		}
 		
 		return entitiesList;

@@ -29,8 +29,9 @@ public class RetrieveGoogle {
 	
 	public static void main(String[] args) throws IOException, GeneralSecurityException {
 		
-//		RetrieveGoogle rg = new RetrieveGoogle();
-//		rg.queryTopicToGoogle("computer science", 2);
+		RetrieveGoogle rg = new RetrieveGoogle();
+		rg.queryTopicToGoogle("computer science", 5);
+		System.exit(0);
 		
 		//https://developers.google.com/custom-search/v1/overview
 		String searchQuery = "\"computer science\" -fileType:html"; //The query to search
@@ -79,7 +80,7 @@ public class RetrieveGoogle {
 		Search result = null;
 		try {
 			for(int i = 0; i < numberGooglePagesResults; i++) {
-				System.out.println("Google results -- page " + (i+1));
+//				System.out.println("Google results -- page " + (i+1));
 				cs = new Customsearch.Builder(GoogleNetHttpTransport.newTrustedTransport(),
 						JacksonFactory.getDefaultInstance(), null).setApplicationName("MyApplication")
 								.setGoogleClientRequestInitializer(
@@ -92,7 +93,7 @@ public class RetrieveGoogle {
 				list = cs.cse()
 						.list("")
 						.setExactTerms(topic)
-						.setFileType("html")
+//						.setFileType("html")
 						.setStart(start)
 						.setCx(cx);
 				
@@ -101,7 +102,7 @@ public class RetrieveGoogle {
 				if (result.getItems() != null) {
 					for (Result ri : result.getItems()) {
 						// Get title, link, body etc. from search
-						System.out.println(ri.getTitle() + ", " + ri.getLink());
+						System.out.println(ri.getTitle() + ";" + ri.getLink() + ";" + (i+1));
 						googleResultsList.add(ri.getLink());
 					}
 				}
