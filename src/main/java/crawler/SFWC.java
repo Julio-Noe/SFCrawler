@@ -41,6 +41,9 @@ public class SFWC {
 			
 			System.out.println("Information Extraction process");
 			List<Annotation> listAnnotation = sfwcInformationExtraction(content);
+			if(listAnnotation == null) 
+				return null;
+			
 			System.out.println("Calculating TF");
 			listAnnotation = main.computeLemmaTF(listAnnotation);
 			System.out.println("Calculating IDF/TFIDF");
