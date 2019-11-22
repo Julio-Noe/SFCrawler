@@ -46,7 +46,7 @@ public class Main {
 		MongoDBUtils ut = new MongoDBUtils(m.mongoDB, m.mongoColl);
 //		QueryTopic qt = new QueryTopic();
 		
-		int task = 4;
+		int task = 6;
 		
 		/*
 		 * Task 1: extract tokens, NER, NEL from a corpus and save result in MongDB 
@@ -153,7 +153,7 @@ public class Main {
 					System.out.println("text annotation....");
 //					mongoUtils.dropCollection(document.getName());
 					DocumentAnnotation docAnn = ta.stanfordDocumentAnalizer(content);
-					mongoUtils.sotoreDocument(docAnn, document.getName(), content);
+					mongoUtils.storeDocument(docAnn, document.getName(), content);
 				}else
 					System.out.println("Document: " + document.getName() + " is empty");
 				

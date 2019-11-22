@@ -140,7 +140,7 @@ public class MongoDBUtils {
 		
 	}
 	
-	public void sotoreDocument(DocumentAnnotation docAnn, String documentName, String documentContent) {
+	public void storeDocument(DocumentAnnotation docAnn, String documentName, String documentContent) {
 		Document documentObj = new Document()
 				.append("_id", documentName)
 				.append("content", documentContent)
@@ -150,6 +150,12 @@ public class MongoDBUtils {
 		System.out.println("Inserting document");
 		coll.insertOne(documentObj);
 		
+	}
+	
+	public void insertDocument(Document dbObject) {
+		Document doc = coll.find(Filters.eq("_id", dbObject.getString("_id"))).first();
+		if(doc == null)
+			coll.insertOne(dbObject);
 	}
 	
 	private List<DBObject> createListAnnotations(List<Annotation> annotationList){

@@ -237,6 +237,10 @@ public class TextAnalisys {
 			List<String> listWords = listSent.get(i).words();
 			String sentence = listSent.get(i).rawSentence().getText();
 			String annotation = nel.sendPost(sentence);
+			if(annotation.startsWith("<")) {
+				System.out.println("text is HTML");
+				continue;
+			}
 //			System.out.println("Getting NEL from DBpedia");
 			List<Entity> entityList = nel.readOutput(annotation);
 			List<Annotation> sentenceAnnotations = new ArrayList<Annotation>();

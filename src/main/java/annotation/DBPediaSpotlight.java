@@ -73,6 +73,7 @@ public class DBPediaSpotlight{
 		List<Entity> entitiesList = new ArrayList<Entity>();
 		try {
 //			System.out.println("Processing entities: " + text);
+
 			Object obj = parser.parse(text);
 
 			
@@ -98,6 +99,7 @@ public class DBPediaSpotlight{
 			}
 
 		} catch (ParseException e) {
+			System.out.println(text);
 			e.printStackTrace();
 
 		} catch (NullPointerException e) {

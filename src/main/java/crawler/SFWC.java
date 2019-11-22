@@ -10,6 +10,9 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.bson.Document;
+
+import com.mongodb.BasicDBObject;
 
 import nlp.Annotation;
 import nlp.TextAnalisys;
@@ -27,13 +30,14 @@ public class SFWC {
 		SFWC s = new SFWC("computerScience");
 		@SuppressWarnings("deprecation")
 		String content = FileUtils.readFileToString(new File("test5.txt"));
-		s.sfwc(content);
+		//s.sfwc(content);
 	}
 	
-	public double sfwc(String content) throws IOException, InterruptedException {
+	public Document sfwc(String content, String url, double top, double down) throws IOException, InterruptedException {
 		Main main = new Main();
 		if (!content.isEmpty()) {
 			long startTime = System.currentTimeMillis();
+			Document mainObj = new Document();
 			
 			System.out.println("Information Extraction process");
 			List<Annotation> listAnnotation = sfwcInformationExtraction(content);
@@ -49,10 +53,22 @@ public class SFWC {
 			List<Double> tfidfList = new ArrayList<Double>();
 			Set<Double> idfSet = new HashSet<Double>();
 			Set<String> idfLemmaSet = new HashSet<String>();
-			for (Annotation ann : listAnnotation) {
-				if(ann.getIdf() > 0d && !ann.getUri().isEmpty()) {
-					idfSet.add(ann.getIdf()); //avoid repeated values
-					idfLemmaSet.add(ann.getLemma());
+			List<BasicDBObject> dbDocumentList = generateDBObjects(listAnnotation);
+			
+//			for (Annotation ann : listAnnotation) {
+//				if(ann.getIdf() > 0d && !ann.getUri().isEmpty()) {
+//					idfSet.add(ann.getIdf()); //avoid repeated values
+//					idfLemmaSet.add(ann.getLemma());
+//				}
+//			}
+			List<BasicDBObject> rangeList = new ArrayList<BasicDBObject>();
+			for (BasicDBObject obj : dbDocumentList) {
+				if(obj.getDouble("idf") > 0d 
+						&& !obj.getString("uri").isEmpty()
+						&& !idfLemmaSet.contains(obj.getString("lemma"))) {
+					rangeList.add(obj); //avoid repeated values
+					idfSet.add(obj.getDouble("idf"));
+					idfLemmaSet.add(obj.getString("lemma"));
 				}
 			}
 			
@@ -65,6 +81,11 @@ public class SFWC {
 			System.out.println("List size: " + tfidfList.size());
 			
 			
+			mainObj.put("_id", url);
+			mainObj.put("crawled", true);
+			mainObj.put("content", content);
+			mainObj.put("EN", dbDocumentList);
+			mainObj.put("wordsInRange", rangeList);
 			
 			if(!tfidfList.isEmpty() && avgWeight > 0.0d && tfidfList.size() > 10) {
 				medianIndex = tfidfList.size() / 2;
@@ -74,10 +95,16 @@ public class SFWC {
 				System.out.println(idfLemmaSet);
 				System.out.println("Average: " + avgWeight );
 				System.out.println("Median: " + median);
+				mainObj.put("average", avgWeight);
+				mainObj.put("median", median);
 			}else {
 				System.out.println("The list is empty");
 				avgWeight = 0.0d;
 				median =  0.0d;
+				mainObj.put("error", true);
+				mainObj.put("errorMessage","Empty list");
+				mainObj.put("average", 0.0d);
+				mainObj.put("median", 0.0d);
 			}
 			
 			
@@ -85,13 +112,30 @@ public class SFWC {
 			long totalTime = endTime - startTime;
 
 			System.out.format("%d Miliseconds = %d seconds\n", totalTime, TimeUnit.MILLISECONDS.toSeconds(totalTime));
-//			System.out.println("Graph average : " + qt.queryAvgIDF());
-//			System.out.println("Graph median : " + qt.queryMedianIDF());
-			return avgWeight;
-//			return tfidfList.get(medianIndex);
+			mainObj.put("elapsedTime", String.valueOf(TimeUnit.MILLISECONDS.toSeconds(totalTime)));
+			
+			return mainObj;
 		}else
-			return 0.0d;
+			return null;
 	}	
+	
+	private List<BasicDBObject> generateDBObjects(List<Annotation> annotationList){
+		List<BasicDBObject> dbObjectList = new ArrayList<BasicDBObject>();
+		for(Annotation ann : annotationList) {
+			BasicDBObject obj = new BasicDBObject();
+			obj.put("lemma", ann.getLemma());
+			obj.put("posTag", ann.getPosTag());
+			obj.put("ner", ann.getNer());
+			obj.put("uri", ann.getUri());
+			obj.put("begin", ann.getBegin());
+			obj.put("end", ann.getEnd());
+			obj.put("tf",ann.gettf());
+			obj.put("idf", ann.getIdf());
+			obj.put("tfIdf", ann.getTfidf());
+			dbObjectList.add(obj);
+		}
+		return dbObjectList;
+	}
 	
 	private List<Annotation> sfwcInformationExtraction(String content) throws IOException {
 		TextAnalisys ta = new TextAnalisys();
