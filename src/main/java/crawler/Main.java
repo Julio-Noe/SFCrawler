@@ -35,7 +35,7 @@ public class Main {
 //	}
 	
 	private String mongoDB = "SFWC_V2";
-	private String mongoColl = "politics";
+	private String mongoColl = "diabetes";
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		Main m = new Main();
@@ -46,7 +46,7 @@ public class Main {
 		MongoDBUtils ut = new MongoDBUtils(m.mongoDB, m.mongoColl);
 //		QueryTopic qt = new QueryTopic();
 		
-		int task = 6;
+		int task = 7;
 		
 		/*
 		 * Task 1: extract tokens, NER, NEL from a corpus and save result in MongDB 
@@ -75,7 +75,7 @@ public class Main {
 			case 6: m.addTFIDFToMongoDB();
 					break;
 			case 7: List<Document> documentList = ut.getAllDocs();
-					m.createModel(documentList, topic, "./politics_v2.ttl");
+					m.createModel(documentList, topic, "./diabetes_v2.ttl");
 					break;
 			case 8: m.temporalDeleteDocuments();
 					break;
