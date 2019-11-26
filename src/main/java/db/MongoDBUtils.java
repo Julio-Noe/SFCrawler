@@ -20,6 +20,7 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoIterable;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
 
@@ -41,6 +42,11 @@ public class MongoDBUtils {
 		this.db = client.getDatabase(database);
 		this.coll = db.getCollection(collection);
 		
+	}
+	
+	public MongoDBUtils(String database) {
+		this.client = new MongoClient();
+		this.db = client.getDatabase(database);
 	}
 	
 	public void close() {
@@ -310,6 +316,10 @@ public class MongoDBUtils {
 		}
 		return lemmaSet;
 		
+	}
+	
+	public MongoIterable<String> getCollectionsName(){
+		return db.listCollectionNames();
 	}
 	
 }

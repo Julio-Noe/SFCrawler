@@ -230,7 +230,7 @@ public class TextAnalisys {
 		List<Sentence> listSent = doc2.sentences();
 		System.out.println("List of sentences: " + listSent.size());
 		
-		if(listSent.size() > 100)
+		if(listSent.size() > 80)
 			return null;
 		List<Annotation> annotationList = new ArrayList<Annotation>();
 		

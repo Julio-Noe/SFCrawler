@@ -35,7 +35,7 @@ public class Main {
 //	}
 	
 	private String mongoDB = "SFWC_V2";
-	private String mongoColl = "diabetes";
+	private String mongoColl = "politics";
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		Main m = new Main();
@@ -75,7 +75,7 @@ public class Main {
 			case 6: m.addTFIDFToMongoDB();
 					break;
 			case 7: List<Document> documentList = ut.getAllDocs();
-					m.createModel(documentList, topic, "./diabetes_v2.ttl");
+					m.createModel(documentList, topic, "./politics_v2.ttl");
 					break;
 			case 8: m.temporalDeleteDocuments();
 					break;
@@ -493,8 +493,8 @@ public class Main {
 			
 			model = addDocument(model, documentName, subject, NEs, Rels);
 		}
-		StringOutputStream sos = new StringOutputStream();
-		model.write(sos, "NTRIPLES");
+//		StringOutputStream sos = new StringOutputStream();
+//		model.write(sos, "NTRIPLES");
 //		String[] content = sos.toString().split("\n");
 
 		File output = new File(outputFilePath);

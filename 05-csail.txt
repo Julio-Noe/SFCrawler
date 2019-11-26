@@ -3,238 +3,567 @@ SLF4J: Found binding in [jar:file:/Users/cinvestav/.m2/repository/org/slf4j/slf4
 SLF4J: Found binding in [jar:file:/Users/cinvestav/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
 SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
 SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
-40  4.77635469535347
-Graph IDF average: 5.011878349128812
-standard deviaton: 1.5609507422895923
+70  4.576589319696152
+Graph IDF average: 4.842571006166276
+standard deviaton: 1.5425466330455804
+0- Processing url: https://www.businessinsider.com/politics
+Collection: politics20
 COUNTER 0
-https://www.cs.stonybrook.edu/
+https://www.businessinsider.com/politics
 Information Extraction process
-List of sentences: 55
+List of sentences: 112
+top: 6.385117639211856 --- Down : 3.3000243731206957
+URL's crawled: 1 in 3 seconds 
+
+
+List of accepted URIs: 
+
+
+List of rejected URIs: 
+0.0;Politics - Business Insider;https://www.businessinsider.com/politics
+1- Processing url: https://www.scmp.com/news/hong-kong/politics
+Collection: politics21
+COUNTER 0
+https://www.scmp.com/news/hong-kong/politics
+Error connecting to URL....
+URL's crawled: 1 in 0 seconds 
+
+
+List of accepted URIs: 
+
+
+List of rejected URIs: 
+0.0;Politics - Business Insider;https://www.businessinsider.com/politics
+2- Processing url: https://politics.theonion.com/
+Collection: politics22
+COUNTER 0
+https://politics.theonion.com/
+Information Extraction process
+List of sentences: 8
 Returning annotations
 Calculating TF
 Calculating IDF/TFIDF
 IDF values: 
-List size: 16
-[5.645110162075217, 6.16867211813223, 1.9160066856819817, 5.998747116689919, 3.7424073634301327, 3.978847559252213, 5.920744604688646, 7.846744023244868, 3.1352491165947804, 5.709240499494934, 2.7849678256581782, 6.2617815225237115, 10.16867211813223, 9.16867211813223, 7.583709617411074, 5.361317196074626]
-[sigplan, mary, dls, open-source, acm, ieee, lymphocyte, intranet, java, awk, optimization, princeton, regression, contact, empire, cancer, wei, suny, icse, unix, algorithm]
-Average: 5.7119306029510595
-Median: 5.709240499494934
-51780 Miliseconds = 51 seconds
-top: 6.572829091418405 --- Down : 3.45092760683922
+List size: 12
+[7.161551820417308, 1.2268780682952507, 5.254661224808789, 3.424586226251101, 6.576589319696152, 6.746514321138464, 8.746514321138465, 9.746514321138463, 10.746514321138463, 5.991626818974995, 4.38896231652038, 4.815776983575577]
+[iowa, infographic, black, flyers, heaven, andrew, capitol, disney, smithsonian, rapture, impeachment, patrick, time, washington]
+Average: 6.235557505257784
+Median: 5.991626818974995
+24571 Miliseconds = 24 seconds
+top: 6.385117639211856 --- Down : 3.3000243731206957
 ======¡¡¡¡PASS!!!!======
-Normalizing url: / (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/
-Normalizing url: / (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/
-Normalizing url: http://www.stonybrook.edu/ceas (base form): https://www.cs.stonybrook.edu/
-Normalizing url: /members-only (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/members-only
-Normalizing url: http://www.stonybrook.edu (base form): https://www.cs.stonybrook.edu/
-Normalizing url: / (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/
-Normalizing url: / (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/
-Normalizing url: / (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/
-Normalizing url: /about-us (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us
-Normalizing url: /about-us/MessageFromChair (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/MessageFromChair
-Normalizing url: /about-us/dept_prog_obj (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/dept_prog_obj
-Normalizing url: /about-us/whyCS (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/whyCS
-Normalizing url: /about-us/rankings (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/rankings
-Normalizing url: /about-us/dls (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/dls
-Normalizing url: /about-us/News (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/News
-Normalizing url: /about-us/career (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/career
-Normalizing url: /about-us/csintranet (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/csintranet
-Normalizing url: /contact-us (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/contact-us
-Normalizing url: /admissions (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/admissions
-Normalizing url: /admissions/undergrad-cse-program (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/admissions/undergrad-cse-program
-Normalizing url: /admissions/undergrad-honors-program (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/admissions/undergrad-honors-program
-Normalizing url: /admissions/accelerated-bsms-program (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/admissions/accelerated-bsms-program
-Normalizing url: /admissions/Graduate-Program (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/admissions/Graduate-Program
-Normalizing url: /admissions/application-faqs (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/admissions/application-faqs
-Normalizing url: /admissions/assistantships (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/admissions/assistantships
-Normalizing url: /admissions/scholarship-programs (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/admissions/scholarship-programs
-Normalizing url: /people/faculty (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/people/faculty
-Normalizing url: /people/faculty (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/people/faculty
-Normalizing url: /people/graduate (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/people/graduate
-Normalizing url: /people/staff (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/people/staff
-Normalizing url: /people/alumni (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/people/alumni
-Normalizing url: /people/awards (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/people/awards
-Normalizing url: /research (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/research
-Normalizing url: /research/highlights (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/research/highlights
-Normalizing url: /research/affiliations (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/research/affiliations
-Normalizing url: /students (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/students
-Normalizing url: /students/Undergraduate-Programs (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/students/Undergraduate-Programs
-Normalizing url: /students/Graduate-Programs (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/students/Graduate-Programs
-Normalizing url: /students/Policies (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/students/Policies
-Normalizing url:  (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Three-SUNY-Empire-Innovation-Program-Professors-Join-CS-and-AI-Institute (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Three-SUNY-Empire-Innovation-Program-Professors-Join-CS-and-AI-Institute (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Computer-Science-Student-Brings-Hackers-Together-New-Team-Building-App-Hacker-Matcher (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Computer-Science-Student-Brings-Hackers-Together-New-Team-Building-App-Hacker-Matcher (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/dls (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/dls (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Computer-Science-Student-Brings-Hackers-Together-New-Team-Building-App-Hacker-Matcher (base form): https://www.cs.stonybrook.edu/
-Normalizing url: /about-us/News/Computer-Science-Student-Brings-Hackers-Together-New-Team-Building-App-Hacker-Matcher (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/News/Computer-Science-Student-Brings-Hackers-Together-New-Team-Building-App-Hacker-Matcher
-Normalizing url: /about-us/News/New-Fingertip-Keyboard-Technology-Recognized-Human-Computer-Interface-Symposium (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/News/New-Fingertip-Keyboard-Technology-Recognized-Human-Computer-Interface-Symposium
-Normalizing url: /about-us/News/CEAS-Dedicates-Broadridge-Financial-Solutions-Inc-Innovation-Lab-New-Computer-Science (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/News/CEAS-Dedicates-Broadridge-Financial-Solutions-Inc-Innovation-Lab-New-Computer-Science
-Normalizing url: /about-us/News/Three-SUNY-Empire-Innovation-Program-Professors-Join-CS-and-AI-Institute (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/News/Three-SUNY-Empire-Innovation-Program-Professors-Join-CS-and-AI-Institute
-Normalizing url: /about-us/News/Can-Machine-Learning-Awaken-Coma-Patients-Memming-Park%E2%80%99s-Discovery-Prize-Winning (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/News/Can-Machine-Learning-Awaken-Coma-Patients-Memming-Park%E2%80%99s-Discovery-Prize-Winning
-Normalizing url: /about-us/News/SBUHacks-Incubator-Student-Innovation (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/News/SBUHacks-Incubator-Student-Innovation
-Normalizing url: /about-us/News/CS-Industry-Partner-Highlight-Vultr-CSE-356 (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/News/CS-Industry-Partner-Highlight-Vultr-CSE-356
-Normalizing url: /about-us/News/Grant-Funds-Pioneering-Research-Create-3D-Digital-Pathology (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/News/Grant-Funds-Pioneering-Research-Create-3D-Digital-Pathology
-Normalizing url: /about-us/News/AI-and-Conservation-Brief-Summary-Professor-Dan-Rubensteins-DLS-Talk (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/News/AI-and-Conservation-Brief-Summary-Professor-Dan-Rubensteins-DLS-Talk
-Normalizing url: /about-us/News/Two-Computer-Science-Faculty-Receive-2019-Yahoo-Research-Faculty-and-Research (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/News/Two-Computer-Science-Faculty-Receive-2019-Yahoo-Research-Faculty-and-Research
-Normalizing url: /about-us/News/New-Technology-Enables-Greater-Independence-Blind-CS-Faculty-Create-Write-it-Yourself (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/News/New-Technology-Enables-Greater-Independence-Blind-CS-Faculty-Create-Write-it-Yourself
-Normalizing url: about-us/News (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/about-us/News
-Normalizing url: /How-Succeed-Language-Design-Without-Really-Trying-presented-Professor-Brian-Kernighan (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/How-Succeed-Language-Design-Without-Really-Trying-presented-Professor-Brian-Kernighan
-Normalizing url: /Le-Hou-Dissertation-Defense-Deep-Learning-Digital-Histopathology-across-Multiple-Scales (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/Le-Hou-Dissertation-Defense-Deep-Learning-Digital-Histopathology-across-Multiple-Scales
-Normalizing url: /Shutterstock-Distinguished-Lecture-Series-Speaker-Brian-Kernighan (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/Shutterstock-Distinguished-Lecture-Series-Speaker-Brian-Kernighan
-Normalizing url: /Zijun-Wei-Dissertation-Defense-Predicting-Subjective-Attributes-Visual-Data (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/Zijun-Wei-Dissertation-Defense-Predicting-Subjective-Attributes-Visual-Data
-Normalizing url: /CSE-600-Talk-Squeezing-Software-Performance-Eliminating-Wasteful-Operations-presented-Xu-Liu (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/CSE-600-Talk-Squeezing-Software-Performance-Eliminating-Wasteful-Operations-presented-Xu-Liu
-Normalizing url: /Chen-Chen-PhD-Defense (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/Chen-Chen-PhD-Defense
-Normalizing url: /events (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/events
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/CEAS-Dedicates-Broadridge-Financial-Solutions-Inc-Innovation-Lab-New-Computer-Science (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/CEAS-Dedicates-Broadridge-Financial-Solutions-Inc-Innovation-Lab-New-Computer-Science (base form): https://www.cs.stonybrook.edu/
-Normalizing url: /CEAS-Dedicates-Broadridge-Financial-Solutions-Inc-Innovation-Lab-New-Computer-Science-Building-0 (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/CEAS-Dedicates-Broadridge-Financial-Solutions-Inc-Innovation-Lab-New-Computer-Science-Building-0
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/CEAS-Dedicates-Broadridge-Financial-Solutions-Inc-Innovation-Lab-New-Computer-Science (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Grant-Funds-Pioneering-Research-Create-3D-Digital-Pathology (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Grant-Funds-Pioneering-Research-Create-3D-Digital-Pathology (base form): https://www.cs.stonybrook.edu/
-Normalizing url: /Grant-Funds-Pioneering-Research-Create-3D-Digital-Pathology (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/Grant-Funds-Pioneering-Research-Create-3D-Digital-Pathology
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Grant-Funds-Pioneering-Research-Create-3D-Digital-Pathology (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/New-Fingertip-Keyboard-Technology-Recognized-Human-Computer-Interface-Symposium (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/New-Fingertip-Keyboard-Technology-Recognized-Human-Computer-Interface-Symposium (base form): https://www.cs.stonybrook.edu/
-Normalizing url: /New-Fingertip-Keyboard-Technology-Recognized-Human-Computer-Interface-Symposium (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/New-Fingertip-Keyboard-Technology-Recognized-Human-Computer-Interface-Symposium
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/New-Fingertip-Keyboard-Technology-Recognized-Human-Computer-Interface-Symposium (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Two-Computer-Science-Faculty-Receive-2019-Yahoo-Research-Faculty-and-Research (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Two-Computer-Science-Faculty-Receive-2019-Yahoo-Research-Faculty-and-Research (base form): https://www.cs.stonybrook.edu/
-Normalizing url: /Two-Computer-Science-Faculty-Receive-2019-Yahoo-Research-Faculty-and-Research-Engagement-Program (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/Two-Computer-Science-Faculty-Receive-2019-Yahoo-Research-Faculty-and-Research-Engagement-Program
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Two-Computer-Science-Faculty-Receive-2019-Yahoo-Research-Faculty-and-Research (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/SBUHacks-Incubator-Student-Innovation (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/SBUHacks-Incubator-Student-Innovation (base form): https://www.cs.stonybrook.edu/
-Normalizing url: /SBUHacks-Incubator-Student-Innovation (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/SBUHacks-Incubator-Student-Innovation
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/SBUHacks-Incubator-Student-Innovation (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/New-Technology-Enables-Greater-Independence-Blind-CS-Faculty-Create-Write-it-Yourself (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/New-Technology-Enables-Greater-Independence-Blind-CS-Faculty-Create-Write-it-Yourself (base form): https://www.cs.stonybrook.edu/
-Normalizing url: /New-Technology-Enables-Greater-Independence-Blind-CS-Faculty-Create-Write-it-Yourself-Guide-WiYG (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/New-Technology-Enables-Greater-Independence-Blind-CS-Faculty-Create-Write-it-Yourself-Guide-WiYG
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/New-Technology-Enables-Greater-Independence-Blind-CS-Faculty-Create-Write-it-Yourself (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Moving-Student-Faculty-CS-Doctoral-Students-Choose-Academia-Over-Industry (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Moving-Student-Faculty-CS-Doctoral-Students-Choose-Academia-Over-Industry (base form): https://www.cs.stonybrook.edu/
-Normalizing url: /Moving-Student-Faculty-CS-Doctoral-Students-Choose-Academia-Over-Industry (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/Moving-Student-Faculty-CS-Doctoral-Students-Choose-Academia-Over-Industry
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Moving-Student-Faculty-CS-Doctoral-Students-Choose-Academia-Over-Industry (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Podcast-1-All-Things-CS-Youre-admitted-CS-Stony-Brook-now-what (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Podcast-1-All-Things-CS-Youre-admitted-CS-Stony-Brook-now-what (base form): https://www.cs.stonybrook.edu/
-Normalizing url: /All-Things-CS-Podcast-Now-Available-SoundCloud (base form): https://www.cs.stonybrook.edu/
-Normalized URL: https://www.cs.stonybrook.edu/All-Things-CS-Podcast-Now-Available-SoundCloud
-Normalizing url: https://www.cs.stonybrook.edu/about-us/News/Podcast-1-All-Things-CS-Youre-admitted-CS-Stony-Brook-now-what (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.youtube.com/watch?v=XwSP5_hDDDc (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.youtube.com/watch?v=XwSP5_hDDDc (base form): https://www.cs.stonybrook.edu/
-Normalizing url: http://www.stonybrook.edu/ (base form): https://www.cs.stonybrook.edu/
-Normalizing url: http://www.stonybrook.edu/solarsystem (base form): https://www.cs.stonybrook.edu/
-Normalizing url: http://facebook.com/stonybrookucompsc (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://www.instagram.com/stonybrookcs/ (base form): https://www.cs.stonybrook.edu/
-Normalizing url: http://twitter.com/sbucompsc (base form): https://www.cs.stonybrook.edu/
-Normalizing url: http://www.youtube.com/SBUCS (base form): https://www.cs.stonybrook.edu/
-Normalizing url: https://twitter.com/sbucompsc (base form): https://www.cs.stonybrook.edu/
+Normalizing url: //avclub.com (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//avclub.com
+Normalizing url: //deadspin.com (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//deadspin.com
+Normalizing url: //gizmodo.com (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//gizmodo.com
+Normalizing url: //jalopnik.com (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//jalopnik.com
+Normalizing url: //jezebel.com (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//jezebel.com
+Normalizing url: //kotaku.com (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//kotaku.com
+Normalizing url: //lifehacker.com (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//lifehacker.com
+Normalizing url: //theroot.com (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//theroot.com
+Normalizing url: //thetakeout.com (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//thetakeout.com
+Normalizing url: //clickhole.com (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//clickhole.com
+Normalizing url: //theonion.com (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//theonion.com
+Normalizing url: //theinventory.com (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//theinventory.com
+Normalizing url: //www.theonion.com (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//www.theonion.com
+Normalizing url: /search (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com/search
+Normalizing url:  (base form): https://politics.theonion.com/
+Normalizing url: //www.theonion.com/ (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//www.theonion.com/
+Normalizing url: https://politics.theonion.com (base form): https://politics.theonion.com/
+Normalizing url: https://sports.theonion.com (base form): https://politics.theonion.com/
+Normalizing url: https://local.theonion.com (base form): https://politics.theonion.com/
+Normalizing url: https://entertainment.theonion.com (base form): https://politics.theonion.com/
+Normalizing url: https://ogn.theonion.com (base form): https://politics.theonion.com/
+Normalizing url: /tag/opinion (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com/tag/opinion
+Normalizing url: /c/video (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com/c/video
+Normalizing url: https://www.clickhole.com/ (base form): https://politics.theonion.com/
+Normalizing url: //politics.theonion.com (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com//politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-could-spare-some-change-says-man-about-to-become-b-1839991083 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/i-could-spare-some-change-says-man-about-to-become-b-1839991083 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/i-could-spare-some-change-says-man-about-to-become-b-1839991083 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/dnc-server-celebrates-escape-from-u-s-jurisdiction-sur-1839984213 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/dnc-server-celebrates-escape-from-u-s-jurisdiction-sur-1839984213 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/sweating-grunting-mike-pence-straining-to-rapture-hims-1839984347 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/sweating-grunting-mike-pence-straining-to-rapture-hims-1839984347 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/mitt-romney-retires-to-fainting-couch-after-suggesting-1840035966 (base form): https://politics.theonion.com/
+Normalizing url: https://entertainment.theonion.com/frozen-2-creators-confirm-that-elsa-gay-but-also-tran-1839981134 (base form): https://politics.theonion.com/
+Normalizing url: https://entertainment.theonion.com/disney-attempts-to-soften-corporate-image-by-introducin-1840032578 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/mitt-romney-retires-to-fainting-couch-after-suggesting-1840035966 (base form): https://politics.theonion.com/
+Normalizing url: https://entertainment.theonion.com/frozen-2-creators-confirm-that-elsa-gay-but-also-tran-1839981134 (base form): https://politics.theonion.com/
+Normalizing url: https://entertainment.theonion.com/disney-attempts-to-soften-corporate-image-by-introducin-1840032578 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/highlights-of-the-fifth-democratic-debate-1839987764 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/5-things-to-know-about-nikki-haley-1839830813 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/should-people-automatically-respect-the-office-of-the-p-1839473878 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/mitt-romney-retires-to-fainting-couch-after-suggesting-1840035966 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/mitt-romney-retires-to-fainting-couch-after-suggesting-1840035966 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/mitt-romney-retires-to-fainting-couch-after-suggesting-1840035966 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/mitt-romney-retires-to-fainting-couch-after-suggesting-1840035966 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/i-could-spare-some-change-says-man-about-to-become-b-1839991083 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/i-could-spare-some-change-says-man-about-to-become-b-1839991083 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/i-could-spare-some-change-says-man-about-to-become-b-1839991083 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/i-could-spare-some-change-says-man-about-to-become-b-1839991083 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/video (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/highlights-of-the-fifth-democratic-debate-1839987764 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/video (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/highlights-of-the-fifth-democratic-debate-1839987764 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/video (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/highlights-of-the-fifth-democratic-debate-1839987764 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/trump-honors-war-criminal-with-presidential-string-of-h-1839987976 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/trump-honors-war-criminal-with-presidential-string-of-h-1839987976 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/trump-honors-war-criminal-with-presidential-string-of-h-1839987976 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/trump-honors-war-criminal-with-presidential-string-of-h-1839987976 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/sweating-grunting-mike-pence-straining-to-rapture-hims-1839984347 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/sweating-grunting-mike-pence-straining-to-rapture-hims-1839984347 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/sweating-grunting-mike-pence-straining-to-rapture-hims-1839984347 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/sweating-grunting-mike-pence-straining-to-rapture-hims-1839984347 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/dnc-server-celebrates-escape-from-u-s-jurisdiction-sur-1839984213 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/dnc-server-celebrates-escape-from-u-s-jurisdiction-sur-1839984213 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/dnc-server-celebrates-escape-from-u-s-jurisdiction-sur-1839984213 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/dnc-server-celebrates-escape-from-u-s-jurisdiction-sur-1839984213 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/i-ll-see-you-in-hell-says-giuliani-slamming-door-on-1839983804 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/i-ll-see-you-in-hell-says-giuliani-slamming-door-on-1839983804 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/i-ll-see-you-in-hell-says-giuliani-slamming-door-on-1839983804 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/i-ll-see-you-in-hell-says-giuliani-slamming-door-on-1839983804 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/hey-are-you-gonna-let-me-talk-shouts-rudy-giuliani-1839969630 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/hey-are-you-gonna-let-me-talk-shouts-rudy-giuliani-1839969630 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/hey-are-you-gonna-let-me-talk-shouts-rudy-giuliani-1839969630 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/hey-are-you-gonna-let-me-talk-shouts-rudy-giuliani-1839969630 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/trump-tries-to-doxx-impeachment-inquiry-by-tweeting-add-1839966163 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/trump-tries-to-doxx-impeachment-inquiry-by-tweeting-add-1839966163 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/trump-tries-to-doxx-impeachment-inquiry-by-tweeting-add-1839966163 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/trump-tries-to-doxx-impeachment-inquiry-by-tweeting-add-1839966163 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/i-yield-the-remainder-of-my-time-to-you-the-viewer-at-1839962546 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/i-yield-the-remainder-of-my-time-to-you-the-viewer-at-1839962546 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/i-yield-the-remainder-of-my-time-to-you-the-viewer-at-1839962546 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/i-yield-the-remainder-of-my-time-to-you-the-viewer-at-1839962546 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/cory-booker-taken-aback-to-find-dozens-of-pictures-of-h-1839961966 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/cory-booker-taken-aback-to-find-dozens-of-pictures-of-h-1839961966 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/cory-booker-taken-aback-to-find-dozens-of-pictures-of-h-1839961966 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/cory-booker-taken-aback-to-find-dozens-of-pictures-of-h-1839961966 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/infographic (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/biggest-revelations-from-the-anonymous-trump-official-s-1839952741 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/infographic (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/biggest-revelations-from-the-anonymous-trump-official-s-1839952741 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/biggest-revelations-from-the-anonymous-trump-official-s-1839952741 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/infographic (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/biggest-revelations-from-the-anonymous-trump-official-s-1839952741 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/jim-jordan-arrives-in-congress-displaying-even-more-cas-1839941332 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/jim-jordan-arrives-in-congress-displaying-even-more-cas-1839941332 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/jim-jordan-arrives-in-congress-displaying-even-more-cas-1839941332 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/jim-jordan-arrives-in-congress-displaying-even-more-cas-1839941332 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/trump-declares-he-s-healthier-than-ever-while-addressin-1839926263 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/trump-declares-he-s-healthier-than-ever-while-addressin-1839926263 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/trump-declares-he-s-healthier-than-ever-while-addressin-1839926263 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/trump-declares-he-s-healthier-than-ever-while-addressin-1839926263 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/buttigieg-campaign-appeals-to-moderate-republicans-by-t-1839925378 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/buttigieg-campaign-appeals-to-moderate-republicans-by-t-1839925378 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/buttigieg-campaign-appeals-to-moderate-republicans-by-t-1839925378 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/buttigieg-campaign-appeals-to-moderate-republicans-by-t-1839925378 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/infographic (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/how-political-ads-are-made-1839896374 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/infographic (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/how-political-ads-are-made-1839896374 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/how-political-ads-are-made-1839896374 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/infographic (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/how-political-ads-are-made-1839896374 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/yovanovitch-testifies-that-she-was-removed-to-make-way-1839895020 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/yovanovitch-testifies-that-she-was-removed-to-make-way-1839895020 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/yovanovitch-testifies-that-she-was-removed-to-make-way-1839895020 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/yovanovitch-testifies-that-she-was-removed-to-make-way-1839895020 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/full-trump-transcript-includes-37-pages-of-confused-pre-1839894483 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/full-trump-transcript-includes-37-pages-of-confused-pre-1839894483 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/full-trump-transcript-includes-37-pages-of-confused-pre-1839894483 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/full-trump-transcript-includes-37-pages-of-confused-pre-1839894483 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/washington-post-impeachment-critic-gives-insipid-day-1839866848 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/washington-post-impeachment-critic-gives-insipid-day-1839866848 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/washington-post-impeachment-critic-gives-insipid-day-1839866848 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/washington-post-impeachment-critic-gives-insipid-day-1839866848 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/deval-patrick-acquires-high-favorability-numbers-good-1839864061 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/deval-patrick-acquires-high-favorability-numbers-good-1839864061 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/deval-patrick-acquires-high-favorability-numbers-good-1839864061 (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com/
+Normalizing url: https://politics.theonion.com/deval-patrick-acquires-high-favorability-numbers-good-1839864061 (base form): https://politics.theonion.com/
+Normalizing url: ?startTime=1573757340060 (base form): https://politics.theonion.com/
+Normalized URL: https://politics.theonion.com/?startTime=1573757340060
 COUNTER 1
-COUNTER 1
-COUNTER 1
-http://www.stonybrook.edu/ceas
+https://politics.theonion.com//avclub.com
+Error connecting to URL....
+COUNTER 2
+https://politics.theonion.com//deadspin.com
+Error connecting to URL....
+COUNTER 3
+https://politics.theonion.com//gizmodo.com
+Error connecting to URL....
+COUNTER 4
+https://politics.theonion.com//jalopnik.com
+Error connecting to URL....
+COUNTER 5
+https://politics.theonion.com//jezebel.com
+Error connecting to URL....
+COUNTER 6
+https://politics.theonion.com//kotaku.com
+Error connecting to URL....
+COUNTER 7
+https://politics.theonion.com//lifehacker.com
+Error connecting to URL....
+COUNTER 8
+https://politics.theonion.com//theroot.com
+Error connecting to URL....
+COUNTER 9
+https://politics.theonion.com//thetakeout.com
+Error connecting to URL....
+COUNTER 10
+https://politics.theonion.com//clickhole.com
+Error connecting to URL....
+COUNTER 11
+https://politics.theonion.com//theonion.com
+Error connecting to URL....
+COUNTER 12
+https://politics.theonion.com//theinventory.com
+Error connecting to URL....
+COUNTER 13
+https://politics.theonion.com//www.theonion.com
+Error connecting to URL....
+COUNTER 14
+https://politics.theonion.com/search
 Information Extraction process
-List of sentences: 1
+List of sentences: 5
 Returning annotations
 Calculating TF
 Calculating IDF/TFIDF
 IDF values: 
-List size: 0
+List size: 12
+[6.659051479888125, 7.161551820417308, 7.576589319696152, 1.2268780682952507, 6.424586226251102, 5.839623725529945, 6.161551820417308, 4.406664318253839, 8.746514321138465, 2.907310533041519, 9.746514321138463, 10.746514321138463]
+[abortion, beck, tesla, james, netflix, josh, cern, julian, assange, panama, apple, earth, silence, time, patriarchy]
+Average: 6.466945856267163
+Median: 6.424586226251102
+4244 Miliseconds = 4 seconds
+top: 6.385117639211856 --- Down : 3.3000243731206957
+COUNTER 15
+COUNTER 15
+https://politics.theonion.com//www.theonion.com/
+Error connecting to URL....
+COUNTER 16
+https://politics.theonion.com
+Information Extraction process
+List of sentences: 8
+text is HTML
+Returning annotations
+Calculating TF
+Calculating IDF/TFIDF
+IDF values: 
+List size: 11
+[7.161551820417308, 1.2268780682952507, 5.254661224808789, 3.424586226251101, 6.576589319696152, 6.746514321138464, 8.746514321138465, 9.746514321138463, 10.746514321138463, 4.38896231652038, 4.815776983575577]
+[capitol, iowa, infographic, disney, black, rapture, impeachment, patrick, time, flyers, washington, andrew]
+Average: 6.257733022192583
+Median: 6.576589319696152
+6898 Miliseconds = 6 seconds
+top: 6.385117639211856 --- Down : 3.3000243731206957
+======¡¡¡¡PASS!!!!======
+Normalizing url: //avclub.com (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//avclub.com
+Normalizing url: //deadspin.com (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//deadspin.com
+Normalizing url: //gizmodo.com (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//gizmodo.com
+Normalizing url: //jalopnik.com (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//jalopnik.com
+Normalizing url: //jezebel.com (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//jezebel.com
+Normalizing url: //kotaku.com (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//kotaku.com
+Normalizing url: //lifehacker.com (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//lifehacker.com
+Normalizing url: //theroot.com (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//theroot.com
+Normalizing url: //thetakeout.com (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//thetakeout.com
+Normalizing url: //clickhole.com (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//clickhole.com
+Normalizing url: //theonion.com (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//theonion.com
+Normalizing url: //theinventory.com (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//theinventory.com
+Normalizing url: //www.theonion.com (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//www.theonion.com
+Normalizing url: /search (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com/search
+Normalizing url:  (base form): https://politics.theonion.com
+Normalizing url: //www.theonion.com/ (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//www.theonion.com/
+Normalizing url: https://politics.theonion.com (base form): https://politics.theonion.com
+Normalizing url: https://sports.theonion.com (base form): https://politics.theonion.com
+Normalizing url: https://local.theonion.com (base form): https://politics.theonion.com
+Normalizing url: https://entertainment.theonion.com (base form): https://politics.theonion.com
+Normalizing url: https://ogn.theonion.com (base form): https://politics.theonion.com
+Normalizing url: /tag/opinion (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com/tag/opinion
+Normalizing url: /c/video (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com/c/video
+Normalizing url: https://www.clickhole.com/ (base form): https://politics.theonion.com
+Normalizing url: //politics.theonion.com (base form): https://politics.theonion.com
+Normalized URL: https://politics.theonion.com//politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-could-spare-some-change-says-man-about-to-become-b-1839991083 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-could-spare-some-change-says-man-about-to-become-b-1839991083 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-could-spare-some-change-says-man-about-to-become-b-1839991083 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/dnc-server-celebrates-escape-from-u-s-jurisdiction-sur-1839984213 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/dnc-server-celebrates-escape-from-u-s-jurisdiction-sur-1839984213 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/sweating-grunting-mike-pence-straining-to-rapture-hims-1839984347 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/sweating-grunting-mike-pence-straining-to-rapture-hims-1839984347 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/mitt-romney-retires-to-fainting-couch-after-suggesting-1840035966 (base form): https://politics.theonion.com
+Normalizing url: https://entertainment.theonion.com/frozen-2-creators-confirm-that-elsa-gay-but-also-tran-1839981134 (base form): https://politics.theonion.com
+Normalizing url: https://entertainment.theonion.com/disney-attempts-to-soften-corporate-image-by-introducin-1840032578 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/mitt-romney-retires-to-fainting-couch-after-suggesting-1840035966 (base form): https://politics.theonion.com
+Normalizing url: https://entertainment.theonion.com/frozen-2-creators-confirm-that-elsa-gay-but-also-tran-1839981134 (base form): https://politics.theonion.com
+Normalizing url: https://entertainment.theonion.com/disney-attempts-to-soften-corporate-image-by-introducin-1840032578 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/highlights-of-the-fifth-democratic-debate-1839987764 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/5-things-to-know-about-nikki-haley-1839830813 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/should-people-automatically-respect-the-office-of-the-p-1839473878 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/mitt-romney-retires-to-fainting-couch-after-suggesting-1840035966 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/mitt-romney-retires-to-fainting-couch-after-suggesting-1840035966 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/mitt-romney-retires-to-fainting-couch-after-suggesting-1840035966 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/mitt-romney-retires-to-fainting-couch-after-suggesting-1840035966 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-could-spare-some-change-says-man-about-to-become-b-1839991083 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-could-spare-some-change-says-man-about-to-become-b-1839991083 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-could-spare-some-change-says-man-about-to-become-b-1839991083 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-could-spare-some-change-says-man-about-to-become-b-1839991083 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/video (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/highlights-of-the-fifth-democratic-debate-1839987764 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/video (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/highlights-of-the-fifth-democratic-debate-1839987764 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/video (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/highlights-of-the-fifth-democratic-debate-1839987764 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/trump-honors-war-criminal-with-presidential-string-of-h-1839987976 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/trump-honors-war-criminal-with-presidential-string-of-h-1839987976 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/trump-honors-war-criminal-with-presidential-string-of-h-1839987976 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/trump-honors-war-criminal-with-presidential-string-of-h-1839987976 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/sweating-grunting-mike-pence-straining-to-rapture-hims-1839984347 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/sweating-grunting-mike-pence-straining-to-rapture-hims-1839984347 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/sweating-grunting-mike-pence-straining-to-rapture-hims-1839984347 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/sweating-grunting-mike-pence-straining-to-rapture-hims-1839984347 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/dnc-server-celebrates-escape-from-u-s-jurisdiction-sur-1839984213 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/dnc-server-celebrates-escape-from-u-s-jurisdiction-sur-1839984213 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/dnc-server-celebrates-escape-from-u-s-jurisdiction-sur-1839984213 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/dnc-server-celebrates-escape-from-u-s-jurisdiction-sur-1839984213 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-ll-see-you-in-hell-says-giuliani-slamming-door-on-1839983804 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-ll-see-you-in-hell-says-giuliani-slamming-door-on-1839983804 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-ll-see-you-in-hell-says-giuliani-slamming-door-on-1839983804 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-ll-see-you-in-hell-says-giuliani-slamming-door-on-1839983804 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/hey-are-you-gonna-let-me-talk-shouts-rudy-giuliani-1839969630 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/hey-are-you-gonna-let-me-talk-shouts-rudy-giuliani-1839969630 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/hey-are-you-gonna-let-me-talk-shouts-rudy-giuliani-1839969630 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/hey-are-you-gonna-let-me-talk-shouts-rudy-giuliani-1839969630 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/trump-tries-to-doxx-impeachment-inquiry-by-tweeting-add-1839966163 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/trump-tries-to-doxx-impeachment-inquiry-by-tweeting-add-1839966163 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/trump-tries-to-doxx-impeachment-inquiry-by-tweeting-add-1839966163 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/trump-tries-to-doxx-impeachment-inquiry-by-tweeting-add-1839966163 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-yield-the-remainder-of-my-time-to-you-the-viewer-at-1839962546 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-yield-the-remainder-of-my-time-to-you-the-viewer-at-1839962546 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-yield-the-remainder-of-my-time-to-you-the-viewer-at-1839962546 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/i-yield-the-remainder-of-my-time-to-you-the-viewer-at-1839962546 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/cory-booker-taken-aback-to-find-dozens-of-pictures-of-h-1839961966 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/cory-booker-taken-aback-to-find-dozens-of-pictures-of-h-1839961966 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/cory-booker-taken-aback-to-find-dozens-of-pictures-of-h-1839961966 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/cory-booker-taken-aback-to-find-dozens-of-pictures-of-h-1839961966 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/infographic (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/biggest-revelations-from-the-anonymous-trump-official-s-1839952741 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/infographic (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/biggest-revelations-from-the-anonymous-trump-official-s-1839952741 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/biggest-revelations-from-the-anonymous-trump-official-s-1839952741 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/infographic (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/biggest-revelations-from-the-anonymous-trump-official-s-1839952741 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/jim-jordan-arrives-in-congress-displaying-even-more-cas-1839941332 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/jim-jordan-arrives-in-congress-displaying-even-more-cas-1839941332 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/jim-jordan-arrives-in-congress-displaying-even-more-cas-1839941332 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/jim-jordan-arrives-in-congress-displaying-even-more-cas-1839941332 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/trump-declares-he-s-healthier-than-ever-while-addressin-1839926263 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/trump-declares-he-s-healthier-than-ever-while-addressin-1839926263 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/trump-declares-he-s-healthier-than-ever-while-addressin-1839926263 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-photos (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/trump-declares-he-s-healthier-than-ever-while-addressin-1839926263 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/buttigieg-campaign-appeals-to-moderate-republicans-by-t-1839925378 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/buttigieg-campaign-appeals-to-moderate-republicans-by-t-1839925378 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/buttigieg-campaign-appeals-to-moderate-republicans-by-t-1839925378 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/buttigieg-campaign-appeals-to-moderate-republicans-by-t-1839925378 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/infographic (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/how-political-ads-are-made-1839896374 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/infographic (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/how-political-ads-are-made-1839896374 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/how-political-ads-are-made-1839896374 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/infographic (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/how-political-ads-are-made-1839896374 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/yovanovitch-testifies-that-she-was-removed-to-make-way-1839895020 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/yovanovitch-testifies-that-she-was-removed-to-make-way-1839895020 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/yovanovitch-testifies-that-she-was-removed-to-make-way-1839895020 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/yovanovitch-testifies-that-she-was-removed-to-make-way-1839895020 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/full-trump-transcript-includes-37-pages-of-confused-pre-1839894483 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/full-trump-transcript-includes-37-pages-of-confused-pre-1839894483 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/full-trump-transcript-includes-37-pages-of-confused-pre-1839894483 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/full-trump-transcript-includes-37-pages-of-confused-pre-1839894483 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/washington-post-impeachment-critic-gives-insipid-day-1839866848 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/washington-post-impeachment-critic-gives-insipid-day-1839866848 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/washington-post-impeachment-critic-gives-insipid-day-1839866848 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/washington-post-impeachment-critic-gives-insipid-day-1839866848 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/deval-patrick-acquires-high-favorability-numbers-good-1839864061 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/deval-patrick-acquires-high-favorability-numbers-good-1839864061 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/deval-patrick-acquires-high-favorability-numbers-good-1839864061 (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/c/news-in-brief (base form): https://politics.theonion.com
+Normalizing url: https://politics.theonion.com/deval-patrick-acquires-high-favorability-numbers-good-1839864061 (base form): https://politics.theonion.com
+Normalizing url: ?startTime=1573757340060 (base form): https://politics.theonion.com
+Normalized URL: https://?startTime=1573757340060
+COUNTER 17
+https://sports.theonion.com
+Information Extraction process
+List of sentences: 7
+Returning annotations
+Calculating TF
+Calculating IDF/TFIDF
+IDF values: 
+List size: 7
 The list is empty
-792 Miliseconds = 0 seconds
-top: 6.572829091418405 --- Down : 3.45092760683922
-COUNTER 2
-https://www.cs.stonybrook.edu/members-only
+6418 Miliseconds = 6 seconds
+top: 6.385117639211856 --- Down : 3.3000243731206957
+COUNTER 18
+https://local.theonion.com
 Information Extraction process
 List of sentences: 3
 Returning annotations
 Calculating TF
 Calculating IDF/TFIDF
 IDF values: 
-List size: 3
+List size: 7
 The list is empty
-2321 Miliseconds = 2 seconds
-top: 6.572829091418405 --- Down : 3.45092760683922
-COUNTER 3
-http://www.stonybrook.edu
+4023 Miliseconds = 4 seconds
+top: 6.385117639211856 --- Down : 3.3000243731206957
+COUNTER 19
+https://entertainment.theonion.com
 Information Extraction process
-List of sentences: 1
+List of sentences: 8
 Returning annotations
 Calculating TF
 Calculating IDF/TFIDF
 IDF values: 
-List size: 0
+List size: 6
 The list is empty
-555 Miliseconds = 0 seconds
-top: 6.572829091418405 --- Down : 3.45092760683922
-COUNTER 4
-COUNTER 4
-COUNTER 4
-COUNTER 4
-https://www.cs.stonybrook.edu/about-us
+6669 Miliseconds = 6 seconds
+top: 6.385117639211856 --- Down : 3.3000243731206957
+COUNTER 20
+https://ogn.theonion.com
 Information Extraction process
-List of sentences: 22
+List of sentences: 6
