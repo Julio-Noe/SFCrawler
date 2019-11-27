@@ -16,7 +16,7 @@ public class EvaluationSheet {
 
 	public static void main(String[] args) throws IOException {
 		EvaluationSheet es = new EvaluationSheet();
-		es.createSheet("Experiments");
+		es.createSampleSheet("Diabetes");
 
 	}
 	
@@ -38,6 +38,40 @@ public class EvaluationSheet {
 			}
 		}
 		FileUtils.writeLines(new File("sheet.tsv"), rows);
+		
+	}
+	
+	public void createSampleSheet(String db) throws IOException {
+		String mongoDB = db;
+		MongoDBUtils utils = new MongoDBUtils(mongoDB);
+		MongoIterable<String> collectionList = utils.getCollectionsName();
+		List<String> rows = new ArrayList<String>();
+		int counterAccepted = 0;
+		int counterRejected = 0;
+		for(String name : collectionList) {
+			MongoDBUtils u = new MongoDBUtils(mongoDB, name);
+			List<Document> documentList = u.getAllDocs();
+			for(Document doc : documentList) {
+				if(doc.getBoolean("error"))
+					continue;
+				String row = "";
+				row += doc.getString("_id") + "\t";
+				row += doc.getString("decision");
+				if(doc.getString("decision").contains("Rejected") 
+						&& (counterRejected%3 == 0)) {
+					rows.add(row);
+					counterRejected++;
+				}else if(doc.getString("decision").contains("Rejected"))
+					counterRejected++;
+				if(doc.getString("decision").contains("Accepted") 
+						&& (counterAccepted%3 == 0)) {
+					rows.add(row);
+					counterAccepted++;
+				}else if(doc.getString("decision").contains("Accepted"))
+					counterAccepted++;
+			}
+		}
+		FileUtils.writeLines(new File("Diabetes_Sample.tsv"), rows);
 		
 	}
 

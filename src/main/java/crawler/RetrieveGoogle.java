@@ -30,7 +30,7 @@ public class RetrieveGoogle {
 	public static void main(String[] args) throws IOException, GeneralSecurityException {
 		
 		RetrieveGoogle rg = new RetrieveGoogle();
-		rg.queryTopicToGoogle("politics", 5);
+		rg.queryTopicToGoogle("diabetes", 5);
 		System.exit(0);
 		
 		//https://developers.google.com/custom-search/v1/overview
