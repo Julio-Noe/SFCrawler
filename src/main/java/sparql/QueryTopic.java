@@ -31,7 +31,7 @@ public class QueryTopic {
 	}
 
 	public static void main(String[] args) throws IOException {
-		QueryTopic t = new QueryTopic("computerScience");
+		QueryTopic t = new QueryTopic("diabetes");
 //		List<String> documents = t.queryDocuments("automaton");
 		List<Double> idfList = t.queryMedianIDF();
 		
@@ -247,8 +247,9 @@ public class QueryTopic {
 				lemmasinRangeList.add(lemma);
 			}
 		}
+		int counter = 1;
 		for(String lemma : lemmasinRangeList) {
-			System.out.println(lemma);
+			System.out.print("("+counter++ +")" + " " + lemma + ",");
 		}
 	}
 	

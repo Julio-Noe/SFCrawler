@@ -226,6 +226,22 @@ public class MongoDBUtils {
 		return lemmaList;
 	}
 	
+	public List<String> getDocLemmasWithURL(String documentId){
+		List<String> lemmaList = new ArrayList<String>();
+		
+		Document mongoDocument = coll.find(Filters.eq("_id",documentId)).first();
+		
+		@SuppressWarnings("unchecked")
+		List<Document> NEList = mongoDocument.get("EN", ArrayList.class);
+		
+		for(Document doc : NEList) {
+			if(!doc.getString("uri").isEmpty())
+				lemmaList.add(doc.getString("lemma"));
+		}
+		
+		return lemmaList;
+	}
+	
 	public List<String> getDocsId(){
 		List<String> documentsIdList = new ArrayList<String>();
 		

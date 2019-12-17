@@ -35,7 +35,7 @@ public class Main {
 //	}
 	
 	private String mongoDB = "SFWC_V2";
-	private String mongoColl = "politics";
+	private String mongoColl = "diabetes";
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		Main m = new Main();
@@ -75,7 +75,7 @@ public class Main {
 			case 6: m.addTFIDFToMongoDB();
 					break;
 			case 7: List<Document> documentList = ut.getAllDocs();
-					m.createModel(documentList, topic, "./politics_v2.ttl");
+					m.createModel(documentList, topic, "./diabetes_v2.ttl");
 					break;
 			case 8: m.temporalDeleteDocuments();
 					break;
@@ -532,7 +532,7 @@ public class Main {
 			else
 				nifType = "Word";
 			Resource lemmaObj = model.createResource(SFWCSchema.SFWC_URI+documentName + "_Entity-"+lemma+"_"+begin+"-"+end);
-			
+		
 			model = addNE(model, subject, lemma, lemmaObj, nifType, ne);
 			
 			model.add(subject, SFWCSchema.hasEntity, lemmaObj);
@@ -588,6 +588,7 @@ public class Main {
 		
 		model.add(lemma, RDF.type, SFWCSchema.ENTITY);
 		model.add(lemma, RDF.type, SFWCSchema.NIF_URI+nifType);
+		model.add(lemma, RDFS.label, lemmaString);
 		model.add(SFWCSchema.ENTITY, RDFS.subClassOf, SFWCSchema.NIF_URI+nifType);
 		model.add(lemma, model.createProperty(SFWCSchema.NIF_URI+"anchorOf"), lemmaString);
 		model.add(lemma, model.createProperty(SFWCSchema.NIF_URI+"posTag"), posTag);
@@ -613,6 +614,7 @@ public class Main {
 		model.add(relSbj, SFWCSchema.objectLabel, lemmaObj);
 		model.add(relSbj, SFWCSchema.sentence, sentence);
 		model.add(relSbj, SFWCSchema.inDocument, relDoc);
+		model.add(relSbj, RDFS.label, lemmaSbj+"-"+lemmaObj);
 //		model.add(relSbj, SFWCSchema.correlationValue, correlation);
 		
 		return model;
