@@ -19,6 +19,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import edu.stanford.nlp.time.SUTime.TimeUnit;
+
 
 /**
  *
@@ -31,13 +33,25 @@ public class DBPediaSpotlight{
 	}
 
 	public static void main(String[] args) throws Exception {
-
+		DBPediaSpotlight spot = new DBPediaSpotlight();
+		for(int i = 0 ; i < 10000 ; i++) {
+			String response = spot.sendPost("Mutations in the gene coding for lamin B2 (LMNB2 gene) have been linked to Barraquer-Simons syndrome[4] and duplication in the gene coding for lamin B1 (LMNB1 gene) cause autosomal dominant leukodystrophy.");
+			if(response.startsWith("<"))
+				System.out.println(response);
+//			if(response.startsWith("<")) {
+			System.out.println(i);
+			if(i%40 == 0) {
+				System.out.println(i);
+				//java.util.concurrent.TimeUnit.MINUTES.sleep(3);
+			}
+		}
 	}
 
 	// HTTP POST request
 	public String sendPost(String text) {
 
 		HttpClient client = HttpClientBuilder.create().build();
+//		HttpPost post = new HttpPost("http://model.dbpedia-spotlight.org/en/annotate");
 		HttpPost post = new HttpPost("http://model.dbpedia-spotlight.org/en/annotate");
 		post.addHeader("Accept", "application/json");
 

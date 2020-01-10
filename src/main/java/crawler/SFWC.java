@@ -140,7 +140,7 @@ public class SFWC {
 		return dbObjectList;
 	}
 	
-	private List<Annotation> sfwcInformationExtraction(String content) throws IOException {
+	private List<Annotation> sfwcInformationExtraction(String content) throws IOException, InterruptedException {
 		TextAnalisys ta = new TextAnalisys();
 		List<Annotation> docAnn = null;
 			docAnn = ta.stanfordTestDocumentAnalizer(content);

@@ -35,14 +35,14 @@ public class Main {
 //	}
 	
 	private String mongoDB = "SFWC_V2";
-	private String mongoColl = "diabetes";
+	private String mongoColl = "computerScience";
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		Main m = new Main();
 		String corpusPath = "./corpus/politics";
 		String pathProcessedDocuments = "ProcessedDocuments-politics.txt";
 		String idfFilePath = "IDF-Politics.txt";
-		String topic = "Politics";
+		String topic = "Computer_Science";
 		MongoDBUtils ut = new MongoDBUtils(m.mongoDB, m.mongoColl);
 //		QueryTopic qt = new QueryTopic();
 		
@@ -75,7 +75,7 @@ public class Main {
 			case 6: m.addTFIDFToMongoDB();
 					break;
 			case 7: List<Document> documentList = ut.getAllDocs();
-					m.createModel(documentList, topic, "./diabetes_v2.ttl");
+					m.createModel(documentList, topic, "./computerScience_v2-20191217.ttl");
 					break;
 			case 8: m.temporalDeleteDocuments();
 					break;

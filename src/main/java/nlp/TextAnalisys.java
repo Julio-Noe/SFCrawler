@@ -11,6 +11,7 @@ import annotation.Entity;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.simple.Document;
 import edu.stanford.nlp.simple.Sentence;
+import edu.stanford.nlp.time.SUTime.TimeUnit;
 
 public class TextAnalisys {
 	
@@ -222,25 +223,33 @@ public class TextAnalisys {
 		return docAnn;
 	}
 	
-	public List<Annotation> stanfordTestDocumentAnalizer(String documentContent) {
+	public List<Annotation> stanfordTestDocumentAnalizer(String documentContent) throws InterruptedException {
 		DBPediaSpotlight nel = new DBPediaSpotlight();
 		Document doc2 = new Document(documentContent);
 		TextAnalisys ta = new TextAnalisys();
 		
 		List<Sentence> listSent = doc2.sentences();
 		System.out.println("List of sentences: " + listSent.size());
+		int listSentLength = listSent.size();
 		
 		if(listSent.size() > 80)
-			return null;
+			listSentLength = 80;
+//			return null;
 		List<Annotation> annotationList = new ArrayList<Annotation>();
 		
-		for (int i = 0; i < listSent.size(); i++) { // Will iterate over sentences
-//			System.out.println("Processing sentence: " + i +" of " + listSent.size());
+		
+		for (int i = 0; i < listSentLength; i++) { // Will iterate over sentences
+			System.out.println("Processing sentence: " + i +" of " + listSent.size());
+//			System.out.println("\t" + listSent.get(i));
 			List<String> listWords = listSent.get(i).words();
 			String sentence = listSent.get(i).rawSentence().getText();
 			String annotation = nel.sendPost(sentence);
+			if(i > 0 && i%40 == 0) {
+				System.out.println(i);
+				java.util.concurrent.TimeUnit.MINUTES.sleep(3);
+			}
 			if(annotation.startsWith("<")) {
-				System.out.println("text is HTML");
+				System.out.println("text is HTML: " + annotation.toString());
 				continue;
 			}
 //			System.out.println("Getting NEL from DBpedia");
@@ -275,7 +284,9 @@ public class TextAnalisys {
 			}
 			
 			annotationList.addAll(sentenceAnnotations);
+			
 		}
+		java.util.concurrent.TimeUnit.MINUTES.sleep(3);
 		System.out.println("Returning annotations");
 		return annotationList;
 	}
