@@ -1,8 +1,0 @@
-A Prioritised Petri net is a structure (PN, Π) where PN is a Petri net and Π is a priority function that maps transitions into non-negative natural numbers representing their priority levelThe enabled transitions with a given priority k always fire before any other enabled transition with priority j<k.
-
-
-== References ==
-
-
-== Sources ==
-B. Hruz, M.C.Zhou, "Modeling and Control of Discrete-event Dynamic Systems with Petri Nets and Other Tool", Advanced Control and signal processing, Springer, 2007

@@ -1,6 +1,0 @@
-Quick Mail Queuing Protocol (QMQP) is a network protocol designed to share e-mail queues between several hosts. It was designed and implemented by Daniel J. Bernstein in qmail.
-
-
-== External links ==
-QMQP Frequently Asked Questions
-Postfix QMQP Implementation

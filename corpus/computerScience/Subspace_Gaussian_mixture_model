@@ -1,4 +1,0 @@
-Subspace Gaussian mixture model (SGMM) is an acoustic modeling approach in which all phonetic states share a common Gaussian mixture model structure, and the means and mixture weights vary in a subspace of the total parameter space.
-
-
-== References ==

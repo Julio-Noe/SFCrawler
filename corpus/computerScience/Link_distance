@@ -1,7 +1,0 @@
-In computational geometry, the link distance between two points in a polygon is the minimum number of line segments of any polygonal chain within the polygon that has the two points as its endpoints. The link diameter of the polygon is the maximum link distance of any two of its points.
-A polygon is a convex polygon if and only if its link diameter is one.
-Every star-shaped polygon has link diameter at most two: every two points may be connected by a polygonal chain that bends once, inside the kernel of the polygon. However, this property does not characterize star-shaped polygons, as there also exist polygons with holes in which the link diameter is two.
-
-
-== References ==
-Maheshwari, Anil; Sack, Jörg-Rüdiger; Djidjev, Hristo N. (2000), "Link distance problems", Handbook of Computational Geometry, North-Holland, Amsterdam, pp. 519–558, doi:10.1016/B978-044482537-7/50013-9, MR 1746684.

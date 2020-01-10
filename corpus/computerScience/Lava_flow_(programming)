@@ -1,4 +1,0 @@
-In computer programming jargon, lava flow is a problem in which computer code written under sub-optimal conditions is put into production and added to while still in a developmental state.  Often, putting the system into production results in a need to maintain backward compatibility (as many additional components now depend on it) with the original, incomplete design.Changes in the development team working on a project often exacerbate lava flows. As workers cycle in and out of the project, knowledge of the purpose of aspects of the system can be lost. Rather than clean up these pieces, subsequent workers work around them, increasing the complexity and mess of the system.Lava flow is considered an anti-pattern, a commonly encountered phenomenon leading to poor design.
-
-
-== References ==

@@ -1,9 +1,0 @@
-Author profiling is a method of analyzing a given number of texts to try to uncover various characteristics of the author (e.g. age and gender) based on stylistic- and content-based features.
-
-
-== Overview ==
-Automatic Authorship Identification (AAI) has existed for almost 120 years. Thomas Corwin Mendenhall was the first to examine works of Francis Bacon, William Shakespeare, and Christopher Marlowe aiming to detect quantitative stylistic differences using word length. Since then, things have changed rapidly due to the development of technology.
-There are three major fields in AAI: authorship attribution, author identification, and author profiling. In the first two, the goal is to recognize the author from a set of authors, while in author profiling, the goal is to find specific characteristics of the author, based on stylistic- or content-based features.The author profiling task is a yet unsolved problem, due to its difficulty. It has been studied by many researchers and, while some show great progress and good results, it still has many unexplored areas and room for improvement. Through the organizational efforts of PAN, many teams around the globe try every year to find the characteristics of authors.Characteristics vary between approaches, but age and gender are usually among them. Other personality traits have included the zodiac and the occupation of the author.
-
-
-== References ==

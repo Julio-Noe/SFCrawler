@@ -1,8 +1,0 @@
-In the C++ programming language, <sstream> is a part of the C++ Standard Library. It is a header file that provides templates and types that enable interoperation between stream buffers and string objects.
-
-
-== References ==
-
-
-== External links ==
-C++ reference for std::stringstream
