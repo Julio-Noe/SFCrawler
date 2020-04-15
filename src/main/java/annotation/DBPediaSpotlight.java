@@ -40,9 +40,9 @@ public class DBPediaSpotlight{
 				System.out.println(response);
 //			if(response.startsWith("<")) {
 			System.out.println(i);
-			if(i%40 == 0) {
+			if(i > 0 && i%40 == 0) {
 				System.out.println(i);
-				//java.util.concurrent.TimeUnit.MINUTES.sleep(3);
+				java.util.concurrent.TimeUnit.SECONDS.sleep(120);
 			}
 		}
 	}

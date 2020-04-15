@@ -232,8 +232,8 @@ public class TextAnalisys {
 		System.out.println("List of sentences: " + listSent.size());
 		int listSentLength = listSent.size();
 		
-		if(listSent.size() > 80)
-			listSentLength = 80;
+		if(listSent.size() > 40)
+			listSentLength = 40;
 //			return null;
 		List<Annotation> annotationList = new ArrayList<Annotation>();
 		
@@ -244,10 +244,10 @@ public class TextAnalisys {
 			List<String> listWords = listSent.get(i).words();
 			String sentence = listSent.get(i).rawSentence().getText();
 			String annotation = nel.sendPost(sentence);
-			if(i > 0 && i%40 == 0) {
-				System.out.println(i);
-				java.util.concurrent.TimeUnit.MINUTES.sleep(3);
-			}
+//			if(i > 0 && i%40 == 0) {
+//				System.out.println(i);
+//				java.util.concurrent.TimeUnit.SECONDS.sleep(120);
+//			}
 			if(annotation.startsWith("<")) {
 				System.out.println("text is HTML: " + annotation.toString());
 				continue;
@@ -286,7 +286,7 @@ public class TextAnalisys {
 			annotationList.addAll(sentenceAnnotations);
 			
 		}
-		java.util.concurrent.TimeUnit.MINUTES.sleep(3);
+		java.util.concurrent.TimeUnit.SECONDS.sleep(120);
 		System.out.println("Returning annotations");
 		return annotationList;
 	}

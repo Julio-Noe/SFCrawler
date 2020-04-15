@@ -16,7 +16,8 @@ public class EvaluationSheet {
 
 	public static void main(String[] args) throws IOException {
 		EvaluationSheet es = new EvaluationSheet();
-		es.createSampleSheet("Diabetes");
+//		es.createSampleSheet("ComputerScienceExp2");
+		es.createSheet("ComputerScienceExp2");
 
 	}
 	
@@ -71,7 +72,7 @@ public class EvaluationSheet {
 					counterAccepted++;
 			}
 		}
-		FileUtils.writeLines(new File("Diabetes_Sample.tsv"), rows);
+		FileUtils.writeLines(new File("ComputerScienceExp2_Sample.tsv"), rows);
 		
 	}
 
